@@ -7,8 +7,7 @@ class Ayuda extends Controller{
     }
 
     function FAQ(){
-        $args = func_get_args();
-        echo "<h1>FAQ</h1><br><h1>".var_dump($args)."</h1>";
+        echo "<p>" . var_dump(func_get_args()) . "</p>";
     }
 }
 
