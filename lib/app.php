@@ -3,9 +3,11 @@
 class App{
     function __construct(){
 
-        $url = $_GET['url'];            //Obtenemos la URL
-        $url = rtrim($url, '/');        //elimina espacios en blanco
-        $url = explode('/', $url);      //Convierte el string en un array, similar al split de java
+        if(isset($_GET['url'])){
+            $url = $_GET['url'];            //Obtenemos la URL
+            $url = rtrim($url, '/');        //elimina espacios en blanco
+            $url = explode('/', $url);      //Convierte el string en un array, similar al split de java
+        }
 
         if(isset($url[0]) && $url[0]){
             //Si $url[0] esta definida y tiene un valor
