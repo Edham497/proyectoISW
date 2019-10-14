@@ -1,7 +1,8 @@
 <?php require 'views/head.php';?>
-    <div class="main">
-        <div class="mainTitle">Error 404</div>
-        <p>El lugar solicitado no se ha encontrado, verifica el enlace y vuelve a intentarlo</p>
+<?php require 'views/components/header.php';?>
+    <div class="main col cc material-dark">
+        <div class="title fs50 tac">Error <?php echo $this->error_code; echo " - ".$this->error_name?></div>
+        <p class="mt20 tac"><?php echo $this->error_desc; ?></p>
+        <a href="/proyectoISW/"><div class="ham-btn material-normal">Regresar</div></a>
     </div>
-    <a href="/proyectoISW/"><div class="btn">Regresar</div></a>
 <?php require 'views/footer.php';?>

@@ -23,20 +23,7 @@ html, body{
     padding: 25px;
     overflow-y: auto;
 }
-.bggrad1{
-    background: #1f4037;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #99f2c8, #1f4037);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #99f2c8, #1f4037) !important;/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
-}
-.nodewp{
-    background-image: url("../img/nodeJS_wp.png") !important;
-    background-position: center !important;
-    background-repeat: no-repeat !important;
-    background-attachment: fixed !important;
-    background-size: cover !important;
-
-}
 
 //Components
 @import 'components/index';
@@ -52,55 +39,52 @@ html, body{
 .cursorP{cursor:pointer;}
 
 /* position fixed to */
-.pos-fix-left{position: fixed; left: 0;}
-.pos-fix-rigth{position: fixed; right: 0;}
-.pos-fix-top{position: fixed; top: 0;}
-.pos-fix-bottom{position: fixed; bottom: 0;}
+.pos-fix{
+    position: fixed;
+    &-left{@extend .pos-fix; left: 0;}
+    &-right{@extend .pos-fix;right: 0;}
+    &-top{@extend .pos-fix;top: 0;}
+    &-bottom{@extend .pos-fix;bottom: 0;}
+}
 
 /*position absolute to */
-
-.pos-absolute-left{position: relative; left: 0;}
-.pos-absolute-rigth{position: relative; right: 0;}
-.pos-absolute-top{position: relative; top: 0;}
-.pos-absolute-bottom{position: relative; bottom: 0;}
+.pos-abs{
+    position: absolute;
+    &-left{@extend .pos-abs; left: 0;}
+    &-right{@extend .pos-abs; right: 0;}
+    &-top{@extend .pos-abs; top: 0;}
+    &-bottom{@extend .pos-abs; bottom: 0;}
+}
 
 /*max-width*/
 .mw500{max-width: 500px;}
 /*Padding*/
-.pdg10{padding:10px;}
-.pdg12{padding:12px;}
-.pdg16{padding:16px;}
-.pdg20{padding:20px;}
-.pdg25{padding:25px;}
-.pdg30{padding:30px;}
-.pdg35{padding:25px;}
-.pdg40{padding:30px;}
-.pdg45{padding:25px;}
-.pdg50{padding:30px;}
-
+@for $i from 1 through 10 {
+    .pdg#{$i*10}{margin-top: #{$i*10}px}
+}
 .pdgT60{padding-top: 60px; box-sizing: border-box;}
+.pdgB50{padding-bottom: 50px;}
+.pdgB100{padding-bottom: 100px;}
 
 /*Margin top*/
-.mt10{margin-top: 10px;}
-.mt20{margin-top: 20px;}
-.mt30{margin-top: 30px;}
-.mt40{margin-top: 40px;}
-.mt50{margin-top: 50px;}
+@for $i from 1 through 10 {
+    .mt#{$i*10}{margin-top: #{$i*10}px}
+}
 
 /*Margin botton*/
-.mb10{margin-bottom: 10px;}
-.mb20{margin-bottom: 20px;}
-.mb30{margin-bottom: 30px;}
+@for $i from 1 through 10 {
+    .mb#{$i*10}{margin-bottom: #{$i*10}px}
+}
 
 /*Margin left*/
-.ml10{margin-left: 10px;}
-.ml20{margin-left: 20px;}
-.ml30{margin-left: 30px;}
+@for $i from 1 through 10 {
+    .ml#{$i*10}{margin-left: #{$i*10}px}
+}
 
 /*Margin rigth*/
-.mr10{margin-right: 10px;}
-.mr20{margin-right: 20px;}
-.mr30{margin-right: 30px;}
+@for $i from 1 through 10 {
+    .mr#{$i*10}{margin-right: #{$i*10}px}
+}
 
 /*Font size*/
 .fs12{font-size: 12px}
@@ -121,6 +105,9 @@ html, body{
 /*Interlineado*/
 .lh2{line-height: 2}
 .lh1p5{line-height: 1.5}
+
+/*Text Align*/
+.tac{text-align: center;}
 
 /*Overflow*/
 .ofXscroll{
@@ -160,6 +147,10 @@ html, body{
     padding: 10px;
     box-sizing: border-box;
     transition: .12s ease-in-out;
-  }
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
   
 .ham-btn:hover{background: #3498db; border-bottom: solid 1px #3498db;color: #f1f1f1;}

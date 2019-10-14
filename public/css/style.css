@@ -26,23 +26,6 @@ html, body {
   overflow-y: auto;
 }
 
-.bggrad1 {
-  background: #1f4037;
-  /* fallback for old browsers */
-  /* Chrome 10-25, Safari 5.1-6 */
-  background: -webkit-gradient(linear, left top, right top, from(#99f2c8), to(#1f4037)) !important;
-  background: linear-gradient(to right, #99f2c8, #1f4037) !important;
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-}
-
-.nodewp {
-  background-image: url("../img/nodeJS_wp.png") !important;
-  background-position: center !important;
-  background-repeat: no-repeat !important;
-  background-attachment: fixed !important;
-  background-size: cover !important;
-}
-
 ham-container, .ham-container {
   width: 100%;
   max-width: 720px;
@@ -138,9 +121,69 @@ ham-header ham-nav ham-item:hover {
   }
 }
 
+.card {
+  width: 300px;
+  height: 350px;
+  position: relative;
+  background: #FFFFFF;
+  margin: 10px 5px;
+  overflow: hidden;
+  -webkit-box-shadow: 3px 3px 6px #000000af;
+          box-shadow: 3px 3px 6px #000000af;
+  -webkit-transition: .12s ease-in-out;
+  transition: .12s ease-in-out;
+}
+
+.card:hover {
+  -webkit-box-shadow: 0px 0px 12px 4px #133441;
+          box-shadow: 0px 0px 12px 4px #133441;
+  -webkit-transform: scale(1.025);
+          transform: scale(1.025);
+}
+
+.card .info {
+  font-size: 12px;
+  position: absolute;
+  width: 100%;
+  height: 125px;
+  bottom: 0;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto 1fr;
+      grid-template-columns: auto 1fr;
+  gap: 5px 2em;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 10px;
+}
+
+.card .info .txt {
+  color: #dadada;
+}
+
+.card .info .label {
+  color: #838383;
+}
+
 .full, ham-header, ham-header ham-logo, ham-header ham-nav {
   width: 100%;
   height: 100%;
+}
+
+.fullw {
+  width: 100%;
+}
+
+.fullh {
+  height: 100%;
+}
+
+.fullvh {
+  height: 100vh;
 }
 
 /* Implementacion de flexbox por Jorge Rea (Edham)
@@ -491,44 +534,44 @@ ham-header ham-nav ham-item:hover {
 }
 
 /* position fixed to */
-.pos-fix-left {
+.pos-fix, .pos-fix-left, .pos-fix-right, .pos-fix-top, .pos-fix-bottom {
   position: fixed;
+}
+
+.pos-fix-left {
   left: 0;
 }
 
-.pos-fix-rigth {
-  position: fixed;
+.pos-fix-right {
   right: 0;
 }
 
 .pos-fix-top {
-  position: fixed;
   top: 0;
 }
 
 .pos-fix-bottom {
-  position: fixed;
   bottom: 0;
 }
 
 /*position absolute to */
-.pos-absolute-left {
-  position: relative;
+.pos-abs, .pos-abs-left, .pos-abs-right, .pos-abs-top, .pos-abs-bottom {
+  position: absolute;
+}
+
+.pos-abs-left {
   left: 0;
 }
 
-.pos-absolute-rigth {
-  position: relative;
+.pos-abs-right {
   right: 0;
 }
 
-.pos-absolute-top {
-  position: relative;
+.pos-abs-top {
   top: 0;
 }
 
-.pos-absolute-bottom {
-  position: relative;
+.pos-abs-bottom {
   bottom: 0;
 }
 
@@ -539,49 +582,57 @@ ham-header ham-nav ham-item:hover {
 
 /*Padding*/
 .pdg10 {
-  padding: 10px;
-}
-
-.pdg12 {
-  padding: 12px;
-}
-
-.pdg16 {
-  padding: 16px;
+  margin-top: 10px;
 }
 
 .pdg20 {
-  padding: 20px;
-}
-
-.pdg25 {
-  padding: 25px;
+  margin-top: 20px;
 }
 
 .pdg30 {
-  padding: 30px;
-}
-
-.pdg35 {
-  padding: 25px;
+  margin-top: 30px;
 }
 
 .pdg40 {
-  padding: 30px;
-}
-
-.pdg45 {
-  padding: 25px;
+  margin-top: 40px;
 }
 
 .pdg50 {
-  padding: 30px;
+  margin-top: 50px;
+}
+
+.pdg60 {
+  margin-top: 60px;
+}
+
+.pdg70 {
+  margin-top: 70px;
+}
+
+.pdg80 {
+  margin-top: 80px;
+}
+
+.pdg90 {
+  margin-top: 90px;
+}
+
+.pdg100 {
+  margin-top: 100px;
 }
 
 .pdgT60 {
   padding-top: 60px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+}
+
+.pdgB50 {
+  padding-bottom: 50px;
+}
+
+.pdgB100 {
+  padding-bottom: 100px;
 }
 
 /*Margin top*/
@@ -605,6 +656,26 @@ ham-header ham-nav ham-item:hover {
   margin-top: 50px;
 }
 
+.mt60 {
+  margin-top: 60px;
+}
+
+.mt70 {
+  margin-top: 70px;
+}
+
+.mt80 {
+  margin-top: 80px;
+}
+
+.mt90 {
+  margin-top: 90px;
+}
+
+.mt100 {
+  margin-top: 100px;
+}
+
 /*Margin botton*/
 .mb10 {
   margin-bottom: 10px;
@@ -616,6 +687,34 @@ ham-header ham-nav ham-item:hover {
 
 .mb30 {
   margin-bottom: 30px;
+}
+
+.mb40 {
+  margin-bottom: 40px;
+}
+
+.mb50 {
+  margin-bottom: 50px;
+}
+
+.mb60 {
+  margin-bottom: 60px;
+}
+
+.mb70 {
+  margin-bottom: 70px;
+}
+
+.mb80 {
+  margin-bottom: 80px;
+}
+
+.mb90 {
+  margin-bottom: 90px;
+}
+
+.mb100 {
+  margin-bottom: 100px;
 }
 
 /*Margin left*/
@@ -631,6 +730,34 @@ ham-header ham-nav ham-item:hover {
   margin-left: 30px;
 }
 
+.ml40 {
+  margin-left: 40px;
+}
+
+.ml50 {
+  margin-left: 50px;
+}
+
+.ml60 {
+  margin-left: 60px;
+}
+
+.ml70 {
+  margin-left: 70px;
+}
+
+.ml80 {
+  margin-left: 80px;
+}
+
+.ml90 {
+  margin-left: 90px;
+}
+
+.ml100 {
+  margin-left: 100px;
+}
+
 /*Margin rigth*/
 .mr10 {
   margin-right: 10px;
@@ -642,6 +769,34 @@ ham-header ham-nav ham-item:hover {
 
 .mr30 {
   margin-right: 30px;
+}
+
+.mr40 {
+  margin-right: 40px;
+}
+
+.mr50 {
+  margin-right: 50px;
+}
+
+.mr60 {
+  margin-right: 60px;
+}
+
+.mr70 {
+  margin-right: 70px;
+}
+
+.mr80 {
+  margin-right: 80px;
+}
+
+.mr90 {
+  margin-right: 90px;
+}
+
+.mr100 {
+  margin-right: 100px;
 }
 
 /*Font size*/
@@ -710,6 +865,11 @@ ham-header ham-nav ham-item:hover {
   line-height: 1.5;
 }
 
+/*Text Align*/
+.tac {
+  text-align: center;
+}
+
 /*Overflow*/
 .ofXscroll {
   overflow: hidden;
@@ -755,6 +915,11 @@ ham-header ham-nav ham-item:hover {
           box-sizing: border-box;
   -webkit-transition: .12s ease-in-out;
   transition: .12s ease-in-out;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
 .ham-btn:hover {

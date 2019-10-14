@@ -1,4 +1,4 @@
-<ham-header>
+<ham-header class="material-normal">
     <ham-logo>Guarderia Yocho</ham-logo>
     <ham-nav>
         <ham-item>Ayuda</ham-item>
