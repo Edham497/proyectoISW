@@ -1,8 +1,6 @@
 <?php
-    require_once 'lib/app.php';
-    require_once 'lib/controller.php';
-    require_once 'lib/view.php';
-    require_once 'lib/model.php';
-
+    //path para que funcione sin problemas con git
+    //C:/.*/htdocs/pruebasMVC
+    require_once 'core/app.php';
     $app = new App();
 ?>
