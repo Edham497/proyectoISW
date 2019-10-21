@@ -5,7 +5,7 @@
         <!-- <p>Pagina Principal del sitio</p> -->
         <div class="cardContainer row cc mt30 wp fullw fixFlowC">
             <?php
-                for($i =0; $i < 350; $i++)
+                for($i =0; $i < 50; $i++)
                     echo '<div class="card material-lighter">
                     <div class="info material-normal">
                         <div class="label">Nombre</div>
