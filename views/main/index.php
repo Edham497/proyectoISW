@@ -1,4 +1,3 @@
-<!-- <?php require_once "views/components/header.php"; ?> -->
 <div class="section bg-main">
     <div class="container-principal col cc tac">
         <div class="title">
