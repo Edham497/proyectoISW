@@ -1,0 +1,16 @@
+.formulario{
+
+    > .titulo{
+        font-size: 35px;
+    }
+
+    > .textBox{
+        margin-bottom: 8px;
+        width: 100%;
+        outline: solid red 2px;
+
+        .title{
+            margin: 5px 0;
+        }
+    }
+}

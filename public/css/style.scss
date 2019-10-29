@@ -8,7 +8,6 @@
 html, body{
     width: 100%;
     height: 100vh;
-    overflow: hidden;
 }
 @media (max-height: 400px){
     html, body{
@@ -60,7 +59,7 @@ html, body{
 .mw500{max-width: 500px;}
 /*Padding*/
 @for $i from 1 through 10 {
-    .pdg#{$i*10}{margin-top: #{$i*10}px}
+    .pdg#{$i*10}{padding: #{$i*10}px}
 }
 .pdgT60{padding-top: 60px; box-sizing: border-box;}
 .pdgB50{padding-bottom: 50px;}

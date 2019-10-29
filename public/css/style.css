@@ -9,7 +9,6 @@
 html, body {
   width: 100%;
   height: 100vh;
-  overflow: hidden;
 }
 
 @media (max-height: 400px) {
@@ -58,6 +57,51 @@ ham-btn-container {
   background-color: #3392b5;
 }
 
+.section {
+  -webkit-transition: .25s;
+  transition: .25s;
+  padding: 10rem .9rem;
+  color: white;
+}
+
+.section .container {
+  -webkit-transition: .25s;
+  transition: .25s;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.section .container-principal {
+  padding: 6rem 0rem 6rem;
+}
+
+.display {
+  margin-bottom: .5rem;
+}
+
+.display1 {
+  font-size: 5.5rem;
+}
+
+.display2 {
+  font-size: 4.5rem;
+}
+
+.display3 {
+  font-size: 3.5rem;
+}
+
+.display4 {
+  font-size: 2.5rem;
+}
+
+.display5 {
+  font-size: 1.5rem;
+}
+
 ham-btn {
   display: -ms-grid;
   display: grid;
@@ -70,25 +114,8 @@ ham-btn {
   border-radius: 6px;
 }
 
-ham-header {
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-  max-height: 65px !important;
-  -ms-grid-columns: auto 1fr;
-      grid-template-columns: auto 1fr;
-}
-
-ham-header ham-logo {
-  padding: 0 25px;
-  -webkit-transition: .12s ease-in-out;
-  transition: .12s ease-in-out;
-  font-size: 25px;
-  cursor: pointer;
-}
-
-ham-header ham-nav {
+.navbar {
+  z-index: 10;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -96,28 +123,74 @@ ham-header ham-nav {
   -webkit-box-direction: normal;
       -ms-flex-flow: row;
           flex-flow: row;
+  width: 100%;
+  color: #DADADA;
+  -webkit-transition: .25s;
+  transition: .25s;
 }
 
-ham-header ham-nav ham-item {
-  -ms-flex-preferred-size: 0;
-      flex-basis: 0;
-  padding: 0 1em;
-  -webkit-transition: .12s ease-in-out;
-  transition: .12s ease-in-out;
+.navbar .brand, .navbar .item {
+  padding: 1.5rem 1rem;
 }
 
-ham-header ham-nav ham-item:hover {
-  background: #FFFFFF30;
+.navbar .nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+}
+
+.navbar .nav .item {
+  -webkit-transition: .2s ease-in-out;
+  transition: .2s ease-in-out;
+}
+
+.navbar .nav .item:hover {
+  background: #585c5f50;
+  cursor: pointer;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.sticky + .content {
+  padding-top: 60px;
 }
 
 @media (max-width: 720px) {
-  ham-header {
-    position: relative;
+  .navbar .nav {
+    top: calc(-100% - 65px);
+    left: 0;
+    width: 100%;
+    position: fixed;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column;
+            flex-flow: column;
+    overflow: hidden;
+    overflow-y: auto;
+    -webkit-transition: .25s ease-in-out;
+    transition: .25s ease-in-out;
   }
-  ham-nav ham-item {
-    -webkit-box-flex: 1;
-        -ms-flex-positive: 1;
-            flex-grow: 1;
+  .navbar .nav.open {
+    top: 65px;
+    background: inherit;
+    z-index: 5;
+  }
+  .navbar .nav .item {
+    background: #212529;
+  }
+  .user {
+    font-size: 12px;
+  }
+  .user .nombre {
+    max-width: 150px;
   }
 }
 
@@ -169,7 +242,21 @@ ham-header ham-nav ham-item:hover {
   color: #838383;
 }
 
-.full, ham-header, ham-header ham-logo, ham-header ham-nav {
+.formulario > .titulo {
+  font-size: 35px;
+}
+
+.formulario > .textBox {
+  margin-bottom: 8px;
+  width: 100%;
+  outline: solid red 2px;
+}
+
+.formulario > .textBox .title {
+  margin: 5px 0;
+}
+
+.full {
   width: 100%;
   height: 100%;
 }
@@ -388,12 +475,12 @@ ham-header ham-nav ham-item:hover {
   }
 }
 
-.grid, ham-header, ham-header ham-logo, ham-header ham-nav ham-item {
+.grid {
   display: -ms-grid;
   display: grid;
 }
 
-.grid-cc, ham-header, ham-header ham-logo, ham-header ham-nav ham-item {
+.grid-cc {
   display: -ms-grid;
   display: grid;
   place-items: center;
@@ -521,6 +608,47 @@ ham-header ham-nav ham-item:hover {
   z-index: -1;
 }
 
+.bg-main {
+  background: #4A154B;
+  color: #DADADA;
+}
+
+.bg-primary {
+  background: #611F6A;
+  color: #DADADA;
+}
+
+.bg-secondary {
+  background: #071D5C;
+  color: #DADADA;
+}
+
+.bg-success {
+  background: #007A5B;
+  color: #DADADA;
+}
+
+.bg-Info {
+  background: #1264A4;
+  color: #DADADA;
+}
+
+.bg-Warning {
+  background: #ECB22F;
+}
+
+.bg-Danger {
+  background: #E01E5B;
+}
+
+.bg-Dark {
+  background: #212529;
+}
+
+.bg-Light {
+  background: #EBEAEB;
+}
+
 .fRoboto {
   font-family: 'Roboto', sans-serif;
 }
@@ -582,43 +710,43 @@ ham-header ham-nav ham-item:hover {
 
 /*Padding*/
 .pdg10 {
-  margin-top: 10px;
+  padding: 10px;
 }
 
 .pdg20 {
-  margin-top: 20px;
+  padding: 20px;
 }
 
 .pdg30 {
-  margin-top: 30px;
+  padding: 30px;
 }
 
 .pdg40 {
-  margin-top: 40px;
+  padding: 40px;
 }
 
 .pdg50 {
-  margin-top: 50px;
+  padding: 50px;
 }
 
 .pdg60 {
-  margin-top: 60px;
+  padding: 60px;
 }
 
 .pdg70 {
-  margin-top: 70px;
+  padding: 70px;
 }
 
 .pdg80 {
-  margin-top: 80px;
+  padding: 80px;
 }
 
 .pdg90 {
-  margin-top: 90px;
+  padding: 90px;
 }
 
 .pdg100 {
-  margin-top: 100px;
+  padding: 100px;
 }
 
 .pdgT60 {

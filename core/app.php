@@ -6,7 +6,6 @@ class App{
 
     function __construct(){
         require_once 'controllers/_err.php';
-
         
         if(isset($_GET['url']))
             Router::get($this->getURLArray());

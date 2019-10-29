@@ -8,5 +8,5 @@
     <link rel="stylesheet" href="<?php echo constant('URL'); ?>public/css/style.css">
     <title>Document</title>
 </head>
-<body>
+<body class="material-normal">
  

@@ -2,14 +2,14 @@
 class Main extends Controller{
     function __construct(){
         parent::__construct();
-        // echo "<p>Main Controller</p>";
+        $this->renderFile = 'main/index';
     }
     function render(){
-        $this->view->render('main/index');
+        $this->view->render($this->renderFile);
     }
 
-    function f(){
-        echo "<p>f</p>";
+    function instalaciones(){
+        $this->renderFile = 'main/instalaciones';
     }
 }
 ?>

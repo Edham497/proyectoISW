@@ -1,14 +1,11 @@
-<ham-header class="material-normal">
-    <ham-logo>Guarderia Yocho</ham-logo>
-    <ham-nav>
-        <ham-item>Ayuda</ham-item>
-        <ham-item>FAQ</ham-item>
-    </ham-nav>
-</ham-header>
+<div class="navbar">
+    <div class="brand">Guarderia Yocho</div>
+    <div class="nav" id="menu">
+        <a href="<?php echo constant('URL'); ?>"><div class="item">Inicio</div></a>
+        <a href="<?php echo constant('URL'); ?>main/Instalaciones"><div class="item">Instalaciones</div></a>
+        <a href="<?php echo constant('URL'); ?>main/About"><div class="item">Acerca de</div></a>
+        <a href="<?php echo constant('URL'); ?>login"><div class="item">Login</div></a>
+    </div>
+</div>
 
-<script>
-    document.querySelector('ham-logo').onclick = ()=> window.location = '<?php echo constant('URL'); ?>'
-    let items = document.querySelectorAll('ham-item')
-    items[0].onclick= () => window.location = '<?php echo constant('URL'); ?>ayuda'
-    items[1].onclick= () => window.location = '<?php echo constant('URL'); ?>ayuda/FAQ'
-</script>
+<script src="<?php echo constant('URL'); ?>public/js/utilities.js"></script>
