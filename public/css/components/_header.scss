@@ -1,41 +1,64 @@
-ham-header{
-    user-select: none;
-    @extend .full;
-    max-height: 65px !important;
-    @extend .grid, .grid-cc;
-    grid-template-columns: 200px 1fr;
+.navbar{
+    z-index: 10;
+    display: flex;
+    flex-flow: row;
+    width: 100%;
+    // background: #2C3E50;
+    color: #DADADA;
+    transition: .25s;
 
-    ham-logo{
-        @extend .grid, .grid-cc;    
-        @extend .full;
-        transition: .12s ease-in-out;
-        font-size: 25px;
-        cursor: pointer;
+    .brand, .item{
+        padding: 1.5rem 1rem;
     }
-    ham-nav{    
-        @extend .full;
+
+    .nav{
         display: flex;
-        flex-flow: row;
-        ham-item{
-            flex-basis: 0;
-            padding: 0 1em;
-            transition: .12s ease-in-out;
-            @extend .grid, .grid-cc;
+        flex-flow: row nowrap;
+        // transition: .25s;
+        .item{
+            transition: .2s ease-in-out;
             &:hover{
-                background: #FFFFFF30;
+                background: #585c5f50;
+                cursor: pointer;
             }
         }
     }
 }
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+  
+.sticky + .content {
+    padding-top: 60px;
+}
 
 @media (max-width: 720px){
-    ham-header{
-        position: relative;
+    .navbar{
+        .nav{
+            top: calc(-100% - 65px);
+            left: 0;
+            width: 100%;
+            position: fixed;
+            flex-flow: column;
+            overflow: hidden;
+            overflow-y: auto;
+            transition: .25s ease-in-out;
+            &.open{
+                top: 65px;
+                background: inherit;
+                z-index: 5;
+            }
+            .item{
+                background: #212529;
+            }
+        }
     }
-    ham-nav{
-        // display: none !important;
-        ham-item{
-            flex-grow: 1;
+    .user{
+        font-size: 12px;
+        .nombre{
+            max-width: 150px;
         }
     }
 }
