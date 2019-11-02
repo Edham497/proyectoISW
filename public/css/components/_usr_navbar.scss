@@ -1,0 +1,50 @@
+.hidden{
+    left: -300px
+}
+.usr_navbar{
+    position: fixed;
+    transition: .2s;
+    width: 350px;
+    height: 100%;
+    background: #268FFF;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    padding: 2em;
+    .brand{
+        width: 150px;
+        height: 100px;
+    }
+    .user{
+        margin-top: 3em;
+        color: #FFF;
+        text-align: center;
+
+        .nombre{
+            font-size: 25px;
+        }
+        .rol{
+            border-radius: 20px;
+            background: #076EDC;
+        }
+    }
+    .options{
+        width: 100%;
+        margin-top: 20px;
+        // outline: solid green 1px;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 8px 0;
+
+        .op{
+            text-align: center;
+            // outline: solid red 1px;
+            padding: 1.5em .25em;
+            // outline: solid 2px #076EDC;
+            color: #FFF;
+            border-radius: 20px;
+            cursor: pointer;
+
+        }
+    }
+}

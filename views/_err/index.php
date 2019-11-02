@@ -1,4 +1,4 @@
-<div class="main col cc material-dark">
+<div class="main col cc material-dark pdgT60">
     <div class="title fs50 tac">Error 
         <?php echo $this->error_code; echo " - " . $this->error_name ?></div>
     <p class="mt20 tac"><?php echo $this->error_desc; ?></p>

@@ -18,6 +18,12 @@ ham-btn-container{
     text-shadow: 1px 1px #0a0a0a30;
 }
 
+.textBox{
+    .ham-subtitle, .ham-input{
+        transition: .25s ease-in-out;
+    }
+}
+
 .scrollAzul{
     scrollbar-color: #3392b5 transparent;
     scrollbar-width: thin;
@@ -29,11 +35,11 @@ ham-btn-container{
         background-color: #3392b5;
     }
 }
-
 .section{
     transition: .25s;
     padding: 10rem .9rem;
     color: white;
+
     .container {
         transition: .25s;
         width: 100%;

@@ -5,9 +5,9 @@ function myFunction() {
     if (window.pageYOffset > sticky) {
         navbar.classList.add("sticky")
         if(window.pageYOffset > sticky+150)
-            navbar.classList.add("bg-Dark")
+            navbar.classList.add("material-darker")
     } else {
-        navbar.classList.remove("sticky", "bg-Dark");
+        navbar.classList.remove("material-darker");
     }
 }
 
