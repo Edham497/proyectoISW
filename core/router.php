@@ -1,5 +1,4 @@
 <?php
-
 require_once 'core/controller.php';
 require_once 'core/view.php';
 require_once 'core/model.php';
@@ -8,6 +7,7 @@ define('URL', '/proyectoISW/');
 
 class Router{
     static function get($URL){
+
         if(isset($URL[0]) && $URL[0]){
             if($URL[0] == "418"){
                 $controlador= new _error(418);

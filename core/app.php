@@ -7,15 +7,24 @@ class App{
     function __construct(){
         require_once 'controllers/_err.php';
 
+        //Ruteando las secciones de la app
+        if (isset($_GET['url']))
+            Router::get($this->getURLArray());    
         
-        if(isset($_GET['url']))
-            Router::get($this->getURLArray());
-
-        else{
-            require_once 'controllers/main.php';
-            // $controlador = new main();
-            Router::prepareModule(new main());
-            // $controlador->render();
+        // Render del Inicio
+        else {
+            //Verificamos si hay una seccion iniciada
+            if(self::is_session_started()){
+                // renderizamos home (El controlador de home se encarga de 
+                // renderizar la seccion del rol iniciado)
+                require_once 'controllers/home.php';
+                Router::prepareModule(new Home());
+            }
+            else{
+                //renderizamos home
+                require_once 'controllers/main.php';
+                Router::prepareModule(new main());
+            }
         }
     }
 
@@ -25,6 +34,9 @@ class App{
         $URL = explode('/', $URL);      //Convierte el string en un array, similar al split de java
         return $URL;
     }
-}
 
-?>
+    static function is_session_started(){
+        session_start();
+        return isset($_SESSION['usrname']);
+    }
+}

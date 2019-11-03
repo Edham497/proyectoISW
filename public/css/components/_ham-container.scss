@@ -18,6 +18,12 @@ ham-btn-container{
     text-shadow: 1px 1px #0a0a0a30;
 }
 
+.textBox{
+    .ham-subtitle, .ham-input{
+        transition: .25s ease-in-out;
+    }
+}
+
 .scrollAzul{
     scrollbar-color: #3392b5 transparent;
     scrollbar-width: thin;
@@ -28,4 +34,31 @@ ham-btn-container{
     &::-webkit-scrollbar-thumb{
         background-color: #3392b5;
     }
+}
+.section{
+    transition: .25s;
+    padding: 10rem .9rem;
+    color: white;
+
+    .container {
+        transition: .25s;
+        width: 100%;
+        padding-right: 15px;
+        padding-left: 15px;
+        margin-right: auto;
+        margin-left: auto;
+        &-principal{
+            padding: 6rem 0rem 6rem;
+        }
+    }
+}
+
+.display{
+    margin-bottom: .5rem;
+
+    &1{font-size: 5.5rem;}
+    &2{font-size: 4.5rem;}
+    &3{font-size: 3.5rem;}
+    &4{font-size: 2.5rem;}
+    &5{font-size: 1.5rem;}
 }
