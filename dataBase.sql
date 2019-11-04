@@ -42,8 +42,10 @@ CREATE TABLE Maestro_Niño(
     idNiñofk int,
     fechaEntrada datetime,
     fechaSalida datetime DEFAULT NULL,
+    idAdultoSalidafk int,
     foreign key (idMaestrofk) references Maestro(idMaestro),
-    foreign key (idNiñofk) references Niño (idNiño)
+    foreign key (idNiñofk) references Niño (idNiño),
+    foreign key (idAdultoSalidafk) references Adulto (idAdulto)
 );
 
 CREATE TABLE Bitacora(
@@ -81,7 +83,7 @@ insert into Niño (nomNiño,apPatNiño,apMatNiño)values
 ('Marco','Solis','Facio');
 
 /*id, nombre, apPat, apMat,  email, nickname, contraseña, ¡¿rolAdulto?!, telefono*/
-insert into Adulto (nomAdulto,apPatAdulto,apMatAdulto,email,nickName,rolAdulto,telefono)values
+insert into Adulto (nomAdulto,apPatAdulto,apMatAdulto,email,contra,nickName,rolAdulto,telefono)values
 ('Alberto','Medrano','Leon','medranolayon@hotmail.com','Alecbertho34','123456',2,'871111111'),
 ('Javier','Rosame','Lanastacio','elHector_C_la_kome@Gmail.com','pussyeater69','696969',2,'871puñeton');
 
@@ -92,8 +94,8 @@ insert into Maestro (nomMaestro,apPatMaestro,apMatMaestro)values
 /*id, nombre, apPat, apMat*/
 insert into Pediatra (nomPediatra,apPatPediatra,apMatPediatra)values
 ('Franku','Papu','Joji');
-
-
+/*Relacion niño con adulto*/
+INSERT INTO Adulto_Niño (idAdultofk, idNiñofk) VALUES (2, 3), (1, 2);
 /*Faltan las tablas RELACION porque #queWEBA .-ATTE: Mario Medrano ;V*/
 
 select * from Niño;
@@ -103,9 +105,11 @@ select * from Niño where asistencia = false;
 select * from Maestro join Bitacora on idMaestro = idMaestrofk 
 join Niño on idNiño = idNiñofk where idMaestro = 1 and idNiño = 3;
 -- Recibir a los niños
-insert into Maestro_Niño values(1,3,'2013-11-24 08:15:10',null);
+insert into Maestro_Niño (idMaestrofk,idNiñofk,fechaEntrada) values(1,3,'2013-11-24 08:15:10');
 -- Salida de los niños
 update Maestro_Niño set fechaSalida = '2013-11-24 13:45:05' where idNiñofk = 3;
+-- Tutor o autorizado que recogio al niño
+update Maestro_Niño set idAdultoSalidafk = 1 where idNiñofk = 3;
 -- Obtener diferencias entre hora de llegada y salida
 SELECT *,TIMESTAMPDIFF(HOUR,fechaEntrada,fechaSalida) FROM Maestro_Niño
 -- Sacar asistencias por tiempo
