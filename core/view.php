@@ -10,7 +10,7 @@ class View{
         require_once "views/assets/head.php";
 
         //Validando componentes
-        if(App::is_session_started())        
+        if(isset($_SESSION['usr_name']))        
             require_once "views/components/user_navbar.php";
         else
             require_once "views/components/navbar.php";

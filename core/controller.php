@@ -8,11 +8,12 @@ class Controller{
     }
 
     function setModel($model){
-        $url = 'models/'.$model.'model.php';
+        $url = 'models/'.$model.'_model.php';
         if(file_exists($url)){
             require_once $url;
 
-            $modelName = $model.'model';
+            $modelName = $model.'_model';
+            // echo "$model _model";
             $this->model = new $modelName();
         }
     }

@@ -13,7 +13,7 @@ function myFunction() {
 
 window.onscroll = function() {myFunction()}
 
-document.querySelector('.brand').onclick = ()=> {
+document.querySelector('.expand').onclick = ()=> {
     let menu = document.querySelector('#menu')
     if(menu.classList.contains('open'))
         menu.classList.remove('open')

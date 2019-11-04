@@ -1,19 +1,44 @@
 .hidden{
-    left: -300px
+    left: -100%;
+    animation: slideOut 1 .5s ease-in-out;
 }
+
+@keyframes slideOut{
+    0% {
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(-100%);
+    }
+}
+@keyframes slideIn{
+    0% {
+        transform: translateX(-100%);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+
 .usr_navbar{
+    top:0;
     position: fixed;
-    transition: .2s;
-    width: 350px;
-    height: 100%;
+    transition: .5s ease-in-out;
+    width: 100%;
+    min-height: 100%;
+    max-height: 100%;
     background: #268FFF;
     display: flex;
     flex-flow: column;
     align-items: center;
     padding: 2em;
+    padding-top: calc(2em + 65px);
+    overflow-y: auto !important;
     .brand{
         width: 150px;
-        height: 100px;
+        min-height: 150px;
+        border-radius: 100%;
+        background: white;
     }
     .user{
         margin-top: 3em;
@@ -24,6 +49,9 @@
             font-size: 25px;
         }
         .rol{
+            font-weight: bold;
+            margin-top: 8px;
+            padding: .25em;
             border-radius: 20px;
             background: #076EDC;
         }

@@ -37,6 +37,6 @@ class App{
 
     static function is_session_started(){
         session_start();
-        return isset($_SESSION['usrname']);
+        return isset($_SESSION['usr_name']);
     }
 }
