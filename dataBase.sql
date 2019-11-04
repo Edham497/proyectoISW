@@ -19,7 +19,7 @@ CREATE TABLE Niño(
     nomNiño varchar(255),
     apPatNiño varchar(255),
     apMatNiño varchar(255),
-    asistencia bool
+    asistencia bool DEFAULT FALSE
 );
 
 CREATE TABLE Adulto_Niño(
@@ -74,24 +74,24 @@ CREATE TABLE Pediatra_Niño(
 );
 
 /*nombre, apPat, apMat, asistencia*/
-insert into Niño values
-(1,'Mario','Medrano','Lomas',true),
-(2,'Jorge','Rea','Salazar',false),
-(3,'Hector','Hernandez','De La Cruz',true),
-(4,'Marco','Solis','Facio',false);
+insert into Niño (nomNiño,apPatNiño,apMatNiño)values
+('Mario','Medrano','Lomas'),
+('Jorge','Rea','Salazar'),
+('Hector','Hernandez','De La Cruz'),
+('Marco','Solis','Facio');
 
 /*id, nombre, apPat, apMat,  email, nickname, contraseña, ¡¿rolAdulto?!, telefono*/
-insert into Adulto values
-(1,'Alberto','Medrano','Leon','medranolayon@hotmail.com','Alecbertho34','123456',2,'871111111'),
-(2,'Javier','Rosame','Lanastacio','elHector_C_la_kome@Gmail.com','pussyeater69','696969',2,'871puñeton');
+insert into Adulto (nomAdulto,apPatAdulto,apMatAdulto,email,nickName,rolAdulto,telefono)values
+('Alberto','Medrano','Leon','medranolayon@hotmail.com','Alecbertho34','123456',2,'871111111'),
+('Javier','Rosame','Lanastacio','elHector_C_la_kome@Gmail.com','pussyeater69','696969',2,'871puñeton');
 
 /*id, nombre, apPat, apMat*/
-insert into Maestro values
-(1,'Frank','Black','Francis');
+insert into Maestro (nomMaestro,apPatMaestro,apMatMaestro)values
+('Frank','Black','Francis');
 
 /*id, nombre, apPat, apMat*/
-insert into Pediatra values
-(1, 'Franku','Papu','Joji');
+insert into Pediatra (nomPediatra,apPatPediatra,apMatPediatra)values
+('Franku','Papu','Joji');
 
 
 /*Faltan las tablas RELACION porque #queWEBA .-ATTE: Mario Medrano ;V*/
