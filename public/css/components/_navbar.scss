@@ -6,18 +6,80 @@
     // background: #2C3E50;
     color: rgb(255, 255, 255);
     transition: .25s;
-    font-weight: bold;
-    
+    // font-weight: bold;
+
     .brand, .item{
-        padding: 1.5rem 1rem;
+        padding: 1em;
+    }
+    
+    .brand{
+        display: flex; 
+        flex-flow: row;
+        align-items: center;
+        z-index: 100;
+        .icon{
+            width: 40px;
+            height: 40px;
+            margin-right: 15px;
+            background: url('../ico/babyapp.png') no-repeat center;
+            background-size: 100%;
+        }
+        .titulo{
+            font-size: 20px;
+            display: grid;
+            place-items: center;
+        }
+        .expand{
+            opacity: 0;
+            width: 15px;
+            height: 15px;
+            margin: 10px;
+            margin-left: 25px;
+            background: url('../ico/expand.png') no-repeat center;
+            background-size: 100%;
+            position: relative;
+
+            &.expandMenu{
+                width: 20px;
+                height: 20px;
+                margin: 0 25px 0 15px;
+                opacity: 1;
+                background: url('../ico/menu.png') no-repeat center;
+                background-size: 100%;
+                position: relative;
+            }
+
+            &::before{
+                content: "";
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: -5px;
+                left: -5px;
+                background: #343e52;
+                padding: 5px;
+                border-radius: 5px;
+                z-index: -1;
+                transition: .25s ease-in-out;
+            }
+            &:hover::before{
+                background: #3f4d67;
+            }
+        }
     }
 
     .nav{
         display: flex;
         flex-flow: row nowrap;
         // transition: .25s;
+        a{
+            display: grid;
+            place-items: center;
+        }
         .item{
-            transition: .2s ease-in-out;
+            font-size: 14px;
+            outline: none !important;
+            transition: .4s ease-in-out;
             &:hover{
                 transform: scale(.9);
                 background: #1089FF;
@@ -39,23 +101,31 @@
 
 @media (max-width: 720px){
     .navbar{
+        .brand{
+            .expand{
+                display: grid;
+                opacity: 1;
+            }
+        }
         .nav{
-            top: calc(-100% - 65px);
+            top: -100%;
             left: 0;
             width: 100%;
             position: fixed;
             flex-flow: column;
             overflow: hidden;
             overflow-y: auto;
-            transition: .25s ease-in-out;
+            transition: .5s ease-in-out;
+            background: #212529;
             &.open{
-                top: 65px;
-                background: inherit;
+                top: 0;
+                padding-top: 65px;
                 z-index: 5;
             }
             .item{
-                background: #212529;
+                width: 100%;
             }
+            
         }
     }
     .user{

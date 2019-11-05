@@ -2,6 +2,8 @@
 require_once 'core/controller.php';
 require_once 'core/view.php';
 require_once 'core/model.php';
+require_once 'core/db.php';
+
 
 define('URL', '/proyectoISW/');
 
@@ -18,6 +20,7 @@ class Router{
             if(file_exists($archivoControlador)){
                 require_once $archivoControlador;
                 $controlador= new $URL[0];
+                $controlador->setModel($URL[0]);
                 // self::prepareModule($controlador);
                 
                 if(isset($URL[1])){
@@ -27,7 +30,10 @@ class Router{
                             $controlador->{$URL[1]}($URL[2]);
                         else $controlador->{$URL[1]}();
                     }
-                    else $controlador = new _error(400);
+                    else{
+                        $controlador = new _error(400);
+                        return;
+                    }
                 }
                 self::prepareModule($controlador);
             }

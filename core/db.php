@@ -8,13 +8,14 @@ class Database{
     private $charset;
 
     function __construct(){
-
         $this->host = "localhost";
-        $this->db = "prueba";
+        $this->db = "guarderia";
         $this->user = "root";
         $this->password = "";
         $this->charset = "utf8mb4";
-
+    }
+    
+    function getConn(){
         try{
             $connection = "mysql:host=$this->host; dbname=$this->db; charset=$this->charset;";
             $options = [
@@ -23,12 +24,13 @@ class Database{
                 PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
                 PDO::ATTR_EMULATE_PREPARES => false
             ];
-            $this->pdo = new PDO($connection, $this->user, $this->password, $options);   
+            return new PDO($connection, $this->user, $this->password, $options);   
         }
         catch(PDOException $e){
-            return new _error(666);
+            print_r('Error connection' . $e->getMessage());
         }
     }
+<<<<<<< HEAD
     
     function insert($query){
         $stmt = $this->pdo->prepare($query);
@@ -50,6 +52,10 @@ class Database{
         $stmt = $this->pdo->prepare($query);
         $stmt->execute();
     }
+=======
+
+
+>>>>>>> edham
 }
 
 ?>

@@ -1,5 +1,5 @@
 <body class="cold-dark pdgT60">
-    <div class="container col ss pdg20">
+    <div class="container col sc pdg20">
         <div class="title fs30">Listado de niños</div>
         <!-- <p>Pagina Principal del sitio</p> -->
         <div class="cardContainer row cc mt30 wp fullw fixFlowC">

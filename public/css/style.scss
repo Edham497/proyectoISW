@@ -12,11 +12,11 @@ html, body{
 }
 @media (max-height: 400px){
     html, body{
-        padding-bottom: 150px;
-        height: 120vh;
+        height: 150vh;
         overflow-y: auto;
     }
 }
+a{outline: none !important;}
 
 .main{
     width: 100%;
@@ -102,8 +102,6 @@ html, body{
         padding-top: #{$i*10}px !important;
         padding-bottom: #{$i*10}px !important;
     }
-}
-@for $i from 1 to 10 {
 }
 
 @for $i from 1 to 21{
