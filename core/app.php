@@ -1,4 +1,5 @@
 <?php
+
 require_once 'core/router.php';
 
 class App{
@@ -8,7 +9,7 @@ class App{
 
         //Ruteando las secciones de la app
         if (isset($_GET['url']))
-            Router::get($this->getURLArray());
+            Router::get($this->getURLArray());    
         
         // Render del Inicio
         else {

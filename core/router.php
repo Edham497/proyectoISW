@@ -16,8 +16,6 @@ class Router{
                 return;
             }
 
-            App::is_session_started();
-
             $archivoControlador = self::getControllerPath($URL);
             if(file_exists($archivoControlador)){
                 require_once $archivoControlador;
@@ -47,8 +45,7 @@ class Router{
         return "controllers/$controller[0].php";
     }
     static function prepareModule($module){
-        if(method_exists($module, 'render'))
-            $module->render();
+        $module->render();
     }
 }
 

@@ -1,5 +1,5 @@
 <body class="col sc pdgT60 fullw fixFlowC">
-    <form class="formulario col ss pdg20" action="<?php echo constant('URL')?>usuarios/start" method="POST">
+    <form class="formulario col ss pdg20" action="<?php echo constant('URL')?>user/insert" method="POST">
         <div class=" fullW display4">Registro</div>
         <div class="textBox fullW maxW500 pdg20">
             <div class="mrg0 pdg0 pdg10 brn">Nombre(s)</div>

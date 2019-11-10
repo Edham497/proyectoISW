@@ -10,12 +10,11 @@ class View{
         require_once "views/assets/head.php";
 
         //Validando componentes
-        session_start();
+        session_start();// este lo puse para que siguiera el menu del inicio del sesion
         if(isset($_SESSION['usr_name']))        
             require_once "views/components/user_navbar.php";
         else
-            require_once "views/components/navbar.php";
-        
+           require_once "views/components/navbar.php";
         require_once "views/$nombre.php";
     }
 }

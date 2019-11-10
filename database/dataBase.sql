@@ -64,7 +64,7 @@ insert into Niño (nomNiño,apPatNiño,apMatNiño)values
 ('Mario','Medrano','Lomas'),
 ('Jorge','Rea','Salazar'),
 ('Hector','Hernandez','De La Cruz'),
-('Marco','Solis','Facio'),;
+('Marco','Solis','Facio');
 
 /*id, nombre, apPat, apMat,  email, nickname, contraseña, ¡¿rolAdulto?!, telefono*/
 insert into Adulto (nomAdulto,apPatAdulto,apMatAdulto,email,contra,nickName,rolAdulto,telefono)values

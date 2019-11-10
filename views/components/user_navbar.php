@@ -2,30 +2,27 @@
     <div class="brand">
         <div class="expand expandMenu"></div>
         <div class="icon"></div>
-        <a href="<?php echo constant('URL');?>"><div class="titulo">Guarderia M. Jackson</div></a>
+        <a href="<?php echo constant('URL');?>"><div class="titulo">Guarderia Yocho</div></a>
     </div>
 </div>
 
-<div class="usr_navbar hidden">
+<div class="usr_navbar maxW500 hidden">
     <div class="brand">
-        <img src="<?php echo constant('URL');?>public/img/guardarias.jpg" alt="">
     </div>
     <div class="user">
         <div class="nombre"><?php echo $_SESSION['usr_name']; ?></div>
         <div class="rol"><?php echo $_SESSION['usr_roleName']; ?></div>
     </div>
     <div class="options">
-<<<<<<< HEAD
         <a href="<?php echo constant('URL') ?>">
             <div class="op">Home</div>
-=======
-        <a href="<?php echo constant('URL')?>users/add">
-            <div class="op">ADD USER</div>
->>>>>>> edham
         </a>
-        <?php if($_SESSION['usr_role'] === 1){ ?>
+        <?php if($_SESSION['usr_role'] == 1){ ?>
             <a href="<?php echo constant('URL') . 'login/signup'; ?>">
                 <div class="op">Registro</div>
+            </a>
+            <a href="<?php echo constant('URL').'user/read';?>">
+                <div class="op">Empleados</div>
             </a>
         <?php } ?>
         <a href="<?php echo constant('URL') . 'login/end'; ?>">

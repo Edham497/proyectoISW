@@ -4,7 +4,8 @@
     flex-flow: row;
     width: 100%;
     // background: #2C3E50;
-    // transition: .25s;
+    color: rgb(255, 255, 255);
+    transition: .25s;
     // font-weight: bold;
 
     .brand, .item{
@@ -78,7 +79,7 @@
         .item{
             font-size: 14px;
             outline: none !important;
-            transition: .3s ease-in-out;
+            transition: .4s ease-in-out;
             &:hover{
                 transform: scale(.9);
                 background: #1089FF;
@@ -116,12 +117,10 @@
             overflow-y: auto;
             transition: .5s ease-in-out;
             background: #212529;
-            color: #DADADA !important;
             &.open{
                 top: 0;
                 padding-top: 65px;
                 z-index: 5;
-                color: #DADADA;
             }
             .item{
                 width: 100%;
