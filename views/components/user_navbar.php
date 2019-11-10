@@ -14,9 +14,14 @@
         <div class="rol"><?php echo $_SESSION['usr_roleName']; ?></div>
     </div>
     <div class="options">
-        <a href="#">
+        <a href="<?php echo constant('URL') ?>">
             <div class="op">Home</div>
         </a>
+        <?php if($_SESSION['usr_role'] === 1){ ?>
+            <a href="<?php echo constant('URL') . 'login/signup'; ?>">
+                <div class="op">Registro</div>
+            </a>
+        <?php } ?>
         <a href="<?php echo constant('URL') . 'login/end'; ?>">
             <div class="op">Cerrar Session</div>
         </a>

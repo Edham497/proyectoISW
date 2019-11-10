@@ -5,7 +5,7 @@ class Login extends Controller{
         parent::__construct();
         $this->renderFile = 'login/index';
 
-        if(self::isLoged()) header('Location:' . constant('URL'));
+        //if(self::isLoged()) header('Location:' . constant('URL'));
         
     }
     
@@ -16,15 +16,14 @@ class Login extends Controller{
     function start(){
         //Verificamos si lo que se mando por Post es valido
         if($_POST['usrname'] && $_POST['pass']){
-            
             //consulta a la dase de datos por medio del modelo
-            $USER = $this->model->checkUser($_POST['usrname'], $_POST['pass']);
+            $USER = $this->model->checkUser($_POST['usrname']);
 
-            if($USER['usrname']){
+            if($USER['nomAdulto']&&password_verify($_POST['pass'],$USER['contra'])){
 
                 session_start();
-                $_SESSION['usr_name'] = $USER['usrname'];
-                $_SESSION['usr_role'] = $USER['rol'];
+                $_SESSION['usr_name'] = $USER['nomAdulto'];
+                $_SESSION['usr_role'] = $USER['rolAdulto'];
                 $_SESSION['usr_roleName'] = 'undefined';
                 
                 //Asignamos el nombre del rol para la barra de navegacion
@@ -44,7 +43,7 @@ class Login extends Controller{
                 header('Location:' . constant('URL') . 'login/err');
             }
         }
-        //Si los camos no son validos redireccionamos con un error
+        //Si los campos no son validos redireccionamos con un error
         else header('Location:' . constant('URL') . 'login/err');
         
     }
@@ -67,6 +66,10 @@ class Login extends Controller{
 
     function pass_recovery(){
         $this->renderFile = 'login/pass_recovery';
+    }
+
+    function signup(){
+        $this->renderFile = 'login/signup';
     }
 }
 

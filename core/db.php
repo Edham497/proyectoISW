@@ -9,9 +9,9 @@ class Database{
 
     function __construct(){
         $this->host = "localhost";
-        $this->db = "guarderia";
+        $this->db = "Guarderia";
         $this->user = "root";
-        $this->password = "";
+        $this->password = "Hector_2807";
         $this->charset = "utf8mb4";
     }
     
@@ -30,7 +30,6 @@ class Database{
             print_r('Error connection' . $e->getMessage());
         }
     }
-<<<<<<< HEAD
     
     function insert($query){
         $stmt = $this->pdo->prepare($query);
@@ -52,10 +51,6 @@ class Database{
         $stmt = $this->pdo->prepare($query);
         $stmt->execute();
     }
-=======
-
-
->>>>>>> edham
 }
 
 ?>
