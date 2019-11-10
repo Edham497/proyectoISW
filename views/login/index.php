@@ -1,4 +1,4 @@
-<body class="of-hidden col cc">
+<body class="col sc pdgT100">
     <form class="formulario col ss pdg20" action="<?php echo constant('URL')?>login/start" method="POST">
         <div class=" fullW display4">Inicio de Sesion</div>
         <div class="textBox fullW maxW500 pdg20">
