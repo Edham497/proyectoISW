@@ -3,9 +3,12 @@
         <?php echo $this->error_code; echo " - " . $this->error_name ?></div>
     <p class="mt20 tac"><?php echo $this->error_desc; ?></p>
     <a href="/proyectoISW/">
-        <div class="ham-btn material-normal">Regresar</div>
+        <div class="ham-btn material-normal">Regresar al Inicio</div>
     </a>
 </div>
+<script>
+    document.querySelector('.navbar').style.color='#DADADA'
+</script>
 <style>
     html, body{
         overflow: hidden;

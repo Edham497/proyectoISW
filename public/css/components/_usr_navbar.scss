@@ -25,6 +25,7 @@
     position: fixed;
     transition: .5s ease-in-out;
     width: 100%;
+    max-width: 350px;
     min-height: 100%;
     max-height: 100%;
     background: #268FFF;
@@ -36,9 +37,17 @@
     overflow-y: auto !important;
     .brand{
         width: 150px;
-        min-height: 150px;
+        height: 150px;
         border-radius: 100%;
         background: white;
+        position: relative;
+        overflow: hidden;
+        display: grid;
+        place-items: center;
+        img{
+            width: 150%;
+            height: 100%;
+        }
     }
     .user{
         margin-top: 3em;
