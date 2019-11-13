@@ -2,7 +2,7 @@
     <div class="brand">
         <div class="expand expandMenu"></div>
         <div class="icon"></div>
-        <a href="<?php echo constant('URL');?>"><div class="titulo">Guarderia M. Jackson</div></a>
+        <a href="<?php echo constant('URL');?>"><div class="titulo">Guarderia Yocho</div></a>
     </div>
 </div>
 
