@@ -22,14 +22,14 @@
         overflow-x: auto;
         
         tr{ 
-            background: #E1E1E1EE;
+            background: #E3E3E3;
             transition: .15s ease-in-out; 
             // &:hover{
             //     background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
             // }
         }
         th { 
-            background: #FFF; 
+            background: #E8E8E8; 
             color: #333; 
         }
         td, th {
@@ -67,14 +67,18 @@ only screen and (max-width: 650px),
                 left: -9999px;
             }
             
-            tr {background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); border: 1px solid #ccc; margin: 5px 0;}
+            tr {
+                // background: linear-gradient(135deg, #f5f7fa 0%, #e3e3e3 100%); 
+                border: 1px solid rgb(189, 189, 189); 
+                margin-bottom: 10px;
+            }
             
             td { 
                 /* Behave  like a "row" */
-                border: none;
+                padding: .5em;
                 position: relative;
-                padding-left: 50%;
-                text-align: start; 
+                padding-left: 40%;
+                text-align: center; 
             }
             
             td:before { 
@@ -93,9 +97,9 @@ only screen and (max-width: 650px),
 	/*
 	Label the data
 	*/
-	td:nth-of-type(1):before { content: "No. Control"; }
+	td:nth-of-type(1):before { content: "ID"; }
 	td:nth-of-type(2):before { content: "Nombre"; }
-	td:nth-of-type(3):before { content: "Carrera"; }
-	td:nth-of-type(4):before { content: "Accion"; }
+	td:nth-of-type(3):before { content: "rol"; }
+	td:nth-of-type(4):before { content: "pass"; }
 }
   /* Zebra striping */

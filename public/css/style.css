@@ -9,6 +9,7 @@
 html, body {
   width: 100%;
   height: 100vh;
+  background: #f0f0f0;
 }
 
 @media (max-height: 400px) {
@@ -26,27 +27,8 @@ a {
   width: 100%;
   height: 100%;
   padding: 25px;
+  background: #f0f0f0;
   overflow-y: auto;
-}
-
-.bgGuarderia1 {
-  position: relative;
-  overflow: hidden;
-}
-
-.bgGuarderia1::before {
-  content: "";
-  z-index: -1;
-  top: -5%;
-  left: -5%;
-  width: 110%;
-  height: 110%;
-  position: absolute;
-  background: url("../img/guardarias.jpg");
-  background-size: cover;
-  opacity: .5;
-  -webkit-filter: blur(4px);
-          filter: blur(4px);
 }
 
 ham-container, .ham-container {
@@ -136,17 +118,6 @@ ham-btn-container {
   font-size: 1.5rem;
 }
 
-.ham-btn {
-  display: -ms-grid;
-  display: grid;
-  padding: .6em .8em;
-  cursor: pointer;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-}
-
 .ham-title {
   padding: .45em;
   font-size: 35px;
@@ -189,7 +160,6 @@ ham-btn-container {
 }
 
 .navbar {
-  z-index: 10;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -198,6 +168,7 @@ ham-btn-container {
       -ms-flex-flow: row;
           flex-flow: row;
   width: 100%;
+  background: #FFFFFF;
 }
 
 .navbar .brand, .navbar .item {
@@ -353,134 +324,6 @@ ham-btn-container {
   }
 }
 
-.hidden {
-  left: -100%;
-  -webkit-animation: slideOut 1 .5s ease-in-out;
-          animation: slideOut 1 .5s ease-in-out;
-}
-
-@-webkit-keyframes slideOut {
-  0% {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
-  }
-  100% {
-    -webkit-transform: translateX(-100%);
-            transform: translateX(-100%);
-  }
-}
-
-@keyframes slideOut {
-  0% {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
-  }
-  100% {
-    -webkit-transform: translateX(-100%);
-            transform: translateX(-100%);
-  }
-}
-
-@-webkit-keyframes slideIn {
-  0% {
-    -webkit-transform: translateX(-100%);
-            transform: translateX(-100%);
-  }
-  100% {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
-  }
-}
-
-@keyframes slideIn {
-  0% {
-    -webkit-transform: translateX(-100%);
-            transform: translateX(-100%);
-  }
-  100% {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
-  }
-}
-
-.usr_navbar {
-  top: 0;
-  position: fixed;
-  -webkit-transition: .5s ease-in-out;
-  transition: .5s ease-in-out;
-  width: 100%;
-  max-width: 350px;
-  min-height: 100%;
-  max-height: 100%;
-  background: #268FFF;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: column;
-          flex-flow: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  padding: 2em;
-  padding-top: calc(2em + 65px);
-  overflow-y: auto !important;
-}
-
-.usr_navbar .brand {
-  width: 150px;
-  height: 150px;
-  border-radius: 100%;
-  background: white;
-  position: relative;
-  overflow: hidden;
-  display: -ms-grid;
-  display: grid;
-  place-items: center;
-}
-
-.usr_navbar .brand img {
-  width: 150%;
-  height: 100%;
-}
-
-.usr_navbar .user {
-  margin-top: 3em;
-  color: #FFF;
-  text-align: center;
-}
-
-.usr_navbar .user .nombre {
-  font-size: 25px;
-}
-
-.usr_navbar .user .rol {
-  font-weight: bold;
-  margin-top: 8px;
-  padding: .25em;
-  border-radius: 20px;
-  background: #076EDC;
-}
-
-.usr_navbar .options {
-  width: 100%;
-  margin-top: 20px;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr;
-      grid-template-columns: 1fr;
-  gap: 8px 0;
-}
-
-.usr_navbar .options .op {
-  text-align: center;
-  padding: 1.5em .25em;
-  color: #FFF;
-  border-radius: 20px;
-  cursor: pointer;
-}
-
 .card {
   width: 300px;
   height: 350px;
@@ -604,13 +447,13 @@ ham-header ham-nav ham-item:hover {
 }
 
 .table-container table tr {
-  background: #E1E1E1EE;
+  background: #E3E3E3;
   -webkit-transition: .15s ease-in-out;
   transition: .15s ease-in-out;
 }
 
 .table-container table th {
-  background: #FFF;
+  background: #E8E8E8;
   color: #333;
 }
 
@@ -640,16 +483,15 @@ and also iPads specifically.
     left: -9999px;
   }
   .table-container table tr {
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-    border: 1px solid #ccc;
-    margin: 5px 0;
+    border: 1px solid #bdbdbd;
+    margin-bottom: 10px;
   }
   .table-container table td {
     /* Behave  like a "row" */
-    border: none;
+    padding: .5em;
     position: relative;
-    padding-left: 50%;
-    text-align: start;
+    padding-left: 40%;
+    text-align: center;
   }
   .table-container table td:before {
     /* Now like a table header */
@@ -664,16 +506,16 @@ and also iPads specifically.
 	Label the data
 	*/
   td:nth-of-type(1):before {
-    content: "No. Control";
+    content: "ID";
   }
   td:nth-of-type(2):before {
     content: "Nombre";
   }
   td:nth-of-type(3):before {
-    content: "Carrera";
+    content: "rol";
   }
   td:nth-of-type(4):before {
-    content: "Accion";
+    content: "pass";
   }
 }
 
@@ -925,7 +767,7 @@ and also iPads specifically.
   color: #d4dfe4;
 }
 
-.electric-dark, .ham-btn.electric {
+.electric-dark {
   background: #0d4053;
   color: #3392b5;
 }
@@ -1011,7 +853,7 @@ and also iPads specifically.
   color: #f7f7f7;
 }
 
-.material-normal, .ham-btn.danger, .material ham-header, .material ham-header ham-logo, .material ham-header ham-item {
+.material-normal, .material ham-header, .material ham-header ham-logo, .material ham-header ham-item {
   background: #273136;
   color: #f4f4f5;
 }
@@ -1234,7 +1076,7 @@ and also iPads specifically.
   color: #7ebbd6;
 }
 
-.electric-dark, .ham-btn.electric {
+.electric-dark {
   background-color: #0d4053;
   color: #3392b5;
 }
@@ -2293,8 +2135,11 @@ and also iPads specifically.
   padding: 5px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  outline: none;
+  background: inherit;
   border: none;
   border-radius: 4px;
+  width: 80%;
 }
 
 .ham-btn {
