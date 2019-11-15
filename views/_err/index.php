@@ -8,6 +8,7 @@
 </div>
 <script>
     document.querySelector('.navbar').style.color='#DADADA'
+    document.querySelector('.navbar').style.background ='#1D2528'
 </script>
 <style>
     html, body{

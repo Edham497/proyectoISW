@@ -1,10 +1,10 @@
-<body class="cold-dark pdgT60">
+<body class=" pdgT60">
     <div class="container col sc pdg20">
-        <div class="title fs30">Listado de niños</div>
+        <div class="title fs40 pdgT50">Listado de niños</div>
         <!-- <p>Pagina Principal del sitio</p> -->
         <div class="cardContainer row cc mt30 wp fullw fixFlowC">
             <?php
-            for ($i = 0; $i < 50; $i++)
+            for ($i = 0; $i < 10; $i++)
                 echo '<div class="card cold-ligh">
                         <div class="info cold-dark">
                             <div class="label">Nombre</div>

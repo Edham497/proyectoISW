@@ -6,6 +6,7 @@ class Users extends Controller{
         parent::__construct();
         $this->renderFile = 'users/list';
         $this->view->empleados = "";
+
     }
 
     function render(){
