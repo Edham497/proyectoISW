@@ -16,6 +16,12 @@ class Router{
                 return;
             }
 
+            if($URL[0] == 'api'){
+                require_once 'controllers/API/API.php';
+                $API = new API($URL);
+                return;
+            }
+
             App::is_session_started();
 
             $archivoControlador = self::getControllerPath($URL);
