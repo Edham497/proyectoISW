@@ -18,6 +18,10 @@ class Users extends Controller{
         $this->renderFile = 'users/addUser';
     }
 
+    function list(){
+        echo "f";
+    }
+
     function create(){
         if($_POST['usrname'] && $_POST['rol']){
             if($this->model->insertUser($_POST['usrname'], $_POST['rol'])){

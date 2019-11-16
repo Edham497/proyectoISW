@@ -55,7 +55,8 @@ class Login extends Controller{
     }
 
     function isLoged(){
-        session_start();
+        if(!session_status())
+            session_start();
         return isset($_SESSION['usr_name']);
     }
     
