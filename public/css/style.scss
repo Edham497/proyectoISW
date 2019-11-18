@@ -117,7 +117,7 @@ a{outline: none !important;}
 .mw500{max-width: 500px;}
 /*Padding*/
 
-@for $i from 1 through 10 {
+@for $i from 0 through 10 {
     .pdgT#{$i*10}{padding-top: #{$i*10}px}
     .pdgB#{$i*10}{padding-bottom: #{$i*10}px}
     .pdgL#{$i*10}{padding-left: #{$i*10}px}

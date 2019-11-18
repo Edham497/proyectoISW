@@ -169,6 +169,7 @@ ham-btn-container {
           flex-flow: row;
   width: 100%;
   background: #FFFFFF;
+  color: #232323 !important;
   z-index: 100;
   -webkit-transition: .25s;
   transition: .25s;
@@ -382,7 +383,7 @@ span {
   width: 100%;
   position: relative;
   display: inline-block;
-  margin: 30px 10px;
+  margin: 10px 0px;
 }
 
 .basic-slide {
@@ -1037,12 +1038,14 @@ span:nth-child(3) .card-slide:active {
 
 .balloon {
   display: inline-block;
-  width: 380px;
-  padding: 10px 0 10px 15%;
+  width: 100%;
+  padding: 10px 0;
+  padding-left: 3.5em;
   font-family: "Open Sans", sans;
-  font-weight: 400;
+  font-weight: 500;
+  font-size: 16px;
   color: #409cda;
-  background: #efefef;
+  background: #e7e7e7;
   border: 0;
   border-radius: 3px;
   outline: 0;
@@ -1052,7 +1055,7 @@ span:nth-child(3) .card-slide:active {
 }
 
 .balloon::-webkit-input-placeholder {
-  color: #efefef;
+  color: #d1d1d1;
   text-indent: 0;
   font-weight: 300;
 }
@@ -1092,9 +1095,9 @@ span:nth-child(3) .card-slide:active {
 
 .balloon:focus,
 .balloon:active {
-  color: #249cd3;
+  color: white;
   text-indent: 0;
-  background: #fff;
+  background: #00b7ff;
 }
 
 .balloon:focus::-webkit-input-placeholder,
@@ -2606,6 +2609,22 @@ and also iPads specifically.
 }
 
 /*Padding*/
+.pdgT0 {
+  padding-top: 0px;
+}
+
+.pdgB0 {
+  padding-bottom: 0px;
+}
+
+.pdgL0 {
+  padding-left: 0px;
+}
+
+.pdgR0 {
+  padding-right: 0px;
+}
+
 .pdgT10 {
   padding-top: 10px;
 }

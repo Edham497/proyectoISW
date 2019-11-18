@@ -3,22 +3,10 @@
         function __construct($URL){
             $this->db = new Database();
 
-            if(method_exists($this, $URL[2]))
-                $this->{$URL[2]}(isset($URL[3])?$URL[3]:'');
             
-
-            // if(isset($URL[3])){
-            //     $this->{$URL[2]}($URL[3]);
-            // }else{
-            //     $route = strtolower($_GET['url']);
-            //     switch($route){
-            //         case 'api/users/list': $this->getUsers(); break;
-            //         case 'api/users/add': $this->addUser(); break;
-            //         case 'api/users/delete': $this->deleteUser(); break;
-            //         default: echo json_encode('Bad request'); break;
-            //     }
-            //     return;
-            // }
+            if(isset($URL[2]) && method_exists($this, $URL[2]))
+                $this->{$URL[2]}(isset($URL[3])?$URL[3]:'');
+            else throw new _error(400);
         }
 
         function list(){
@@ -98,6 +86,25 @@
                 $stmt = $stmt->execute();
 
                 echo json_encode(["res" => "Usuario eliminado"]);
+            }
+            catch(PDOException $pdo_err){
+                echo json_encode(["error"=>[
+                    "code" => $pdo_err->getCode(),
+                    "msg" => $pdo_err->getMessage()
+                ]]);
+            }
+        }
+        function describe(){
+            try{
+                $stmt = $this->db->getConn();
+                $query = "DESCRIBE usuarios";
+                $stmt = $stmt->query($query);
+                $stmt = $stmt->fetchAll(PDO::FETCH_OBJ);
+                if($stmt){
+                    echo json_encode($stmt);
+                }else{
+                    echo json_encode(["Error" => "No existe el usuario con el id $id"]);
+                }
             }
             catch(PDOException $pdo_err){
                 echo json_encode(["error"=>[
