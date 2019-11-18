@@ -8,7 +8,13 @@
     transition: .25s;
 =======
     background: #FFFFFF;
+<<<<<<< HEAD
     // transition: .25s;
+>>>>>>> edham
+=======
+    color: #232323 !important;
+    z-index: 100;
+    transition: .25s;
 >>>>>>> edham
     // font-weight: bold;
 
@@ -29,6 +35,7 @@
             background-size: 100%;
         }
         .titulo{
+            transition: .35s ease-in-out;
             font-size: 20px;
             display: grid;
             place-items: center;

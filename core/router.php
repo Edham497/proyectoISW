@@ -32,14 +32,13 @@ class Router{
                 require_once $archivoControlador;
                 $controlador= new $URL[0];
                 $controlador->setModel($URL[0]);
-                // self::prepareModule($controlador);
                 
                 if(isset($URL[1])){
-                    // echo "<p>$archivoControlador/$URL[1]/$URL[2]</p>"; 
                     if(method_exists($controlador, $URL[1])){
-                        if(isset($URL[2]))
-                            $controlador->{$URL[1]}($URL[2]);
-                        else $controlador->{$URL[1]}();
+                            $controlador->{$URL[1]}(isset($URL[2])?$URL[2]:'');
+                        // if(isset($URL[2]))
+                        //     $controlador->{$URL[1]}($URL[2]);
+                        // else $controlador->{$URL[1]}();
                     }
                     else{
                         $controlador = new _error(400);
@@ -48,12 +47,19 @@ class Router{
                 }
                 self::prepareModule($controlador);
             }
+            else if(file_exists($view = self::getViewPath($URL))){
+                $view = new View();
+                $view -> render("main/$URL[0]");
+            }
             else $controlador = new _error(404);
         }
     }
     
     static function getControllerPath($controller){
         return "controllers/$controller[0].php";
+    }
+    static function getViewPath($view){
+        return "views/main/$view[0].php";
     }
     static function prepareModule($module){
         $module->render();

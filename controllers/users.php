@@ -6,6 +6,12 @@ class Users extends Controller{
         parent::__construct();
         $this->renderFile = 'users/list';
         $this->view->empleados = "";
+        
+        if(!self::isLoged()){
+            $this->renderFile = '';
+            new _error(401);
+            return;
+        }
     }
 
     function render(){
@@ -40,5 +46,10 @@ class Users extends Controller{
 
     function delete(){
 
+    }
+    function isLoged(){
+        if(!session_status())
+            session_start();
+        return isset($_SESSION['usr_name']);
     }
 }
