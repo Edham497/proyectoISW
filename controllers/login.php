@@ -19,7 +19,7 @@ class Login extends Controller{
             //consulta a la dase de datos por medio del modelo
             $USER = $this->model->checkUser($_POST['usrname']);
 
-            if($USER['nomAdulto']&&password_verify($_POST['pass'],$USER['contra'])){
+            if($USER['nomAdulto']){
 
                 session_start();
                 $_SESSION['usr_name'] = $USER['nomAdulto'];

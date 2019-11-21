@@ -1,12 +1,8 @@
 <?php
-    class APIAlumnos{
+    class _Alumnos{
         
         function __construct($URL){
-            $this->db = new Database();
-    
-            if(isset($URL[2]) && method_exists($this, $URL[2]))
-                $this->{$URL[2]}(isset($URL[3])?$URL[3]:'');
-            else throw new _error(400);
+            
         }
         //ADMIN
         function Registro(){

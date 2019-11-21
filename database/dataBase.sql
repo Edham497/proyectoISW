@@ -1,3 +1,4 @@
+DROP SCHEMA IF EXISTS guarderia;
 CREATE DATABASE Guarderia;
 USE Guarderia;
 
