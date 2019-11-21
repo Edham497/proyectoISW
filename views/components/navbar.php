@@ -21,9 +21,11 @@
     <div class="user">
         <?php 
             if(isset($_SESSION['usr_name'])){
+                echo "<div class='usrimg'><img src='".constant('URL')."public/img/guardarias.jpg'></div>";
                 echo '<a href="' . constant('URL') . '"><div class="item">'.$_SESSION['usr_name'].'</div></a>';
                 
             }else{
+                echo "<div class='usrimg'><img src='".constant('URL')."public/img/guardarias.jpg'></div>";
                 echo '<a href="' . constant('URL') . 'login "><div class="item">Iniciar Sesion</div></a>';
                 
             }
