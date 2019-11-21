@@ -18,6 +18,9 @@ CREATE TABLE Niño(
     nomNiño varchar(255),
     apPatNiño varchar(255),
     apMatNiño varchar(255),
+    grado varchar(255),
+    fecNacimiento date,
+    direccion text,
     asistencia bool DEFAULT FALSE,
     imgNiño varchar(255)
 );
@@ -59,29 +62,18 @@ CREATE TABLE Pediatra_Niño(
     reporte text
 );
 
-/*nombre, apPat, apMat, asistencia*/
-insert into Niño (nomNiño,apPatNiño,apMatNiño)values
-('Mario','Medrano','Lomas'),
-('Jorge','Rea','Salazar'),
-('Hector','Hernandez','De La Cruz'),
-('Marco','Solis','Facio');
-
-/*id, nombre, apPat, apMat,  email, nickname, contraseña, ¡¿rolAdulto?!, telefono*/
-insert into Adulto (nomAdulto,apPatAdulto,apMatAdulto,email,contra,nickName,rolAdulto,telefono)values
-('Alberto','Medrano','Leon','medranolayon@hotmail.com','Alecbertho34','123456',3,'871111111'),
-('Javier','Rosame','Lanastacio','elHector_C_la_kome@Gmail.com','pussyeater69','696969',2,'871puñeton'),
-('Carla Georgina', 'Pereyra', 'Lam', 'carla_gpl99@hotmail.com', 'CarlaQueen', '123456', 1, '8711315592'),
-('Jose Guadalupe','Zuñiga','Martinez','hohito@gmail.com','Hohito','123456',4,'8717331111'),
-('Adal Omar','Vega','Vielma','trapo@gmail.com','Trapito','123456',4,'8717331113');
+/*id, nombre, apPat, apMat,  email, nickname, contraseña-Naer2807, ¡¿rolAdulto?!, telefono*/
+insert into Adulto (nomAdulto,apPatAdulto,apMatAdulto,email,contra,rolAdulto,telefono)values
+('Naer','Hernandez','de la Cruz','hector.naer@gmail.com','$2y$10$x3gwJpJbotHSt1i6kRcMQ.AbXLWnCo82Z7SM6hwCd.RwNI1OvGRZK',1,'871111111')
 /*id, nombre, apPat, apMat*/
 
 /*id, nombre, apPat, apMat*/
 /*Relacion niño con adulto*/
 INSERT INTO Adulto_Niño (idAdultofk, idNiñofk) VALUES (4, 3),(5,1);
 /*Insertar bitacora*/
-INSERT INTO Bitacora (idAdultofk, idNiñofk, comer, comportamiento) 
-VALUES (2, 3, 1,'El niño se porto bien, comio perfectamente, trabajos completos, excelente'),
-(2, 3, 1,'El niño se porto bien, comio perfectamente, trabajos completos, excelente');
+INSERT INTO Bitacora (idAdultofk, idNiñofk, comida, anotaciones) 
+VALUES (2, 1, 1,'El niño se porto bien, comio perfectamente, trabajos completos, excelente'),
+(2, 2, 1,'El niño se porto bien, comio perfectamente, trabajos completos, excelente');
 
 select * from Niño;
 select * from Niño where asistencia = true;

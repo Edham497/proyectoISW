@@ -2,13 +2,13 @@
     <div class="textBox fullW maxW500 pdg20 col cc">
         <div class="mrg0 pdg0 pdg10 brn fs30" style="font-weight:300">Listado de Usuarios</div>
         <span class="maxW300">
-            <select class="balloon maxW300" name="" id="">
-                <option value="Usuarios">ID</option>
-                <option value="Usuarios">Nombre</option>
-                <option value="Usuarios">Ap. Paterno</option>
-                <option value="Usuarios">Ap. Materno</option>
-                <option value="Usuarios">Salon</option>
-                <option value="Usuarios">Fecha</option>
+            <select class="balloon maxW300" name="" id="tabla">
+                <option value="idAdulto">ID</option>
+                <option value="nomAdulto">Nombre</option>
+                <option value="apPatAdulto">Ap. Paterno</option>
+                <option value="apMatAdulto">Ap. Materno</option>
+                <option value="salon">Salon</option>
+                <option value="fecha">Fecha</option>
             </select>
             <label for="">Filtro</label>
         </span>
@@ -21,7 +21,7 @@
     <div class="container full">
         <div class="table-container">
             <table id="usuarios">
-                
+
             </table>
         </div>
     </div>
@@ -29,6 +29,21 @@
     <script src="<?php echo constant('URL');?>public/js/tableUsuarios.js"></script>
     <script>
         new table()
+        const but = document.createElement('button')
+                    but.type = 'button'
+                    but.innerText = 'Entrada 1'
+                    document.body.appendChild(but);
+                    but.addEventListener("click",() => {
+                        fetch(`api/users/update`)
+                    })
+
+        const but1 = document.createElement('button')
+                    but1.type = 'button'
+                    but1.innerText = 'Entrada 2'
+                    document.body.appendChild(but1);
+                    but1.addEventListener("click",() => {
+                        window.alert("Boton 2");
+                    })
         // document.querySelector('#search').addEventListener('keyup', () =>{
         //     search = document.querySelector('#search').value.trim()
         //     console.log(search.length)

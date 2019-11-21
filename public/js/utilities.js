@@ -29,19 +29,13 @@ document.querySelector('.expand').onclick = ()=> {
     let menu = document.querySelector('#menu')
     if(menu.classList.contains('open'))
         menu.classList.remove('open')
-<<<<<<< HEAD
-<<<<<<< HEAD
-    else
+    else{
         menu.classList.add('open')
-=======
         // navbar.classList.remove("fwhite");
-=======
         navbar.classList.remove("fwhite");
->>>>>>> edham
-    }
+    }/*
     else{
         menu.classList.add('open')
         navbar.classList.add("fwhite")
-    }
->>>>>>> edham
+    }*/
 }

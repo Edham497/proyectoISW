@@ -16,8 +16,6 @@ class Router{
                 return;
             }
 
-<<<<<<< HEAD
-=======
             if($URL[0] == 'api'){
                 require_once 'controllers/API/API.php';
                 $API = new API($URL);
@@ -26,7 +24,6 @@ class Router{
 
             App::is_session_started();
 
->>>>>>> edham
             $archivoControlador = self::getControllerPath($URL);
             if(file_exists($archivoControlador)){
                 require_once $archivoControlador;

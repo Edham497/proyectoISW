@@ -10,11 +10,7 @@ class Home extends Controller{
         
         switch($_SESSION['usr_role']){
             case 1:{
-<<<<<<< HEAD
-                // $this->renderFile = 'home/admin';
-=======
                 // $this->renderFile = '';
->>>>>>> edham
                 $this->view->rol = 'Administrador';
                 header('Location: ' . constant('URL') . 'users');
                 break;

@@ -15,6 +15,7 @@ fetch(`api/users/describe`)
 document.querySelector('#search').addEventListener('keyup', () => {
     search = document.querySelector('#search').value.trim()
     // console.log(search.length)
+    var i = 1
     if (search.length == 0) {
         fetch(`api/users/list`)
             .then(function (response) {
@@ -29,6 +30,13 @@ document.querySelector('#search').addEventListener('keyup', () => {
                     // })
                     // t_Usuarios.addRow(arr)
                     t_Usuarios.addRow(Object.values(user))
+                    /*const but = document.createElement('button')
+                    but.type = 'button'
+                    but.innerText = 'Entrada '+(i++)
+                    document.body.appendChild(but);
+                    but.addEventListener("click",() => {
+                        window.alert("Boton "+(i));
+                    })*/
                 })
             });
     }

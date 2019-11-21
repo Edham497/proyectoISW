@@ -7,8 +7,7 @@ class users_model extends Model{
 
     public function getUsers(){
         $conn = $this->db->getConn();
-        $query = "SELECT * FROM usuarios";
-        // echo $query;
+        $query = "SELECT * FROM Adulto";
         $stmt = $conn->prepare($query);
         $stmt->execute();
         return $stmt;
@@ -17,7 +16,6 @@ class users_model extends Model{
     public function insertUser($usrname, $rol){
         $conn = $this->db->getConn();
         $query = "INSERT INTO usuarios (usrname, rol, pass) VALUES ('$usrname', $rol, 'undefined')";
-        // echo $query;
         $stmt = $conn->prepare($query);
         return $stmt->execute();
     }

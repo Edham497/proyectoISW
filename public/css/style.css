@@ -168,20 +168,14 @@ ham-btn-container {
       -ms-flex-flow: row;
           flex-flow: row;
   width: 100%;
-<<<<<<< HEAD
   color: white;
   -webkit-transition: .25s;
   transition: .25s;
-=======
   background: #FFFFFF;
-<<<<<<< HEAD
->>>>>>> edham
-=======
   color: #232323 !important;
   z-index: 100;
   -webkit-transition: .25s;
   transition: .25s;
->>>>>>> edham
 }
 
 .navbar .brand, .navbar .item {
@@ -337,126 +331,6 @@ ham-btn-container {
   }
 }
 
-<<<<<<< HEAD
-.hidden {
-  left: -100%;
-  -webkit-animation: slideOut 1 .5s ease-in-out;
-          animation: slideOut 1 .5s ease-in-out;
-}
-
-@-webkit-keyframes slideOut {
-  0% {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
-  }
-  100% {
-    -webkit-transform: translateX(-100%);
-            transform: translateX(-100%);
-  }
-}
-
-@keyframes slideOut {
-  0% {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
-  }
-  100% {
-    -webkit-transform: translateX(-100%);
-            transform: translateX(-100%);
-  }
-}
-
-@-webkit-keyframes slideIn {
-  0% {
-    -webkit-transform: translateX(-100%);
-            transform: translateX(-100%);
-  }
-  100% {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
-  }
-}
-
-@keyframes slideIn {
-  0% {
-    -webkit-transform: translateX(-100%);
-            transform: translateX(-100%);
-  }
-  100% {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
-  }
-}
-
-.usr_navbar {
-  top: 0;
-  position: fixed;
-  -webkit-transition: .5s ease-in-out;
-  transition: .5s ease-in-out;
-  width: 100%;
-  min-height: 100%;
-  max-height: 100%;
-  background: #268FFF;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: column;
-          flex-flow: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  padding: 2em;
-  padding-top: calc(2em + 65px);
-  overflow-y: auto !important;
-}
-
-.usr_navbar .brand {
-  width: 150px;
-  min-height: 150px;
-  border-radius: 100%;
-  background: white;
-}
-
-.usr_navbar .user {
-  margin-top: 3em;
-  color: #FFF;
-  text-align: center;
-}
-
-.usr_navbar .user .nombre {
-  font-size: 25px;
-}
-
-.usr_navbar .user .rol {
-  font-weight: bold;
-  margin-top: 8px;
-  padding: .25em;
-  border-radius: 20px;
-  background: #076EDC;
-}
-
-.usr_navbar .options {
-  width: 100%;
-  margin-top: 20px;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr;
-      grid-template-columns: 1fr;
-  gap: 8px 0;
-}
-
-.usr_navbar .options .op {
-  text-align: center;
-  padding: 1.5em .25em;
-  color: #FFF;
-  border-radius: 20px;
-  cursor: pointer;
-}
-
-=======
->>>>>>> edham
 .card {
   width: 300px;
   height: 350px;

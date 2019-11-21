@@ -9,10 +9,26 @@
             else throw new _error(400);
         }
 
+        function update(){
+            try{
+                $stmt = $this->db->getConn();
+                $query = "UPDATE Maestro_Niño SET fechaSalida = NOW(), idAdultoSalidafk = 5 WHERE idNiñofk = 2;";
+                //$query = "UPDATE Maestro_Niño SET fechaEntrada = NOW() WHERE idNiñofk = 2;";
+                $stmt = $stmt->query($query);
+                $stmt->execute();    
+            }catch(PDOException $pdo_err){
+                echo json_encode(["error"=>[
+                    "code" => $pdo_err->getCode(),
+                    "msg" => $pdo_err->getMessage()
+                ]]);
+            }
+        }
+
         function list(){
             try{
                 $stmt = $this->db->getConn();
-                $query = "SELECT * FROM usuarios";
+                $query = "SELECT * FROM Maestro_Niño join Niño on idNiño = idNiñofk";
+                //$query = "SELECT *,TIMESTAMPDIFF(HOUR,fechaEntrada,fechaSalida),TIMESTAMPDIFF(MINUTES,fechaEntrada,fechaSalida) FROM Maestro_Niño";
                 // echo $query;
                 $stmt = $stmt->query($query);
                 if($stmt->rowCount() > 0){
@@ -61,7 +77,7 @@
         function get($id){
             try{
                 $stmt = $this->db->getConn();
-                $query = "SELECT * FROM usuarios WHERE id = $id";
+                $query = "SELECT * FROM Niño WHERE nomNiño LIKE '$id%'";
                 $stmt = $stmt->query($query);
                 $stmt = $stmt->fetch(PDO::FETCH_OBJ);
                 if($stmt){
@@ -97,7 +113,7 @@
         function describe(){
             try{
                 $stmt = $this->db->getConn();
-                $query = "DESCRIBE usuarios";
+                $query = "DESCRIBE Maestro_Niño";
                 $stmt = $stmt->query($query);
                 $stmt = $stmt->fetchAll(PDO::FETCH_OBJ);
                 if($stmt){
