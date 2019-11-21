@@ -1,7 +1,26 @@
-# Revision Lunes 14 de Octubre
-- Vistas y diseño
-- Base de Datos
-
+```json
+{
+    "proyecto": "Aplicacion Web de una Guarderia",
+    "materia": "Ingenieria de Software",
+    "equipo": {
+        "I1": {
+            "nombre": "Jorge Luis Rea Salazar",
+            "roles": "Desarrollador FullStack",
+            "nControl": "C16130488"
+        },
+        "I1": {
+            "nombre": "Hector Javier Hernandez de la Cruz",
+            "roles": "Desarrollador Back-End, Desarrollador de Base de Datos",
+            "nControl": "17130038"
+        },
+        "I1": {
+            "nombre": "Mario Alberto Medrano Lomas",
+            "roles": "Desarrollador de Base de Datos, Diseñador",
+            "nControl": ""
+        },
+    }
+}
+```
 ## Vistas de la aplicacion y accesos
 
 | Vista | Admin | Tutor | Maestro | Enfermera |OK|
