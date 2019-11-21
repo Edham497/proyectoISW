@@ -1,14 +1,31 @@
-# Revision Lunes 14 de Octubre
-- Vistas y diseño
-- Base de Datos
+# Proyecto: Aplicacion Web de una Guarderia
+## Materia: Ingenieria de Software
+## Equipo: "JHM"
 
+### Integrante 1: { 
+> ### Nombre: Jorge Luis Rea Salazar
+> ### Roles: Desarrollador FullStack
+> ### No. Control: C16130488
+### }
+        
+### Integrante 2: {
+> ### Nombre: Hector Javier Hernandez de la Cruz
+> ### Roles: Desarrollador Back-End, Desarrollador de Base de Datos
+> ### No. Control: 17130038
+### }
+        
+### Integrante 3: {
+> ### Nombre: Mario Alberto Medrano Lomas
+> ### Roles: Desarrollador de Base de Datos, Diseñador
+> ### No. Control: 16130826
+### }
+        
 ## Vistas de la aplicacion y accesos
 
 | Vista | Admin | Tutor | Maestro | Enfermera |OK|
 |-|:-:|:-:|:-:|:-:|:-:|
-|Registro               | |#| | |
-|Login                  |#|#|#|#|
-|Home                   |#|#|#|#|*|
+|Login                  |#|#|#|#|*
+|Home                   |#|#|#|#|*
 |Perfil                 |#|#|#|#|
 |Configuracion de pefil |#|#|#|#|
 |Ver pefil niño         |#|#|#|#|
@@ -16,7 +33,6 @@
 |Ver pefil enfermera    |#| | |#|
 |Crear bitacora         | | |#|#|
 |Ver bitacoras          |#|#|#|#|
-|Ver pagos mensualidad  |#|#| | |
 |Notificaciones         |#|#| | |
 |Modificar eventos      |#| | | |
 |Eventos                |#|#|#|#|
@@ -25,11 +41,10 @@
 |Modificar autorizados  |#| | | |
 |Registrar asistencia   | | |#|#|
 |Ver asistencia         |#|#|#|#|
-|Alta niño              |#| | | |
+|Alta niño              |#| | | |*
 |Baja niño              |#| | | |
-|Empleados              |#| | | |
-|Alta empleado          |#| | | |
+|Empleados              |#| | | |*
+|Alta empleado          |#| | | |*
 |Baja empleado          |#| | | |
 |Crear reporte medico   |#|#| |#|
 |Ver reporte medico     |#|#| |#|
-|404                    |#|#|#|#|*|

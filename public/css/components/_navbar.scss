@@ -1,6 +1,6 @@
 .navbar{
-    display: flex;
-    flex-flow: row;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
     width: 100%;
 <<<<<<< HEAD
     // background: #2C3E50;
@@ -80,6 +80,7 @@
     }
 
     .nav{
+        width: 100%;
         display: flex;
         flex-flow: row nowrap;
         // transition: .25s;
@@ -98,6 +99,10 @@
                 cursor: pointer;
             }
         }
+    }
+    .user{
+        display: grid;
+        place-items: center;
     }
 }
 .sticky {

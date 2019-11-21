@@ -160,13 +160,10 @@ ham-btn-container {
 }
 
 .navbar {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: row;
-          flex-flow: row;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto 1fr auto;
+      grid-template-columns: auto 1fr auto;
   width: 100%;
   color: white;
   -webkit-transition: .25s;
@@ -254,6 +251,7 @@ ham-btn-container {
 }
 
 .navbar .nav {
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -282,6 +280,12 @@ ham-btn-container {
   background: #1089FF;
   color: #EEEEEE;
   cursor: pointer;
+}
+
+.navbar .user {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
 }
 
 .sticky {
@@ -2106,11 +2110,27 @@ and also iPads specifically.
   padding-bottom: 90px;
 }
 
-.mrg0 {
-  margin: 0;
+.m0 {
+  margin: 0px;
 }
 
-.mrg10 {
+.mt0 {
+  margin-top: 0px;
+}
+
+.mb0 {
+  margin-bottom: 0px;
+}
+
+.ml0 {
+  margin-left: 0px;
+}
+
+.mr0 {
+  margin-right: 0px;
+}
+
+.m10 {
   margin: 10px;
 }
 
@@ -2130,7 +2150,7 @@ and also iPads specifically.
   margin-right: 10px;
 }
 
-.mrg20 {
+.m20 {
   margin: 20px;
 }
 
@@ -2150,7 +2170,7 @@ and also iPads specifically.
   margin-right: 20px;
 }
 
-.mrg30 {
+.m30 {
   margin: 30px;
 }
 
@@ -2170,7 +2190,7 @@ and also iPads specifically.
   margin-right: 30px;
 }
 
-.mrg40 {
+.m40 {
   margin: 40px;
 }
 
@@ -2190,7 +2210,7 @@ and also iPads specifically.
   margin-right: 40px;
 }
 
-.mrg50 {
+.m50 {
   margin: 50px;
 }
 
@@ -2210,7 +2230,7 @@ and also iPads specifically.
   margin-right: 50px;
 }
 
-.mrg60 {
+.m60 {
   margin: 60px;
 }
 
@@ -2230,7 +2250,7 @@ and also iPads specifically.
   margin-right: 60px;
 }
 
-.mrg70 {
+.m70 {
   margin: 70px;
 }
 
@@ -2250,7 +2270,7 @@ and also iPads specifically.
   margin-right: 70px;
 }
 
-.mrg80 {
+.m80 {
   margin: 80px;
 }
 
@@ -2270,7 +2290,7 @@ and also iPads specifically.
   margin-right: 80px;
 }
 
-.mrg90 {
+.m90 {
   margin: 90px;
 }
 
@@ -2290,12 +2310,32 @@ and also iPads specifically.
   margin-right: 90px;
 }
 
-.mrgH10 {
+.mgH0 {
+  margin-left: 0px !important;
+  margin-right: 0px !important;
+}
+
+.mgV0 {
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
+}
+
+.pdgH0 {
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}
+
+.pdgV0 {
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+}
+
+.mgH10 {
   margin-left: 10px !important;
   margin-right: 10px !important;
 }
 
-.mrgV10 {
+.mgV10 {
   margin-top: 10px !important;
   margin-bottom: 10px !important;
 }
@@ -2310,12 +2350,12 @@ and also iPads specifically.
   padding-bottom: 10px !important;
 }
 
-.mrgH20 {
+.mgH20 {
   margin-left: 20px !important;
   margin-right: 20px !important;
 }
 
-.mrgV20 {
+.mgV20 {
   margin-top: 20px !important;
   margin-bottom: 20px !important;
 }
@@ -2330,12 +2370,12 @@ and also iPads specifically.
   padding-bottom: 20px !important;
 }
 
-.mrgH30 {
+.mgH30 {
   margin-left: 30px !important;
   margin-right: 30px !important;
 }
 
-.mrgV30 {
+.mgV30 {
   margin-top: 30px !important;
   margin-bottom: 30px !important;
 }
@@ -2350,12 +2390,12 @@ and also iPads specifically.
   padding-bottom: 30px !important;
 }
 
-.mrgH40 {
+.mgH40 {
   margin-left: 40px !important;
   margin-right: 40px !important;
 }
 
-.mrgV40 {
+.mgV40 {
   margin-top: 40px !important;
   margin-bottom: 40px !important;
 }
@@ -2370,12 +2410,12 @@ and also iPads specifically.
   padding-bottom: 40px !important;
 }
 
-.mrgH50 {
+.mgH50 {
   margin-left: 50px !important;
   margin-right: 50px !important;
 }
 
-.mrgV50 {
+.mgV50 {
   margin-top: 50px !important;
   margin-bottom: 50px !important;
 }
@@ -2390,12 +2430,12 @@ and also iPads specifically.
   padding-bottom: 50px !important;
 }
 
-.mrgH60 {
+.mgH60 {
   margin-left: 60px !important;
   margin-right: 60px !important;
 }
 
-.mrgV60 {
+.mgV60 {
   margin-top: 60px !important;
   margin-bottom: 60px !important;
 }
@@ -2410,12 +2450,12 @@ and also iPads specifically.
   padding-bottom: 60px !important;
 }
 
-.mrgH70 {
+.mgH70 {
   margin-left: 70px !important;
   margin-right: 70px !important;
 }
 
-.mrgV70 {
+.mgV70 {
   margin-top: 70px !important;
   margin-bottom: 70px !important;
 }
@@ -2430,12 +2470,12 @@ and also iPads specifically.
   padding-bottom: 70px !important;
 }
 
-.mrgH80 {
+.mgH80 {
   margin-left: 80px !important;
   margin-right: 80px !important;
 }
 
-.mrgV80 {
+.mgV80 {
   margin-top: 80px !important;
   margin-bottom: 80px !important;
 }
@@ -2450,12 +2490,12 @@ and also iPads specifically.
   padding-bottom: 80px !important;
 }
 
-.mrgH90 {
+.mgH90 {
   margin-left: 90px !important;
   margin-right: 90px !important;
 }
 
-.mrgV90 {
+.mgV90 {
   margin-top: 90px !important;
   margin-bottom: 90px !important;
 }

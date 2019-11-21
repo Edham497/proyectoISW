@@ -11,7 +11,7 @@ class Database{
         $this->host = "localhost";
         $this->db = "Guarderia";
         $this->user = "root";
-        $this->password = "Hector_2807";
+        $this->password = "";
         $this->charset = "utf8mb4";
     }
     
