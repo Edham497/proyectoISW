@@ -5,7 +5,7 @@ class Login extends Controller{
         parent::__construct();
         $this->renderFile = 'login/index';
 
-        //if(self::isLoged()) header('Location:' . constant('URL'));
+        if(self::isLoged()) header('Location:' . constant('URL'));
         
     }
     
@@ -17,7 +17,7 @@ class Login extends Controller{
         //Verificamos si lo que se mando por Post es valido
         if($_POST['usrname'] && $_POST['pass']){
             //consulta a la dase de datos por medio del modelo
-            $USER = $this->model->checkUser($_POST['usrname']);
+            $USER = $this->model->checkUser($_POST['usrname'], $_POST['pass']);
 
             if($USER['nomAdulto']){
 
@@ -49,7 +49,7 @@ class Login extends Controller{
     }
 
     function end(){
-        session_start();
+        // session_start();
         session_unset();
         session_destroy();
     }
@@ -73,5 +73,9 @@ class Login extends Controller{
         $this->renderFile = 'login/signup';
     }
 }
+
+// Seguridad
+// certeza de que los datos deben de llegar a los que deben de llegar
+// ESPEJEO
 
 ?>

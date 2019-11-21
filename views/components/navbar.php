@@ -25,7 +25,7 @@
                 echo '<a href="' . constant('URL') . '"><div class="item">'.$_SESSION['usr_name'].'</div></a>';
                 
             }else{
-                echo "<div class='usrimg'><img src='".constant('URL')."public/img/guardarias.jpg'></div>";
+                echo "<div class='usrimg'><img src='".constant('URL')."public/ico/login.png'></div>";
                 echo '<a href="' . constant('URL') . 'login "><div class="item">Iniciar Sesion</div></a>';
                 
             }

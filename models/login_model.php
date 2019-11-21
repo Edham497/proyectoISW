@@ -8,10 +8,10 @@ class login_model extends Model{
 
     public function checkUser($user, $pass){
         $conn = $this->db->getConn();
-        $query = "SELECT nomAdulto, rolAdulto, contra FROM dulto WHERE email = '" .$user ."';";
+        $query = "SELECT nomAdulto, rolAdulto, contra FROM Adulto WHERE email = '" .$user ."';";
         $stmt = $conn->prepare($query);
         $stmt->execute();
-        $stmt->fetch(PDO::FETCH_ASSOC);
+        $stmt = $stmt->fetch(PDO::FETCH_ASSOC);
         return password_verify($pass, $stmt['contra'])?$stmt:null;
     }
 }
