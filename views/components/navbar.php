@@ -14,7 +14,18 @@
             }else{
                 echo '<a href="' . constant('URL') . 'instalaciones"><div class="item">Instalaciones</div></a>';
                 echo '<a href="' . constant('URL') . 'about"><div class="item">Acerca de</div></a>';
-                echo '<a href="' . constant('URL') . 'login"><div class="item">Login</div></a>';
+                // echo '<a href="' . constant('URL') . 'login"><div class="item">Login</div></a>';
+            }
+        ?>
+    </div>
+    <div class="user">
+        <?php 
+            if(isset($_SESSION['usr_name'])){
+                echo '<a href="' . constant('URL') . '"><div class="item">'.$_SESSION['usr_name'].'</div></a>';
+                
+            }else{
+                echo '<a href="' . constant('URL') . 'login "><div class="item">Iniciar Sesion</div></a>';
+                
             }
         ?>
     </div>
