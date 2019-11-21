@@ -1,20 +1,24 @@
-## proyecto: Aplicacion Web de una Guarderia
-## materia: Ingenieria de Software
-## equipo: 
-### Integrante 1: 
+# Proyecto: Aplicacion Web de una Guarderia
+## Materia: Ingenieria de Software
+## Equipo: "JHM"
+
+### Integrante 1: { 
 > ### Nombre: Jorge Luis Rea Salazar
 > ### Roles: Desarrollador FullStack
 > ### No. Control: C16130488
+### }
         
-        I1: 
-            nombre: Hector Javier Hernandez de la Cruz
-            roles: Desarrollador Back-End Desarrollador de Base de Datos
-            nControl: 17130038
+### Integrante 2: {
+> ### nombre: Hector Javier Hernandez de la Cruz
+> ### roles: Desarrollador Back-End Desarrollador de Base de Datos
+> ### nControl: 17130038
+### }
         
-        I1: 
-            nombre: Mario Alberto Medrano Lomas
-            roles: Desarrollador de Base de Datos Diseñador
-            nControl: 
+### Integrante 3: {
+> ### nombre: Mario Alberto Medrano Lomas
+> ### roles: Desarrollador de Base de Datos Diseñador
+> ### nControl: 
+### }
         
 ## Vistas de la aplicacion y accesos
 
