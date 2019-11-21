@@ -1,12 +1,16 @@
 <?php
-    class _Maestro{
-        function list(){
+    class _Ninos{
+        function remove(){
             try{
                 $stmt = $this->db->getConn();
-                $query = "SELECT * FROM Niño";
-                $stmt = $stmt->query($query);
-                $stmt->execute();    
-            }catch(PDOException $pdo_err){
+                $query = "UPDATE Niño SET grado = EXPULSADO WHERE idNiño = ".$_POST['id'].";";
+                // $query = "DELETE FROM usuarios WHERE id = $id";
+                $stmt = $stmt->prepare($query);
+                $stmt = $stmt->execute();
+
+                echo json_encode(["res" => "Usuario eliminado"]);
+            }
+            catch(PDOException $pdo_err){
                 echo json_encode(["error"=>[
                     "code" => $pdo_err->getCode(),
                     "msg" => $pdo_err->getMessage()

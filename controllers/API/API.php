@@ -55,12 +55,9 @@
             if($data->usrname){
                 try{
                     $stmt = $this->db->getConn();
-    
-                    $query = "INSERT INTO usuarios (usrname, rol, pass) VALUES (:usrname, :rol, 'undefined')";
-                    
+                    $query = "INSERT INTO Adulto (nomAdulto,apPatAdulto,apMatAdulto,email,contra,rolAdulto,telefono)
+                    values('".$nom."','".$apPat."','".$apMat."','".$email."','".$passR."',4,'".$telefono."');";
                     $stmt = $stmt->prepare($query);
-                    $stmt->bindParam(':usrname', $data->usrname);
-                    $stmt->bindParam(':rol', $data->rol);
                     $stmt->execute();
                     
                     echo json_encode('Usuario insertado Correctamente');
