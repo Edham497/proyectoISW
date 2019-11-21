@@ -9,15 +9,15 @@
 ### }
         
 ### Integrante 2: {
-> ### nombre: Hector Javier Hernandez de la Cruz
-> ### roles: Desarrollador Back-End Desarrollador de Base de Datos
-> ### nControl: 17130038
+> ### Nombre: Hector Javier Hernandez de la Cruz
+> ### Roles: Desarrollador Back-End, Desarrollador de Base de Datos
+> ### No. Control: 17130038
 ### }
         
 ### Integrante 3: {
-> ### nombre: Mario Alberto Medrano Lomas
-> ### roles: Desarrollador de Base de Datos Diseñador
-> ### nControl: 
+> ### Nombre: Mario Alberto Medrano Lomas
+> ### Roles: Desarrollador de Base de Datos, Diseñador
+> ### No. Control: 16130826
 ### }
         
 ## Vistas de la aplicacion y accesos
