@@ -35,3 +35,21 @@
         }
     }
 }
+
+.cardAlumno{
+    width: 300px;
+    height: 65px;
+    margin: 1px;
+    color: white;
+    background: #1a1a1a;
+    display: grid;
+    grid-template-columns: 1fr 65px;
+    align-items: center;
+    .nombre{
+        padding: 10px;
+    }
+    .grado{
+        display: grid;
+        place-items: center;
+    }
+}

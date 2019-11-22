@@ -1,12 +1,19 @@
 <?php
     class API{
         function __construct($URL){
-            $this->db = new Database();
-
+            $nameAPI = "_$URL[1]";
+            if(file_exists(self::getApiPath($nameAPI))){
+                require_once self::getApiPath($nameAPI);
+                $classAPI = new $nameAPI;
+                if(isset($URL[2]) && method_exists($classAPI, $URL[2]))
+                    $classAPI->{$URL[2]}(isset($URL[3])?$URL[3]:'');
+                else new _error(400);
+            }
             
-            if(isset($URL[2]) && method_exists($this, $URL[2]))
-                $this->{$URL[2]}(isset($URL[3])?$URL[3]:'');
-            else throw new _error(400);
+        }
+
+        private static function getApiPath($nameAPI){
+            return "controllers/api/$nameAPI.php";
         }
 
         function update(){
@@ -16,27 +23,6 @@
                 //$query = "UPDATE Maestro_Niño SET fechaEntrada = NOW() WHERE idNiñofk = 2;";
                 $stmt = $stmt->query($query);
                 $stmt->execute();    
-            }catch(PDOException $pdo_err){
-                echo json_encode(["error"=>[
-                    "code" => $pdo_err->getCode(),
-                    "msg" => $pdo_err->getMessage()
-                ]]);
-            }
-        }
-
-        function list(){
-            try{
-                $stmt = $this->db->getConn();
-                $query = "SELECT * FROM Maestro_Niño join Niño on idNiño = idNiñofk";
-                //$query = "SELECT *,TIMESTAMPDIFF(HOUR,fechaEntrada,fechaSalida),TIMESTAMPDIFF(MINUTES,fechaEntrada,fechaSalida) FROM Maestro_Niño";
-                // echo $query;
-                $stmt = $stmt->query($query);
-                if($stmt->rowCount() > 0){
-                    $stmt = $stmt->fetchAll(PDO::FETCH_OBJ);
-                    echo json_encode($stmt);
-                }else{
-                    echo json_encode(["error" => "No existen Usuarios en DB"]);
-                }
             }catch(PDOException $pdo_err){
                 echo json_encode(["error"=>[
                     "code" => $pdo_err->getCode(),
@@ -71,25 +57,6 @@
             }
         }
 
-        function get($id){
-            try{
-                $stmt = $this->db->getConn();
-                $query = "SELECT * FROM Niño WHERE nomNiño LIKE '$id%'";
-                $stmt = $stmt->query($query);
-                $stmt = $stmt->fetch(PDO::FETCH_OBJ);
-                if($stmt){
-                    echo json_encode($stmt);
-                }else{
-                    echo json_encode(["Error" => "No existe el usuario con el id $id"]);
-                }
-            }
-            catch(PDOException $pdo_err){
-                echo json_encode(["error"=>[
-                    "code" => $pdo_err->getCode(),
-                    "msg" => $pdo_err->getMessage()
-                ]]);
-            }
-        }
         function remove(){
             try{
                 $stmt = $this->db->getConn();

@@ -1,6 +1,16 @@
 <?php
+<<<<<<< HEAD
     class _Maestro{
         function list(){
+=======
+    class _Alumnos{
+        
+        function __construct($URL){
+            
+        }
+        //ADMIN
+        function Registro(){
+>>>>>>> master
             try{
                 $stmt = $this->db->getConn();
                 $query = "SELECT * FROM Niño";

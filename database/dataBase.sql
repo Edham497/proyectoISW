@@ -1,3 +1,4 @@
+DROP SCHEMA IF EXISTS guarderia;
 CREATE DATABASE Guarderia;
 USE Guarderia;
 
@@ -63,8 +64,12 @@ CREATE TABLE Pediatra_Niño(
 );
 
 /*id, nombre, apPat, apMat,  email, nickname, contraseña-Naer2807, ¡¿rolAdulto?!, telefono*/
+-- ('Naer','Hernandez','de la Cruz','hector.naer@gmail.com','$2y$10$x3gwJpJbotHSt1i6kRcMQ.AbXLWnCo82Z7SM6hwCd.RwNI1OvGRZK',1,'871111111')
+USE Guarderia;
 insert into Adulto (nomAdulto,apPatAdulto,apMatAdulto,email,contra,rolAdulto,telefono)values
-('Naer','Hernandez','de la Cruz','hector.naer@gmail.com','$2y$10$x3gwJpJbotHSt1i6kRcMQ.AbXLWnCo82Z7SM6hwCd.RwNI1OvGRZK',1,'871111111')
+('Naer','Hernandez','de la Cruz','jorge.edham@gmail.com','$2y$10$uvDvoL3f7sgkWtPazZ2vWuZQMH0YbAPS5uOzybdpbV.lEtJTp5rly',2,'871111111'),
+('Naer','Hernandez','de la Cruz','mario.pendejo@gmail.com','$2y$10$HkzTbYn9Z1gSFuMwV61a1uafxNeeqQRpzY6ebNC3HEsX6GsAqDUr6',3,'871111111'),
+('Naer','Hernandez','de la Cruz','murido@gmail.com','$2y$10$hoNdHVsUpkiKtgwfrWHs7ug1m67s5LyFhRZOZ5bY6zSqTNdNYslKy',4,'871111111');
 /*id, nombre, apPat, apMat*/
 
 /*id, nombre, apPat, apMat*/

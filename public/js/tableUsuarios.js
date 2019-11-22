@@ -1,17 +1,14 @@
-let t_Usuarios = new table()
-getUsers()
-
+let dataTable = new table()
 fetch(`api/users/describe`)
-    .then((response) => {
+    .then(function (response) {
         return response.json();
     })
-    .then((myJson) => {
-        let data = []
-        myJson.forEach(e => {
-            data[data.length] = e.Field
-        })
-        t_Usuarios.setHeaders(data)
-    })
+    .then(function (myJson) {
+        dataTable.cleanTable()
+        dataTable.setHeaders(myJson)
+    });
+getUsers()
+
 
 function getUsers(){
     fetch(`api/users/list`)
@@ -19,8 +16,8 @@ function getUsers(){
             return response.json();
         })
         .then(function (myJson) {
-            t_Usuarios.cleanTable()
-            myJson.forEach(user => t_Usuarios.addRow(Object.values(user)))
+            dataTable.cleanTable()
+            myJson.forEach(user => dataTable.addRow(Object.values(user)))
         });
 }
 
@@ -37,10 +34,10 @@ document.querySelector('#search').addEventListener('keyup', () => {
             })
             .then(function (myJson) {
                 if(myJson['Error'] || myJson['error']){
-                    t_Usuarios.table.innerHTML = `<tr><td><h2 style='font-weight: 100'>${myJson['Error']}</h2></td></tr>`
+                    dataTable.table.innerHTML = `<tr><td><h2 style='font-weight: 100'>${myJson['Error']}</h2></td></tr>`
                 }else{
-                    t_Usuarios.cleanTable()
-                    t_Usuarios.addRow(Object.values(myJson))
+                    dataTable.cleanTable()
+                    dataTable.addRow(Object.values(myJson))
                 }
             })
         }

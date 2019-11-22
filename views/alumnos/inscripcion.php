@@ -2,7 +2,7 @@
     <div class="container">
         <div class="ham-title mrg20 pdg10 mt40 ">Inscripcion</div>
     </div>
-    <form action="" method="POST" class="formulario pdg10">
+    <form action="<?php echo constant('URL');?>API/admin/inscripcion" method="POST" class="formulario pdg10">
         
         <div class="ham-subtitle cold-blue m0 mt20">Informacion del Niño</div>
             <span class="">
@@ -78,4 +78,10 @@
             </span>
             <button class="ham-btn cold-blue pdgH20 fullW mgV50 display5">Terminar Inscripcion</button>
     </form>
+    <script>
+        document.querySelector('.ham-btn').addEventListener('click', (e)=>{
+            e.preventDefault()
+            location.href = '/proyectoISW/'
+        })
+    </script>
 </body>

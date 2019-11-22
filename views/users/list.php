@@ -3,6 +3,12 @@
         <div class="mrg0 pdg0 pdg10 brn fs30" style="font-weight:300">Listado de Usuarios</div>
         <span class="maxW300">
             <select class="balloon maxW300" name="" id="tabla">
+                <option value="idAdulto">ha</option>
+            </select>
+            <label for="">Tipo</label>
+        </span>
+        <span class="maxW300">
+            <select class="balloon maxW300" name="" id="tabla">
                 <option value="idAdulto">ID</option>
                 <option value="nomAdulto">Nombre</option>
                 <option value="apPatAdulto">Ap. Paterno</option>

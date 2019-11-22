@@ -1,21 +1,22 @@
-<body class=" pdgT60">
-    <div class="container col sc pdg20">
-        <div class="title fs40 pdgT50">Listado de niños</div>
-        <!-- <p>Pagina Principal del sitio</p> -->
-        <div class="cardContainer row cc mt30 wp fullw fixFlowC">
-            <?php
-            for ($i = 0; $i < 10; $i++)
-                echo '<div class="card cold-ligh">
-                        <div class="info cold-dark">
-                            <div class="label">Nombre</div>
-                            <div class="txt">Roberto Agustín Miguel Santiago Samuel Trujillo Veracruz</div>
-                            <div class="label">Grupo</div>
-                            <div class="txt">Maternal 3</div>
-                            <div class="label">Maestro</div>
-                            <div class="txt">Susana</div>
-                        </div>
-                    </div>';
-            ?>
-        </div>
+<link rel="stylesheet" href="<?php echo constant('URL');?>public/css/cascarita.css">
+<body class="f">
+<div class="pdg20 pdgT100 display3" style="color: #FFF; text-shadow: 2px 2px 8px #2a2a2a;">Nuestras Instalaciones</div>
+<div class="instalaciones">
+    <div class="instalacion">
+        <div class="imagen"></div>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat obcaecati rem dignissimos expedita deleniti aspernatur pariatur enim veniam ex cum iusto atque suscipit harum necessitatibus nostrum aliquid incidunt, debitis consequuntur!</p>
     </div>
+    <div class="instalacion">
+        <div class="imagen"></div>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat obcaecati rem dignissimos expedita deleniti aspernatur pariatur enim veniam ex cum iusto atque suscipit harum necessitatibus nostrum aliquid incidunt, debitis consequuntur!</p>
+    </div>
+    <div class="instalacion">
+        <div class="imagen"></div>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat obcaecati rem dignissimos expedita deleniti aspernatur pariatur enim veniam ex cum iusto atque suscipit harum necessitatibus nostrum aliquid incidunt, debitis consequuntur!</p>
+    </div>
+
+</div>
+<script>
+    document.querySelector('.navbar').style.background= "#FFFFFFD0";
+</script>
 </body>

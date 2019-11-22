@@ -2,20 +2,14 @@
     display: grid;
     grid-template-columns: auto 1fr auto;
     width: 100%;
-<<<<<<< HEAD
     // background: #2C3E50;
     color: rgb(255, 255, 255);
     transition: .25s;
-=======
     background: #FFFFFF;
-<<<<<<< HEAD
     // transition: .25s;
->>>>>>> edham
-=======
     color: #232323 !important;
     z-index: 100;
     transition: .25s;
->>>>>>> edham
     // font-weight: bold;
 
     .brand, .item{
@@ -101,8 +95,23 @@
         }
     }
     .user{
-        display: grid;
-        place-items: center;
+        display: flex;
+        flex-flow: row;
+        align-items: center;
+        justify-content: center;
+        .usrimg{
+            width: 35px;
+            height: 35px;
+            overflow: hidden;
+            border-radius: 100%;
+            img{
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        // display: grid;
+        // place-items: center;
     }
 }
 .sticky {
@@ -134,6 +143,7 @@
             transition: .5s ease-in-out;
             background: #212529;
             &.open{
+                color: #FFF;
                 top: 0;
                 padding-top: 65px;
                 z-index: 5;

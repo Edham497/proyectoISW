@@ -9,7 +9,7 @@ class Database{
 
     function __construct(){
         $this->host = "localhost";
-        $this->db = "Guarderia";
+        $this->db = "guarderia";
         $this->user = "root";
         $this->password = "Hector_2807";
         $this->charset = "utf8mb4";
@@ -29,27 +29,6 @@ class Database{
         catch(PDOException $e){
             print_r('Error connection' . $e->getMessage());
         }
-    }
-    
-    function insert($query){
-        $stmt = $this->pdo->prepare($query);
-        $stmt->execute();
-    }
-
-    function select($type, $id){
-        $stmt = $this->pdo->prepare("select * from " . $type . "where id = " . $id);
-        $stmt->setFetchMode(PDO::FETCH_ASSOC);
-        return $stmt->execute();
-    }
-
-    function update($query){
-        $stmt = $this->pdo->prepare($query);
-        $stmt->execute();
-    }
-
-    function delete($query){
-        $stmt = $this->pdo->prepare($query);
-        $stmt->execute();
     }
 }
 
