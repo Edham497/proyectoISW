@@ -927,8 +927,9 @@ span:nth-child(3) .card-slide:active {
 
 .swing {
   display: inline-block;
-  width: 215px;
-  padding: 10px 0 10px 15px;
+  width: 100%;
+  padding: 10px 0;
+  padding-left: 3.5em;
   font-family: "Open Sans", sans;
   font-weight: 400;
   color: #377D6A;
@@ -955,6 +956,7 @@ span:nth-child(3) .card-slide:active {
   padding: 10px 15px;
   text-shadow: 0 1px 0 rgba(19, 74, 70, 0.4);
   background: #7AB893;
+  color: #FFF;
   border-top-left-radius: 3px;
   border-bottom-left-radius: 3px;
   -webkit-transform-origin: 2px 2px;
@@ -1144,6 +1146,79 @@ span:nth-child(3) .card-slide:active {
 .balloon:focus + label:after,
 .balloon:active + label:after {
   border-top: 4px solid #7aa4b8;
+}
+
+.card {
+  width: 300px;
+  height: 350px;
+  position: relative;
+  background: #FFFFFF;
+  margin: 10px 5px;
+  overflow: hidden;
+  -webkit-box-shadow: 3px 3px 6px #000000af;
+          box-shadow: 3px 3px 6px #000000af;
+  -webkit-transition: .12s ease-in-out;
+  transition: .12s ease-in-out;
+}
+
+.card:hover {
+  -webkit-box-shadow: 0px 0px 12px 4px #133441;
+          box-shadow: 0px 0px 12px 4px #133441;
+  -webkit-transform: scale(1.025);
+          transform: scale(1.025);
+}
+
+.card .info {
+  font-size: 12px;
+  position: absolute;
+  width: 100%;
+  height: 125px;
+  bottom: 0;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto 1fr;
+      grid-template-columns: auto 1fr;
+  gap: 5px 2em;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 10px;
+}
+
+.card .info .txt {
+  color: #dadada;
+}
+
+.card .info .label {
+  color: #838383;
+}
+
+.cardAlumno {
+  width: 300px;
+  height: 65px;
+  margin: 1px;
+  color: white;
+  background: #1a1a1a;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 65px;
+      grid-template-columns: 1fr 65px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.cardAlumno .nombre {
+  padding: 10px;
+}
+
+.cardAlumno .grado {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
 }
 
 .table-container {

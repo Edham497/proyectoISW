@@ -16,22 +16,22 @@ class Home extends Controller{
                 break;
             } 
             case 2:{
-                // $this->renderFile = 'home/maestro';
+                $this->renderFile = 'home/maestro';
                 $this->view->rol = 'Maestro';
                 break;
             } 
             case 3:{
-                // $this->renderFile = 'home/pediatra';
+                $this->renderFile = 'home/maestro';
                 $this->view->rol = 'Pediatra';
                 break;
             } 
             case 4:{
-                // $this->renderFile = 'home/tutor';
+                $this->renderFile = 'home/tutor';
                 $this->view->rol = 'Tutor';
                 break;
             } 
         }
-        $this->renderFile = 'home/index';
+        // $this->renderFile = 'home/index';
     }
 
     function render(){

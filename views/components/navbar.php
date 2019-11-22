@@ -13,7 +13,7 @@
                 echo '<a href="' . constant('URL') . 'login/end"><div class="item">Cerrar Sesion</div></a>';
             }else{
                 echo '<a href="' . constant('URL') . 'instalaciones"><div class="item">Instalaciones</div></a>';
-                echo '<a href="' . constant('URL') . 'about"><div class="item">Acerca de</div></a>';
+                // echo '<a href="' . constant('URL') . 'about"><div class="item">Acerca de</div></a>';
                 // echo '<a href="' . constant('URL') . 'login"><div class="item">Login</div></a>';
             }
         ?>
