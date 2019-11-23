@@ -1,5 +1,11 @@
 <?php 
 
+require_once 'core/controller.php';
+require_once 'core/views.php';
+
+
+define('URL', '/proyectoISW/');
+
 class Router{
     function __construct(){
         $URL = $this->getURLArray();
@@ -13,7 +19,10 @@ class Router{
             }else{
                 echo "no se arma";
             }
-        }else echo "main";
+        }else{
+            require_once 'controllers/main.php';
+            $controller = new main();
+        }
     }
 
     function getURLArray(){

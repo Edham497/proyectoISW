@@ -1,17 +1,17 @@
 <?php 
-class Views{
+class View{
     function __construct(){
-        
+    }
+    
+    function render($renderFile){
+        $this->setComponent("head");
+        $this->setComponent('navbar');
+        require_once "views/$renderFile.php";
     }
 
-    function render($nombre){
-        require_once "views/assets/head.php";
-        require_once "views/components/navbar.php";
-        require_once "views/$nombre.php";
-    }
-
+    // Funcion para agregar componentes a las vistas
     function setComponent($component){
-        
+        require_once "components/$component.php";
     }
 }
 ?>
