@@ -66,7 +66,9 @@ CREATE TABLE Bitacora(
     durmio boolean,
     comportaminto int,
     reporte text,
+    fecBita date,
 
+    FOREIGN KEY (idNiñofk) REFERENCES Niño (idNiño),
     FOREIGN KEY (idMaestro) REFERENCES Usuario (idUsuario)
 );
 
@@ -105,14 +107,50 @@ INSERT INTO Usuario ( nomUsuario, apPUsuario, apMUsuario, fecNUsuario, direccion
 ('Melissa', 'Orozco', 'Chavarria', '2000-10-28', 'hasta la fregada', '8716902476', '6', '1'), 
 ('Julio', 'Mendez', 'Lira', '1999-12-12', 'por boulevard laguna sur', '8717321112', '6', '1');
 
--- INSERTANDO NIÑOS
-INSERT INTO Niño (nomNiño, apPNiño, apMNiño, fecNNiño, activo) VALUES 
-('Ivanna Isabelle', 'Hernandez', 'Pereyra', '2024-05-25', '1'), 
-('Jorge Javier', 'Hernandez', 'Pereyra', '2026-09-22','1');
-
 -- ASIGNANDO A UN MAESTRO EL GRUPO
 INSERT INTO Grupo VALUES ('M1', '2', 'A1'), ('M2', '3', 'A2');
+
+-- INSERTANDO NIÑOS
+INSERT INTO Niño (nomNiño, apPNiño, apMNiño, fecNNiño, grupofk, activo) VALUES 
+('Ivanna Isabelle', 'Hernandez', 'Pereyra', '2024-05-25', 'M1', '1'), 
+('Jorge Javier', 'Hernandez', 'Pereyra', '2026-09-22','M2','1');
+
 
 -- ASOCIANDO A NIÑOS CON TUTORES Y AUTORIZADOS
 INSERT INTO TutAut_Niño (idTutor, idNiñofk) VALUES
 ('7', '1'), ('8', '1'), ('11', '1'), ('6', '2'), ('9', '2'), ('10', '2');
+
+----------- ADMIN -----------
+-- LISTADO DE LOS USUARIOS
+SELECT nomUsuario,apPUsuario,apMUsuario,direccion,telefono,rol FROM Usuario WHERE rol > 1 AND activo = true;
+
+-- LISTADO DE LOS NIÑOS
+SELECT idNiño,nomNiño,apPNiño,apMNiño,grupofk,imgNiño FROM Niño WHERE activo = true;
+
+-- VER BITACORA POR FECHA
+SELECT * FROM Bitacora WHERE fecBita = '2019-11-24' AND idMaestro = 2;
+
+-- VER BITACORA POR FECHA Y MAESTRO
+SELECT * FROM Bitacora WHERE fecBita = '2019-11-24' AND idMaestro = 2;
+
+-- VER BITACORA POR FECHA Y MAESTRO Y NIÑO
+SELECT * FROM Bitacora WHERE fecBita = '2019-11-24' AND idMaestro = 3 AND idNiñofk = 2;
+
+----------- MAESTRO -----------
+-- NIÑO EN SU GRUPO
+SELECT idNiño,nomNiño,apPNiño,apMNiño,grupofk,imgNiño FROM Niño 
+JOIN Grupo ON idGrupo = grupofk WHERE activo = true and idMaestro = 7;
+
+-- HACER BITACORA
+INSERT INTO Bitacora (idNiñofk, idMaestro, comida, durmio, comportaminto, reporte,fecBita) VALUES 
+('2', '3', 'Nuggets de pollo con sopa de arroz', '1', '5', 'El alumno comio de manera adecuada, su comportamiento fue excelente, trabajo de manera adecuada','2019-11-24');
+
+
+----------- TUTOR -----------
+-- TUTOR VIENDO A SUS NIÑOS
+SELECT * FROM Niño WHERE idNiño in (SELECT idNiñofk FROM TutAut_Niño where idTutor = 7);
+
+-- VER BITACORA DE SUS NIÑOS POR FECHA
+SELECT comida,durmio,comportaminto,reporte,fecBita FROM Bitacora WHERE fecBita = CURDATE() AND idNiñofk IN (SELECT idNiñofk from TutAut_Niño where idTutor = 6)
+
+----------- MAESTRO,TUTOR,ADMIN -----------
