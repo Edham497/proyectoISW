@@ -29,7 +29,10 @@
         // .then((json)=>{
         //     alert(json)
         // })
-        let data = {usr: $('user').value}
+        let data = {
+            usr: $('user').value,
+            pass: $('pass').value
+        }
         // console.log(data)
         fetch('api/', {
             method: 'POST',
@@ -41,14 +44,23 @@
         .then(res => res.json())
         .then((resp) => {
             if(resp.error){
-                // alert(resp.error)
-                $('msg').innerHTML = '' 
-                $('msg').classList.add('active')
-                $('msg').innerHTML = resp.error 
-
+                createAlert(resp.error)
                 return;
             }
-            alert(resp.success)
+            createAlert(resp.success, 'ok')
+            setTimeout(() => location.href = '/proyectoISW/', 1000);
         })
+        .catch(error=> createAlert(error))
     })
+
+    function createAlert(msg, Class){
+        let card = $('msg')
+        card.classList = []
+        card.innerHTML = ''
+        card.classList.add('active')
+        if(Class != undefined){
+            card.classList.add(Class)
+        } 
+        card.innerHTML = msg
+    }
 </script>
