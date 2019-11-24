@@ -1,7 +1,7 @@
 <?php 
 
 require_once 'core/controller.php';
-require_once 'core/views.php';
+require_once 'core/view.php';
 
 
 define('URL', '/proyectoISW/');
