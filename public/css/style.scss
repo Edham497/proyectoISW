@@ -1,15 +1,23 @@
+:root{
+    --fuente: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    // font-family: 'Roboto', sans-serif;
-    // font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: var(--fuente);
+    user-select: none;
+    // font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 html, body{
     width: 100%;
     height: 100vh;
+}
+
+body{
+    padding-top: 72px;
+    background: #EDF2F7;
 }
 
 @media (max-height: 400px){
@@ -23,27 +31,37 @@ a{
     text-decoration: none;
     color: inherit;
     outline: none !important;
+    &.fPass{
+        margin-top: 20px !important;
+        color: #2980B9;
+        text-decoration: underline !important;
+        font-weight: bold;
+    }
 }
 
 /*imports*/
 @import './components/navbar';
+@import './components/inputs';
+@import './components/formularios';
+
+@import './layouts/index';
 /*end imports*/
 
-@for $i from 0 to 10 {
-    .pd#{$i*10}{padding: #{$i*10}px;}
-    .pdt#{$i*10}{padding-top: #{$i*10}px;}
-    .pdb#{$i*10}{padding-bottom: #{$i*10}px;}
-    .pdl#{$i*10}{padding-left: #{$i*10}px;}
-    .pdr#{$i*10}{padding-right: #{$i*10}px;}
+@for $i from 0 to 50 {
+    .pd#{$i*5}{padding: #{$i*5}px;}
+    .pdt#{$i*5}{padding-top: #{$i*5}px;}
+    .pdb#{$i*5}{padding-bottom: #{$i*5}px;}
+    .pdl#{$i*5}{padding-left: #{$i*5}px;}
+    .pdr#{$i*5}{padding-right: #{$i*5}px;}
     
-    .pdH#{$i*10}{
-        padding-left: #{$i*10}px;
-        padding-right: #{$i*10}px;
+    .pdH#{$i*5}{
+        padding-left: #{$i*5}px;
+        padding-right: #{$i*5}px;
     }
 
-    .pdV#{$i*10}{
-        padding-top: #{$i*10}px;
-        padding-bottom: #{$i*10}px
+    .pdV#{$i*5}{
+        padding-top: #{$i*5}px;
+        padding-bottom: #{$i*5}px
     }
 }
 
@@ -72,3 +90,4 @@ a{
 .cursorP{cursor:pointer;}
 .brn{border-radius: 0 !important;}
 .of-hidden{overflow: hidden !important;}
+.tac{text-align: center;}

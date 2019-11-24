@@ -1,7 +1,13 @@
 <?php 
-class login{
+class login extends Controller{
     function __construct(){
-        echo "Controlador de login";
+        parent::__construct();
+        $this->render();
+        
+    }
+
+    function render(){
+        $this->view->render('login/index');
     }
 }
 ?>

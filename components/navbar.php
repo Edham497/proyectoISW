@@ -1,7 +1,7 @@
 <div class="navbar sticky">
     <div class="brand">
         <div class="icon"></div>
-        <a href="<?php echo constant('URL');?>"><div class="titulo">Guarderia Yocho</div></a>
+        <a href="<?php echo constant('URL');?>" class="titulo">Guarderia Yocho</a>
         <div class="expand"></div>
     </div>
     <div class="nav" id="menu">
@@ -12,7 +12,7 @@
                 echo '<a href="' . constant('URL') . 'alumnos/inscribir"><div class="item">Inscribir</div></a>';
                 echo '<a href="' . constant('URL') . 'login/end"><div class="item">Cerrar Sesion</div></a>';
             }else{
-                echo '<a href="' . constant('URL') . 'instalaciones"><div class="item">Instalaciones</div></a>';
+                echo '<a href="' . constant('URL') . 'instalaciones" class="item">Instalaciones</a>';
                 // echo '<a href="' . constant('URL') . 'about"><div class="item">Acerca de</div></a>';
                 // echo '<a href="' . constant('URL') . 'login"><div class="item">Login</div></a>';
             }
@@ -27,10 +27,7 @@
             }else{
                 echo "<div class='usrimg'><img src='".constant('URL')."public/ico/login.png'></div>";
                 echo '<a href="' . constant('URL') . 'login "><div class="item">Iniciar Sesion</div></a>';
-                
             }
         ?>
     </div>
-</div>
-
-<script src="<?php echo constant('URL');?>public/js/utilities.js"></script>
+</div><!-- <script src="<?php echo constant('URL');?>public/js/utilities.js"></script> -->

@@ -7,16 +7,13 @@
     z-index: 100;
     transition: .25s all;
     // font-weight: bold;
-
-    .brand, .item{
+    .brand, .nav, .user{
         padding: 1em;
     }
-    
     .brand{
+        height: 100%;
         display: flex; 
         flex-flow: row;
-        align-items: center;
-        z-index: 100;
         .icon{
             width: 40px;
             height: 40px;
@@ -25,12 +22,14 @@
             background-size: 100%;
         }
         .titulo{
-            transition: .35s ease-in-out;
-            font-size: 20px;
-            display: grid;
+            font-weight: 600;
+            font-size: 1.1em;
+            height: 100%;
+            display: grid; 
             place-items: center;
         }
         .expand{
+            display: none;
             opacity: 0;
             width: 15px;
             height: 15px;
@@ -74,18 +73,19 @@
         display: flex;
         flex-flow: row nowrap;
         // transition: .25s;
-        a{
+        .item{
+            padding: .1em .3em;
             display: grid;
             place-items: center;
-        }
-        .item{
-            font-size: 14px;
-            outline: none !important;
-            transition: .4s ease-in-out;
+            font-size: .9em;
+            height: 100%;
+            transition: .2s ease-in-out;
+
             &:hover{
-                transform: scale(.9);
-                background: #1089FF;
-                color: #EEEEEE;
+                transition: .15s ease-out;
+                // background: #1089FF;
+                background: #2980B9;
+                color: rgb(255, 255, 255);
                 cursor: pointer;
             }
         }
@@ -94,7 +94,7 @@
         display: flex;
         flex-flow: row;
         align-items: center;
-        justify-content: center;
+        justify-content: flex-end;
         .usrimg{
             width: 35px;
             height: 35px;
@@ -155,5 +155,17 @@
         .nombre{
             max-width: 150px;
         }
+    }
+}
+
+@keyframes btnhover{
+    0%{
+        background: #FFF;
+    }
+    50%{
+        background:#6DD5FA;
+    }
+    100%{
+        background: #2980B9;
     }
 }
