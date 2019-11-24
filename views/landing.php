@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="<?php echo constant('URL'); ?>public/css/cascarita.css">
 <div class="main showcase">
     <div class="content">
-        <img src="<?php echo constant('URL'); ?>public/img/MK_Logo_Royal_Blue.png" class="logo" alt="Michael Jackson">
+        <img src="<?php echo constant('URL'); ?>public/svg/logo1.svg" class="logo" alt="Michael Jackson">
         <div class="title">"El mejor ambiente y estancia para un niño"</div>
         <div class="text">Somos una guarderia de calidad alta y servicio a la misma medida</div>
     </div>

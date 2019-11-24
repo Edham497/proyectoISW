@@ -1,11 +1,13 @@
 <div class="navbar sticky">
     <div class="brand">
-        <div class="icon"></div>
-        <a href="<?php echo constant('URL');?>" class="titulo">Guarderia Yocho</a>
+        <!-- <div class="icon"></div> -->
+        <a href="<?php echo constant('URL');?>" class="icon"></a>
         <div class="expand"></div>
     </div>
     <div class="nav" id="menu">
-        <?php 
+        <?php
+        if(!session_status())
+            session_start();
             if(isset($_SESSION['usr_name'])){
                 echo '<a href="' . constant('URL') . '"><div class="item">Inicio</div></a>';
                 echo '<a href="' . constant('URL') . 'users/add"><div class="item">Add User</div></a>';
@@ -19,7 +21,7 @@
         ?>
     </div>
     <div class="user">
-        <?php 
+        <?php
             if(isset($_SESSION['usr_name'])){
                 echo "<div class='usrimg'><img src='".constant('URL')."public/img/guardarias.jpg'></div>";
                 echo '<a href="' . constant('URL') . '"><div class="item">'.$_SESSION['usr_name'].'</div></a>';

@@ -16,13 +16,16 @@
             display: grid;
             place-items: center;
             transition: .25s ease-in-out;
-            background: crimson;
             color: #FFF;
             font-size: 15px;
             &.active{
                 // border-radius: 25px;
+                background: crimson;
                 height: 35px;
                 width: 100%;
+            }
+            &.ok{
+                background: rgb(50, 165, 50);
             }
         }
     }
