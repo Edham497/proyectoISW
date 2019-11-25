@@ -10,14 +10,14 @@ $data = json_decode($json);
 function checkUser($user, $pass){
     $db = new Database();
     $conn = $db->getConn();
-    $query = "SELECT nomAdulto, rolAdulto, contra FROM Adulto WHERE email = '" .$user ."';";
+    $query = "SELECT nomUsuario, rol, pass FROM Usuario WHERE email = '" .$user ."';";
     $stmt = $conn->prepare($query);
     $stmt->execute();
     $stmt = $stmt->fetch(PDO::FETCH_ASSOC);
     session_start();
-    if(password_verify($pass, $stmt['contra'])){
-        $_SESSION['usr_name'] = $stmt['nomAdulto'];
-        $_SESSION['rol'] = $stmt['rolAdulto'];
+    if(password_verify($pass, $stmt['pass'])){
+        $_SESSION['usr_name'] = $stmt['nomUsuario'];
+        $_SESSION['rol'] = $stmt['rol'];
         return true;
     }
     session_destroy();
