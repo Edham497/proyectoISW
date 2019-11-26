@@ -7,6 +7,7 @@
     box-sizing: border-box;
     font-family: var(--fuente);
     user-select: none;
+    list-style: none;
     // font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
@@ -42,9 +43,13 @@ a{
 /*imports*/
 @import './components/navbar';
 @import './components/inputs';
+@import './components/tables';
 @import './components/formularios';
 
 @import './layouts/index';
+
+@import './template/perfil';
+@import './template/tutor';
 /*end imports*/
 
 @for $i from 0 to 50 {

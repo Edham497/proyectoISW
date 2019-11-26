@@ -2,20 +2,23 @@
 
 require_once 'core/controller.php';
 require_once 'core/view.php';
+require_once 'core/_err.php';
 
 
 define('URL', '/proyectoISW/');
+define('userImages', '/proyectoISW/public/img/');
 
 class Router{
     function __construct(){
         $URL = $this->getURLArray();
         // var_dump($URL);
         if($URL[0]){
-            if($URL[0] == 'API'){
+            
+            if($URL[0] == 'api'){
                 require_once 'controllers/api.php';
-                $API = new API($URL);
-                return;
+                return new API($URL);
             }
+
             $controllerPath = $this->getController($URL);
             if(file_exists($controllerPath)){
                 require_once $controllerPath;
@@ -23,7 +26,7 @@ class Router{
                 if(isset($URL[1]) && method_exists($controller, $URL[1]))
                     $controller->{$URL[1]}(isset($URL[2])?$URL[2]:'');
             }else{
-                echo "no se arma";
+                new _error(400);
             }
         }else{
             require_once 'controllers/main.php';
