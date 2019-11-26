@@ -32,4 +32,5 @@
             }
         ?>
     </div>
-</div><!-- <script src="<?php echo constant('URL');?>public/js/utilities.js"></script> -->
+</div>
+<script src="<?php echo constant('URL');?>public/js/utilities.js"></script>

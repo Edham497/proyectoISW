@@ -14,6 +14,9 @@
         height: 100%;
         display: flex; 
         flex-flow: row;
+        place-items: center;
+        z-index: 10;
+
         .icon{
             width: 180px;
             height: 45px;
@@ -96,9 +99,11 @@
         align-items: center;
         justify-content: flex-end;
         .usrimg{
+
             width: 35px;
             height: 35px;
             overflow: hidden;
+            margin-right: 15px;
             border-radius: 100%;
             img{
                 width: 100%;
@@ -143,15 +148,21 @@
                 top: 0;
                 padding-top: 65px;
                 z-index: 5;
+                
             }
             .item{
                 width: 100%;
+                padding: 10px;
             }
             
         }
     }
     .user{
         font-size: 12px;
+        .usrimg{
+            z-index: 100;
+        }
+
         .nombre{
             max-width: 150px;
         }

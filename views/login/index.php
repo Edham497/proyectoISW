@@ -6,7 +6,7 @@
         </h1>
         <span class="mt30">
             <input class="balloon" autocomplete="off" type="text" id="user" name="user">
-            <label for="user">Usuario</label>
+            <label for="user">Correo</label>
         </span>
         <span class="mt30">
             <input class="balloon" autocomplete="off" type="password" id="pass" name="pass">
@@ -19,6 +19,7 @@
     </form>
 </div>
 <script>
+    //87
     $ = (id)=> document.getElementById(id)
     document.getElementById('enviar').addEventListener('click', (e)=>{
         e.preventDefault()
@@ -34,7 +35,7 @@
             pass: $('pass').value
         }
         // console.log(data)
-        fetch('api/', {
+        fetch('api/login', {
             method: 'POST',
             body: JSON.stringify(data),
             headers: {
