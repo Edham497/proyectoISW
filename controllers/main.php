@@ -5,7 +5,7 @@ class main extends Controller{
         $this->renderFile = 'landing';
         
             session_start();
-            switch($_SESSION['rol']){
+            switch(isset($_SESSION['rol'])){
                 case 1: $this->renderFile = 'main/admin'; break;
                 case 2: $this->renderFile = 'main/admin'; break;
                 case 3: $this->renderFile = 'main/admin'; break;

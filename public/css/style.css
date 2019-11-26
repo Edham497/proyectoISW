@@ -72,6 +72,8 @@ a.fPass {
   -webkit-box-direction: normal;
       -ms-flex-flow: row;
           flex-flow: row;
+  place-items: center;
+  z-index: 10;
 }
 
 .navbar .brand .icon {
@@ -182,6 +184,7 @@ a.fPass {
   width: 35px;
   height: 35px;
   overflow: hidden;
+  margin-right: 15px;
   border-radius: 100%;
 }
 
@@ -229,9 +232,13 @@ a.fPass {
   }
   .navbar .nav .item {
     width: 100%;
+    padding: 10px;
   }
   .user {
     font-size: 12px;
+  }
+  .user .usrimg {
+    z-index: 100;
   }
   .user .nombre {
     max-width: 150px;

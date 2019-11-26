@@ -9,7 +9,13 @@ define('URL', '/proyectoISW/');
 class Router{
     function __construct(){
         $URL = $this->getURLArray();
+        // var_dump($URL);
         if($URL[0]){
+            if($URL[0] == 'API'){
+                require_once 'controllers/api.php';
+                $API = new API($URL);
+                return;
+            }
             $controllerPath = $this->getController($URL);
             if(file_exists($controllerPath)){
                 require_once $controllerPath;
@@ -36,6 +42,5 @@ class Router{
 
     function getController($URL){
         return 'controllers/'.$URL[0].'.php';
-        
     }
 }
