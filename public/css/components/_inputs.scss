@@ -1,6 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,600,300,800);
-
-@mixin epic-sides() { // https://codepen.io/MichaelArestad/pen/qltuk
+@mixin epic-sides() { // https://codepen.io/MichaelArestad/pen/qltu
     position: relative;
     z-index: 1;
 
@@ -23,14 +21,14 @@ span {
     display: inline-block;
     margin: 10px 0px;
 }
+
 .basic-slide {
   display: inline-block;
   width: 150px;
   padding: 10px 25px 8px 15px;
-  font-family: "Open Sans", sans;
+  font-family: var(--fuente);
   font-weight: 400;
   font-size: 16px;
-//   box-shadow: 2px 2px 4px #377D6A;
   background: #e3e3e3;
   border: 0;
   border-radius: 3px;
@@ -78,7 +76,7 @@ span {
   display: inline-block;
   width: 215px;
   padding: 10px 0 10px 15px;
-  font-family: "Open Sans", sans;
+  font-family: var(--fuente);
   font-weight: 400;
   color: rgb(55, 103, 125);
   background: #efefef;
@@ -154,7 +152,7 @@ span {
   display: inline-block;
   width: 215px;
   padding: 10px 0 10px 15px;
-  font-family: "Open Sans", sans;
+  font-family: var(--fuente);
   font-weight: 400;
   color: #377D6A;
   background: #efefef;
@@ -237,7 +235,7 @@ span:nth-child(2) .gate:active{
   display: inline-block;
   width: 215px;
   padding: 10px 0 10px 15px;
-  font-family: "Open Sans", sans;
+  font-family: var(--fuente);
   font-weight: 400;
   color: #377D6A;
   background: #efefef;
@@ -311,7 +309,7 @@ span:nth-child(2) .gate:active{
   display: inline-block;
   width: 215px;
   padding: 10px 0 10px 15px;
-  font-family: "Open Sans", sans;
+  font-family: var(--fuente);
   font-weight: 400;
   color: #377D6A;
   background: #efefef;
@@ -400,7 +398,7 @@ span:nth-child(3) .slide-up:active {
   display: inline-block;
   width: 215px;
   padding: 10px 0 10px 15px;
-  font-family: "Open Sans", sans;
+  font-family: var(--fuente);
   font-weight: 400;
   color: #377D6A;
   background: #efefef;
@@ -460,9 +458,10 @@ span:nth-child(3) .card-slide:active {
 }
 .swing {
   display: inline-block;
-  width: 215px;
-  padding: 10px 0 10px 15px;
-  font-family: "Open Sans", sans;
+  width: 100%;
+  padding: 10px 0;
+  padding-left: 3.5em;
+  font-family: var(--fuente);
   font-weight: 400;
   color: #377D6A;
   background: #efefef;
@@ -486,6 +485,7 @@ span:nth-child(3) .card-slide:active {
     padding: 10px 15px;
     text-shadow: 0 1px 0 rgba(19,74,70,.4);
     background: #7AB893;
+    color: #FFF;
     border-top-left-radius: 3px;
     border-bottom-left-radius: 3px;
     transform-origin: 2px 2px;
@@ -544,12 +544,11 @@ span:nth-child(3) .card-slide:active {
   width: 100%;
   padding: 10px 0;
   padding-left: 3.5em;
-  font-family: "Open Sans", sans;
+  font-family: var(--fuente);
   font-weight: 500;
   font-size: 16px;
-  color: rgb(64, 156, 218);
-  background: #e7e7e7;
-  border: 0;
+  color: #409cda;
+  border: solid #409cdaa0 2px;
   border-radius: 3px;
   outline: 0;
   text-indent: 60px; // Arbitrary.
@@ -571,7 +570,7 @@ span:nth-child(3) .card-slide:active {
     color: #ffffff;
     // background: #032429;
     font-size: 11px;
-    font-weight: 700;
+    font-weight: 500;
     text-transform: uppercase;
     text-shadow: 0 1px 0 rgba(19,74,70,0);
     transition: all .3s ease-in-out;
@@ -605,7 +604,7 @@ span:nth-child(3) .card-slide:active {
   + label {
     color: #fff;
     text-shadow: 0 1px 0 rgba(19,74,70,.4);
-    background: rgb(105, 188, 255);
+    background: rgb(88, 168, 233);
     transform: translateY(-40px);
     
     &:after {

@@ -1,7 +1,6 @@
 <?php 
 
 class Database{
-
     private $host;
     private $db;
     private $user;
@@ -10,7 +9,7 @@ class Database{
 
     function __construct(){
         $this->host = "localhost";
-        $this->db = "guarderia";
+        $this->db = "Guarderia";
         $this->user = "root";
         $this->password = "";
         $this->charset = "utf8mb4";
@@ -31,7 +30,10 @@ class Database{
             print_r('Error connection' . $e->getMessage());
         }
     }
+<<<<<<< HEAD:config/db.php
 
+=======
+>>>>>>> edham:core/db.php
 }
 
 ?>

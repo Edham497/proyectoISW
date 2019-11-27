@@ -1,11 +1,11 @@
-<div class="main col cc material-dark pdgT60">
-    <div class="title fs50 tac">Error 
+<div class="full col cc material-dark pdgT60">
+    <div class="ham-title fs50 c_FFF tac">Error 
         <?php echo $this->error_code; echo " - " . $this->error_name ?></div>
-    <p class="mt20 tac"><?php echo $this->error_desc; ?></p>
+    <p class="mb20 tac c_FFF"><?php echo $this->error_desc; ?></p>
     <a href="/proyectoISW/">
-        <div class="ham-btn material-normal">Regresar al Inicio</div>
+        <div class="ham-btn">Regresar</div>
     </a>
-</div>
+</div>  
 <script>
     document.querySelector('.navbar').style.color='#DADADA'
     document.querySelector('.navbar').style.background ='#1D2528'

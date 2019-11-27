@@ -4,6 +4,7 @@
     max-height: 80%;
     overflow-x: auto;
     margin: 0 auto;
+    transition: .25s ease-in-out;
     &::-webkit-scrollbar{
         width: 8px;
         height: 8px;
@@ -20,25 +21,28 @@
         width: 100%;
         border-collapse: collapse;
         overflow-x: auto;
+    transition: .25s ease-in-out;
         
         tr{ 
-            background: #E3E3E3;
+            background: rgb(255, 255, 255);
             transition: .15s ease-in-out; 
             // &:hover{
             //     background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
             // }
         }
         th { 
-            background: #E8E8E8; 
+            // background: #E8E8E8;
+            font-weight: 500; 
             color: #333; 
+            transition: .25s ease-in-out;
         }
         td, th {
-            border: solid #FFF 1px;
-            font-weight: 500; 
+            border: solid rgb(177, 177, 177) 1px;
             padding: 1em; 
             text-align: center;
             font-size: 16px;
             line-height: 16px;
+    transition: .25s ease-in-out;
         }
     }
 }
@@ -68,8 +72,8 @@ only screen and (max-width: 650px),
             }
             
             tr {
-                // background: linear-gradient(135deg, #f5f7fa 0%, #e3e3e3 100%); 
-                border: 1px solid rgb(189, 189, 189); 
+                background: linear-gradient(135deg, #f5f7fa 0%, #e3e3e3 100%); 
+                border: 1px solid #ffffff80; 
                 margin-bottom: 10px;
             }
             
@@ -97,9 +101,5 @@ only screen and (max-width: 650px),
 	/*
 	Label the data
 	*/
-	td:nth-of-type(1):before { content: "ID"; }
-	td:nth-of-type(2):before { content: "Nombre"; }
-	td:nth-of-type(3):before { content: "rol"; }
-	td:nth-of-type(4):before { content: "pass"; }
 }
   /* Zebra striping */

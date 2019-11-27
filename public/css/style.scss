@@ -1,185 +1,44 @@
+:root{
+    --fuente: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: var(--fuente);
+    user-select: none;
+    list-style: none;
+    -webkit-tap-highlight-color: transparent;
+    // font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 html, body{
     width: 100%;
     height: 100vh;
-    // background: #f1f1f1;
-    // overflow: hidden;
 }
+
+body{
+    padding-top: 72px;
+    background: #EDF2F7;
+}
+
 @media (max-height: 400px){
     html, body{
         height: 150vh;
         overflow-y: auto;
     }
 }
-a{outline: none !important;}
 
-.main{
-    width: 100%;
-    height: 100%;
-    padding: 25px;
-    background: #f0f0f0;
-    overflow-y: auto;
-}
-
-
-//Components
-@import 'components/index';
-
-//functions
-@import 'functions/index';
-
-//layouts
-@import 'layouts/index';
-
-//Themes
-@import 'themes/index';
-
-.brn{border-radius: 0 !important;}
-.of-hidden{overflow: hidden !important;}
-.pdg0{padding:0;}
-@for $i from 1 to 10 {
-    .pdg#{$i*10}{padding: #{$i*10}px;}
-}
-
-@for $i from 1 to 10 {
-    .pdgH#{$i*10}{
-        padding-left: #{$i*10}px;
-        padding-right: #{$i*10}px;
+a{
+    text-decoration: none;
+    color: inherit;
+    outline: none !important;
+    &.fPass{
+        margin-top: 20px !important;
+        color: #2980B9;
+        text-decoration: underline !important;
+        font-weight: bold;
     }
-}
-@for $i from 1 to 10 {
-    .pdgV#{$i*10}{
-        padding-top: #{$i*10}px;
-        padding-bottom: #{$i*10}px
-    }
-}
-
-// .mrg0{margin:0;}
-@for $i from 0 to 10 {
-    .m#{$i*10}{margin: #{$i*10}px;}
-    .mt#{$i*10}{margin-top: #{$i*10}px;}
-    .mb#{$i*10}{margin-bottom: #{$i*10}px;}
-    .ml#{$i*10}{margin-left: #{$i*10}px;}
-    .mr#{$i*10}{margin-right: #{$i*10}px;}
-}
-
-@for $i from 0 to 10 {
-    .mgH#{$i*10}{
-        margin-left: #{$i*10}px !important;
-        margin-right: #{$i*10}px !important;
-    }
-    .mgV#{$i*10}{
-        margin-top: #{$i*10}px !important;
-        margin-bottom: #{$i*10}px !important;
-    }
-    .pdgH#{$i*10}{
-        padding-left: #{$i*10}px !important;
-        padding-right: #{$i*10}px !important;
-    }
-    .pdgV#{$i*10}{
-        padding-top: #{$i*10}px !important;
-        padding-bottom: #{$i*10}px !important;
-    }
-}
-
-@for $i from 1 to 21{
-    .maxW#{$i*50}{max-width: #{$i*50}px;}
-}
-.fRoboto{font-family: 'Roboto', sans-serif;}
-.displayN{display: none;}
-.cursorP{cursor:pointer;}
-
-/* position fixed to */
-.pos-fix{
-    position: fixed;
-    &-left{@extend .pos-fix; left: 0;}
-    &-right{@extend .pos-fix;right: 0;}
-    &-top{@extend .pos-fix;top: 0;}
-    &-bottom{@extend .pos-fix;bottom: 0;}
-}
-
-/*position absolute to */
-.pos-abs{
-    position: absolute;
-    &-left{@extend .pos-abs; left: 0;}
-    &-right{@extend .pos-abs; right: 0;}
-    &-top{@extend .pos-abs; top: 0;}
-    &-bottom{@extend .pos-abs; bottom: 0;}
-}
-
-/*max-width*/
-.mw500{max-width: 500px;}
-/*Padding*/
-
-@for $i from 0 through 10 {
-    .pdgT#{$i*10}{padding-top: #{$i*10}px}
-    .pdgB#{$i*10}{padding-bottom: #{$i*10}px}
-    .pdgL#{$i*10}{padding-left: #{$i*10}px}
-    .pdgR#{$i*10}{padding-right: #{$i*10}px}
-}
-
-.pdgT60{padding-top: 60px; box-sizing: border-box;}
-.pdgB50{padding-bottom: 50px;}
-.pdgB100{padding-bottom: 100px;}
-
-.fs12{font-size: 12px}
-.fs14{font-size: 14px}
-.fs16{font-size: 16px}
-.fs18{font-size: 18px}
-.fs20{font-size: 20px}
-.fs23{font-size: 23px}
-.fs25{font-size: 25px}
-.fs30{font-size: 30px}
-.fs35{font-size: 35px}
-.fs40{font-size: 40px}
-.fs50{font-size: 50px}
-.fs120{font-size: 100px}
-.fwB{font-weight: bold}
-.fwN{font-weight: lighter;}
-
-/*Interlineado*/
-.lh2{line-height: 2}
-.lh1p5{line-height: 1.5}
-
-/*Text Align*/
-.tac{text-align: center;}
-
-/*Overflow*/
-.ofXscroll{
-	overflow:hidden;
-	overflow-x: auto;
-}
-.ofYscroll{
-	overflow:none;
-	overflow-y: auto;
-}
-
-.formulario{
-    width: 100%;
-    max-width: 720px;
-
-    ham-title{
-        font-size: 15px;
-        box-shadow: none;
-        border: none;
-        margin: 12px 0;
-    }
-}
-.ham-input{
-    width: 100%;
-    padding: 5px;
-    box-sizing: border-box;
-    outline: none;
-    background: inherit;
-    border: none;
-    border-radius: 4px;
-    width: 80%;
 }
 .ham-btn{
     margin-top: 25px;
@@ -191,10 +50,73 @@ a{outline: none !important;}
     padding: 10px;
     box-sizing: border-box;
     transition: .12s ease-in-out;
-}
-a{
-    text-decoration: none;
-    color: inherit;
-}
-  
+    color: #FFF;
+}  
 .ham-btn:hover{background: #3498db; border-bottom: solid 1px #3498db;color: #f1f1f1;}
+
+
+/*imports*/
+@import './components/navbar';
+@import './components/inputs';
+@import './components/ham-title';
+@import './components/tables';
+@import './components/formularios';
+@import './components/modal';
+
+@import './layouts/index';
+
+@import './template/perfil';
+@import './template/tutor';
+
+@import './themes/paletasColor';
+/*end imports*/
+
+@for $i from 0 to 50 {
+    .pd#{$i*5}{padding: #{$i*5}px;}
+    .pdt#{$i*5}{padding-top: #{$i*5}px;}
+    .pdb#{$i*5}{padding-bottom: #{$i*5}px;}
+    .pdl#{$i*5}{padding-left: #{$i*5}px;}
+    .pdr#{$i*5}{padding-right: #{$i*5}px;}
+    
+    .pdH#{$i*5}{
+        padding-left: #{$i*5}px;
+        padding-right: #{$i*5}px;
+    }
+
+    .pdV#{$i*5}{
+        padding-top: #{$i*5}px;
+        padding-bottom: #{$i*5}px
+    }
+    .fs#{$i*5}{
+        font-size: #{$i*5}px;
+    }
+}
+
+.c_FFF{color: #FFF;}
+
+@for $i from 0 to 10 {
+    .m#{$i*10}{margin: #{$i*10}px;}
+    .mt#{$i*10}{margin-top: #{$i*10}px;}
+    .mb#{$i*10}{margin-bottom: #{$i*10}px;}
+    .ml#{$i*10}{margin-left: #{$i*10}px;}
+    .mr#{$i*10}{margin-right: #{$i*10}px;}
+    
+    .mgH#{$i*10}{
+        margin-left: #{$i*10}px;
+        margin-right: #{$i*10}px;
+    }
+    .mgV#{$i*10}{
+        margin-top: #{$i*10}px;
+        margin-bottom: #{$i*10}px;
+    }
+}
+
+@for $i from 1 to 21{
+    .maxW#{$i*50}{max-width: #{$i*50}px;}
+}
+.fRoboto{font-family: 'Roboto', sans-serif;}
+.displayN{display: none;}
+.cursorP{cursor:pointer;}
+.brn{border-radius: 0 !important;}
+.of-hidden{overflow: hidden !important;}
+.tac{text-align: center;}

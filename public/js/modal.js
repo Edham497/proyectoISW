@@ -5,7 +5,7 @@ function newModal(title, text){
     })
 
     let container = crearWea('div', {
-        classList: 'container'
+        classList: 'containerM'
     })
 
     container.innerHTML = `
@@ -27,7 +27,7 @@ function newModal(title, text){
             opacity: 0
         })
     
-        inyectCSS($('.container'), {
+        inyectCSS($('.containerM'), {
             transition: ".25s ease-in-out",
             width: "0",
             width: "0",

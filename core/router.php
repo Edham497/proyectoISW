@@ -1,67 +1,49 @@
-<?php
+<?php 
+
 require_once 'core/controller.php';
 require_once 'core/view.php';
-require_once 'core/model.php';
-require_once 'core/db.php';
+require_once 'core/_err.php';
 
 
 define('URL', '/proyectoISW/');
+define('userImages', '/proyectoISW/public/img/');
 
 class Router{
-    static function get($URL){
-
-        if(isset($URL[0]) && $URL[0]){
-            if($URL[0] == "418"){
-                $controlador= new _error(418);
-                return;
-            }
-
+    function __construct(){
+        $URL = $this->getURLArray();
+        // var_dump($URL);
+        if($URL[0]){
+            
             if($URL[0] == 'api'){
-                require_once 'controllers/API/API.php';
-                $API = new API($URL);
-                return;
+                require_once 'controllers/api.php';
+                return new API($URL);
             }
 
-            App::is_session_started();
-
-            $archivoControlador = self::getControllerPath($URL);
-            if(file_exists($archivoControlador)){
-                require_once $archivoControlador;
-                $controlador= new $URL[0];
-                $controlador->setModel($URL[0]);
-                
-                if(isset($URL[1])){
-                    if(method_exists($controlador, $URL[1])){
-                            $controlador->{$URL[1]}(isset($URL[2])?$URL[2]:'');
-                        // if(isset($URL[2]))
-                        //     $controlador->{$URL[1]}($URL[2]);
-                        // else $controlador->{$URL[1]}();
-                    }
-                    else{
-                        $controlador = new _error(400);
-                        return;
-                    }
-                }
-                self::prepareModule($controlador);
+            $controllerPath = $this->getController($URL);
+            if(file_exists($controllerPath)){
+                require_once $controllerPath;
+                $controller = new $URL[0];
+                if(isset($URL[1]) && method_exists($controller, $URL[1]))
+                    $controller->{$URL[1]}(isset($URL[2])?$URL[2]:'');
+            }else{
+                new _error(400);
             }
-            else if(file_exists($view = self::getViewPath($URL))){
-                $view = new View();
-                $view -> render("main/$URL[0]");
-            }
-            else $controlador = new _error(404);
+        }else{
+            require_once 'controllers/main.php';
+            $controller = new main();
         }
     }
-    
-    static function getControllerPath($controller){
-        return "controllers/$controller[0].php";
+
+    function getURLArray(){
+        if(isset($_GET['url'])){
+            $URL = $_GET['url'];            //Obtenemos la URL
+            $URL = rtrim($URL, '/');        //elimina espacios en blanco
+            $URL = explode('/', $URL);      //Convierte el string en un array, similar al split de java
+            return $URL;
+        }else return null;
     }
-    static function getViewPath($view){
-        return "views/main/$view[0].php";
-    }
-    static function prepareModule($module){
-        if(method_exists($module, 'render'))
-            $module->render();
+
+    function getController($URL){
+        return 'controllers/'.$URL[0].'.php';
     }
 }
-
-?>
