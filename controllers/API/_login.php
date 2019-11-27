@@ -11,12 +11,13 @@ class _login{
         function checkUser($user, $pass){
             $db = new Database();
             $conn = $db->getConn();
-            $query = "SELECT nomUsuario, rol, pass, imgUsuario FROM Usuario WHERE email = '" .$user ."';";
+            $query = "SELECT idUsuario, nomUsuario, rol, pass, imgUsuario FROM Usuario WHERE email = '" .$user ."';";
             $stmt = $conn->prepare($query);
             $stmt->execute();
             $stmt = $stmt->fetch(PDO::FETCH_ASSOC);
             session_start();
             if(password_verify($pass, $stmt['pass'])){
+                $_SESSION['usr_id'] = $stmt['idUsuario'];
                 $_SESSION['usr_name'] = $stmt['nomUsuario'];
                 $_SESSION['rol'] = $stmt['rol'];
                 $_SESSION['rolName'] = 'undefined';
