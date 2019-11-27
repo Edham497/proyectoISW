@@ -1,0 +1,31 @@
+.bitacora{
+
+}
+
+.datosBitacora{
+    .row,.col{
+        border-radius: 5px;
+        overflow: hidden;
+    }
+    .title{
+        width: 150px;
+        display: flex;
+        align-items: center;
+        background: cornflowerblue;
+        color: #FFF;
+        padding: 10px;
+    }
+    .field{
+        background: rgb(238, 238, 238);
+        color:#353535;
+        width: 100%;
+        padding: 10px;
+
+        &.txt_a{
+            background: #FFF;
+            color: black;
+            resize: none;
+            height: 150px;
+        }
+    }
+}

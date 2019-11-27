@@ -1,10 +1,8 @@
 <div class="tutor row fixFlow full pd20">
     <div class="container fullW col sc pd10 maxW500">
         <div class="titulo">Mis niños</div>
-        <div class="contenido fullW row wp cc">
-            <div class="card">Bastardo_1</div>
-            <div class="card">Bastardo_2</div>
-            <div class="card">Bastardo_3</div>
+        <div class="contenido fullW row wp cc" id="niños">
+            
         </div>
     </div>
     <div class="container fullW col sc pd10">
@@ -27,3 +25,17 @@
         </div>
     </div>
 </div>
+<script>
+    let niños = $('#niños')
+    fetch('api/kids/listKids')
+    .then(resp=>resp.json())
+    .then((json)=>{
+        // console.log(json)
+        json.forEach(niño =>{
+            let card = document.createElement('div')
+            card.classList = 'card'
+            card.innerText = niño['nomNiño']
+            niños.appendChild(card)
+        })
+    })
+</script>
