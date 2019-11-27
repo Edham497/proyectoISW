@@ -11,10 +11,19 @@ class _kids{
     //LISTADO DE TODOS LOS NIÑOS
     function listKids(){
         $conn = $this->db->getConn();
-        $query = "SELECT nomNiño, apPNiño, apMNiño,fecNNiño,grupofk,imgNiño FROM Niño WHERE activo =  true;";
+        $query = "SELECT idNiño, nomNiño, apPNiño, apMNiño,fecNNiño,grupofk,imgNiño FROM Niño WHERE activo =  true;";
         $stmt = $conn->prepare($query);
         $stmt->execute();
         $stmt = $stmt->fetchAll(PDO::FETCH_OBJ);
+        echo json_encode($stmt);
+    }
+    //GET NIÑO POR ID
+    function getKid($id){
+        $conn = $this->db->getConn();
+        $query = "SELECT nomNiño, apPNiño, apMNiño,fecNNiño,grupofk,imgNiño FROM Niño WHERE idNiño =  $id;";
+        $stmt = $conn->prepare($query);
+        $stmt->execute();
+        $stmt = $stmt->fetch(PDO::FETCH_OBJ);
         echo json_encode($stmt);
     }
     //LISTAR NIÑOS POR TUTOR
