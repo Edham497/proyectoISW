@@ -7,6 +7,8 @@
     box-sizing: border-box;
     font-family: var(--fuente);
     user-select: none;
+    list-style: none;
+    -webkit-tap-highlight-color: transparent;
     // font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
@@ -38,13 +40,35 @@ a{
         font-weight: bold;
     }
 }
+.ham-btn{
+    margin-top: 25px;
+    border: 1px solid rgba(230,230,230,0.5);
+    cursor: pointer;
+    border-radius: 10px;
+    min-width: 25px;
+    min-height: 25px;
+    padding: 10px;
+    box-sizing: border-box;
+    transition: .12s ease-in-out;
+    color: #FFF;
+}  
+.ham-btn:hover{background: #3498db; border-bottom: solid 1px #3498db;color: #f1f1f1;}
+
 
 /*imports*/
 @import './components/navbar';
 @import './components/inputs';
+@import './components/ham-title';
+@import './components/tables';
 @import './components/formularios';
+@import './components/modal';
 
 @import './layouts/index';
+
+@import './template/perfil';
+@import './template/tutor';
+
+@import './themes/paletasColor';
 /*end imports*/
 
 @for $i from 0 to 50 {
@@ -63,7 +87,12 @@ a{
         padding-top: #{$i*5}px;
         padding-bottom: #{$i*5}px
     }
+    .fs#{$i*5}{
+        font-size: #{$i*5}px;
+    }
 }
+
+.c_FFF{color: #FFF;}
 
 @for $i from 0 to 10 {
     .m#{$i*10}{margin: #{$i*10}px;}

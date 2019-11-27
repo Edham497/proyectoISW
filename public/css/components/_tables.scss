@@ -1,0 +1,105 @@
+.table-container{
+    width: 80%;
+    max-width: 80%;
+    max-height: 80%;
+    overflow-x: auto;
+    margin: 0 auto;
+    transition: .25s ease-in-out;
+    &::-webkit-scrollbar{
+        width: 8px;
+        height: 8px;
+        background: #E1E1E1;
+    }
+    &::-webkit-scrollbar-thumb{
+        background: #268FFF;
+    }
+    // &::-webkit-scrollbar-button{
+    //     background: red;
+    // }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        overflow-x: auto;
+    transition: .25s ease-in-out;
+        
+        tr{ 
+            background: rgb(255, 255, 255);
+            transition: .15s ease-in-out; 
+            // &:hover{
+            //     background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            // }
+        }
+        th { 
+            // background: #E8E8E8;
+            font-weight: 500; 
+            color: #333; 
+            transition: .25s ease-in-out;
+        }
+        td, th {
+            border: solid rgb(177, 177, 177) 1px;
+            padding: 1em; 
+            text-align: center;
+            font-size: 16px;
+            line-height: 16px;
+    transition: .25s ease-in-out;
+        }
+    }
+}
+
+/* 
+Max width before this PARTICULAR table gets nasty
+This query will take effect for any screen smaller than 760px
+and also iPads specifically.
+*/
+@media 
+only screen and (max-width: 650px),
+(min-device-width: 768px) and (max-device-width: 1024px)  {
+
+	/* Force table to not be like tables anymore */
+	table, thead, tbody, th, td, tr { 
+		display: block; 
+	}
+	
+    /* Hide table headers (but not display: none;, for accessibility) */
+    .table-container{
+        table{
+
+            thead tr { 
+                position: absolute;
+                top: -9999px;
+                left: -9999px;
+            }
+            
+            tr {
+                background: linear-gradient(135deg, #f5f7fa 0%, #e3e3e3 100%); 
+                border: 1px solid #ffffff80; 
+                margin-bottom: 10px;
+            }
+            
+            td { 
+                /* Behave  like a "row" */
+                padding: .5em;
+                position: relative;
+                padding-left: 40%;
+                text-align: center; 
+            }
+            
+            td:before { 
+                /* Now like a table header */
+                position: absolute;
+                /* Top/left values mimic padding */
+                // top: 6px;
+                left: 20px;
+                width: 15%; 
+                padding-right: 10px; 
+                white-space: nowrap;
+            }
+        }
+    }
+	
+	/*
+	Label the data
+	*/
+}
+  /* Zebra striping */

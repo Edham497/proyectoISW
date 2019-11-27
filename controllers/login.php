@@ -10,9 +10,10 @@ class login extends Controller{
     }
 
     function end(){
-            // session_start();
+            session_start();
             session_unset();
             session_destroy();
+            //Al destruir la sesion hay que direccionar al login
             header('Location:' . constant('URL') . 'login');
     }
 }

@@ -1,15 +1,6 @@
 let dataTable = new table()
-fetch(`api/users/describe`)
-    .then(function (response) {
-        return response.json();
-    })
-    .then(function (myJson) {
-        dataTable.cleanTable()
-        dataTable.setHeaders(myJson)
-    });
+dataTable.setHeaders(['ID', 'Nombre(s)', 'Ap. Patero', 'Ap. Materno', 'Fecha de Nacimiento', 'Correo', 'Direccion', 'Telefono'])
 getUsers()
-
-
 function getUsers(){
     fetch(`api/users/list`)
         .then(function (response) {

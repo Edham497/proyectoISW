@@ -23,8 +23,8 @@
     <div class="user">
         <?php
             if(isset($_SESSION['usr_name'])){
-                echo "<div class='usrimg'><img src='".constant('URL')."public/img/guardarias.jpg'></div>";
-                echo '<a href="' . constant('URL') . '"><div class="item">'.$_SESSION['usr_name'].'</div></a>';
+                echo "<div class='usrimg loged'><img src='".constant('userImages') . $_SESSION['usr_img']."'></div>";
+                echo '<a href="' . constant('URL') . '/perfil"><div class="item">'.$_SESSION['usr_name'].'</div></a>';
                 
             }else{
                 echo "<div class='usrimg'><img src='".constant('URL')."public/ico/login.png'></div>";

@@ -12,6 +12,8 @@
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+  list-style: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 html, body {
@@ -42,6 +44,27 @@ a.fPass {
   color: #2980B9;
   text-decoration: underline !important;
   font-weight: bold;
+}
+
+.ham-btn {
+  margin-top: 25px;
+  border: 1px solid rgba(230, 230, 230, 0.5);
+  cursor: pointer;
+  border-radius: 10px;
+  min-width: 25px;
+  min-height: 25px;
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-transition: .12s ease-in-out;
+  transition: .12s ease-in-out;
+  color: #FFF;
+}
+
+.ham-btn:hover {
+  background: #3498db;
+  border-bottom: solid 1px #3498db;
+  color: #f1f1f1;
 }
 
 /*imports*/
@@ -99,7 +122,6 @@ a.fPass {
   width: 15px;
   height: 15px;
   margin: 10px;
-  margin-left: 25px;
   background: url("../ico/expand.png") no-repeat center;
   background-size: 100%;
   position: relative;
@@ -188,6 +210,11 @@ a.fPass {
   border-radius: 100%;
 }
 
+.navbar .user .usrimg.loged {
+  -webkit-box-shadow: 0px 0px 15px 0px #20ade0, 0px 0px 0px 2px #20ade080;
+          box-shadow: 0px 0px 15px 0px #20ade0, 0px 0px 0px 2px #20ade080;
+}
+
 .navbar .user .usrimg img {
   width: 100%;
   height: 100%;
@@ -237,7 +264,7 @@ a.fPass {
   .user {
     font-size: 12px;
   }
-  .user .usrimg {
+  .user .usrimg.loged {
     z-index: 100;
   }
   .user .nombre {
@@ -1010,6 +1037,141 @@ span:nth-child(3) .card-slide:active {
   border-top: 4px solid #7aa4b8;
 }
 
+.ham-title {
+  padding: .45em;
+  font-size: 35px;
+  margin-bottom: 8px;
+  border-radius: 5px;
+  -webkit-transition: .2s ease-in-out;
+  transition: .2s ease-in-out;
+}
+
+.ham-subtitle {
+  padding: .35em 1.9em;
+  font-size: 18px;
+  margin: 4px 0;
+  margin-left: 1.9em;
+  border-radius: 5px;
+  -webkit-transition: .2s ease-in-out;
+  transition: .2s ease-in-out;
+  font-weight: 300;
+}
+
+@media (max-width: 500px) {
+  .ham-title {
+    padding-right: 0;
+  }
+  .ham-subtitle {
+    max-width: 500px;
+  }
+}
+
+.tas {
+  text-align: start;
+}
+
+.tac {
+  text-align: center;
+}
+
+.tae {
+  text-align: end;
+}
+
+.table-container {
+  width: 80%;
+  max-width: 80%;
+  max-height: 80%;
+  overflow-x: auto;
+  margin: 0 auto;
+  -webkit-transition: .25s ease-in-out;
+  transition: .25s ease-in-out;
+}
+
+.table-container::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  background: #E1E1E1;
+}
+
+.table-container::-webkit-scrollbar-thumb {
+  background: #268FFF;
+}
+
+.table-container table {
+  width: 100%;
+  border-collapse: collapse;
+  overflow-x: auto;
+  -webkit-transition: .25s ease-in-out;
+  transition: .25s ease-in-out;
+}
+
+.table-container table tr {
+  background: white;
+  -webkit-transition: .15s ease-in-out;
+  transition: .15s ease-in-out;
+}
+
+.table-container table th {
+  font-weight: 500;
+  color: #333;
+  -webkit-transition: .25s ease-in-out;
+  transition: .25s ease-in-out;
+}
+
+.table-container table td, .table-container table th {
+  border: solid #b1b1b1 1px;
+  padding: 1em;
+  text-align: center;
+  font-size: 16px;
+  line-height: 16px;
+  -webkit-transition: .25s ease-in-out;
+  transition: .25s ease-in-out;
+}
+
+/* 
+Max width before this PARTICULAR table gets nasty
+This query will take effect for any screen smaller than 760px
+and also iPads specifically.
+*/
+@media only screen and (max-width: 650px), (min-device-width: 768px) and (max-device-width: 1024px) {
+  /* Force table to not be like tables anymore */
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
+  /* Hide table headers (but not display: none;, for accessibility) */
+  .table-container table thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  .table-container table tr {
+    background: linear-gradient(135deg, #f5f7fa 0%, #e3e3e3 100%);
+    border: 1px solid #ffffff80;
+    margin-bottom: 10px;
+  }
+  .table-container table td {
+    /* Behave  like a "row" */
+    padding: .5em;
+    position: relative;
+    padding-left: 40%;
+    text-align: center;
+  }
+  .table-container table td:before {
+    /* Now like a table header */
+    position: absolute;
+    /* Top/left values mimic padding */
+    left: 20px;
+    width: 15%;
+    padding-right: 10px;
+    white-space: nowrap;
+  }
+  /*
+	Label the data
+	*/
+}
+
+/* Zebra striping */
 .formulario {
   background: #FFF;
   padding: 25px;
@@ -1068,6 +1230,47 @@ span:nth-child(3) .card-slide:active {
 
 .formulario .btn-sub:hover:active {
   background: #87c2f1;
+}
+
+.modal {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  padding: 20px;
+  top: 0;
+  z-index: 100;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  background: #0a0a0a66;
+}
+
+.modal .containerM {
+  min-height: 100px;
+  max-height: 80vh;
+  width: 100%;
+  max-width: 80%;
+  background: #FFF;
+  padding: 35px;
+  -webkit-box-shadow: 0 0 10px 1px #0a0a0a33;
+          box-shadow: 0 0 10px 1px #0a0a0a33;
+  position: relative;
+}
+
+.modal .containerM .closeModal {
+  position: absolute;
+  margin: 20px;
+  width: 25px;
+  height: 25px;
+  background: url(../ico/close.png);
+  background-size: 100%;
+  top: 0;
+  right: 0;
+}
+
+.modal .containerM p {
+  max-height: 100%;
+  padding-top: 25px;
 }
 
 .full {
@@ -1296,6 +1499,436 @@ span:nth-child(3) .card-slide:active {
   place-items: center;
 }
 
+.perfil {
+  width: 100%;
+  min-height: 460px;
+  margin: auto;
+  -webkit-box-shadow: 0px 8px 60px -10px rgba(13, 28, 39, 0.6);
+          box-shadow: 0px 8px 60px -10px rgba(13, 28, 39, 0.6);
+  background: #fff;
+  border-radius: 12px;
+  max-width: 700px;
+  position: relative;
+  text-align: center;
+  padding: 20px;
+  padding-bottom: 40px;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.perfil #editar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 35px;
+  height: 35px;
+  margin: 15px;
+  background: url("../ico/edit.png") center no-repeat;
+  background-size: 100%;
+  -webkit-transition: .25s ease-in-out;
+  transition: .25s ease-in-out;
+  cursor: pointer;
+}
+
+.perfil #editar:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.perfil .img {
+  margin: -100px 0 40px 0;
+  width: 150px;
+  height: 150px;
+  background: oldlace;
+  -webkit-box-shadow: 0px 5px 50px 0px #20ade0, 0px 0px 0px 7px #20ade080;
+          box-shadow: 0px 5px 50px 0px #20ade0, 0px 0px 0px 7px #20ade080;
+  border-radius: 100%;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+.perfil .img img {
+  width: 115%;
+}
+
+.perfil .titulo {
+  font-weight: 700;
+  font-size: 24px;
+  color: #20ade0;
+  margin-bottom: 15px;
+}
+
+.perfil .subtitulo {
+  font-weight: 700;
+  color: #a0a0a0;
+  margin-bottom: 20px;
+}
+
+.perfil .section {
+  margin-bottom: 15px;
+}
+
+@media (max-width: 720px) {
+  .perfil {
+    max-width: 90%;
+  }
+  .containerPerfil {
+    padding-top: 100px;
+    padding-bottom: 50px;
+    height: auto;
+  }
+}
+
+.tutor .container .titulo {
+  background: white;
+  width: 100%;
+  font-size: 18px;
+  padding: 15px;
+  margin-bottom: 10px;
+}
+
+.tutor .container .section {
+  margin-bottom: 10px;
+  background: #f6f6f6;
+}
+
+.tutor .container .section .titulo {
+  margin: 0;
+}
+
+.tutor .container .section .contenido {
+  padding: 15px;
+  border: solid #FFF 1px;
+}
+
+.tutor .card {
+  width: 100%;
+  height: 100px;
+  background: #FFF;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  margin: 5px;
+}
+
+@media (max-width: 720px) {
+  .tutor .card {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    margin-bottom: 10px;
+  }
+}
+
+.fwhite {
+  color: white !important;
+}
+
+.fblack {
+  color: black !important;
+}
+
+.consola {
+  font-family: monospace;
+  color: white;
+  background: #232323;
+  padding: 15px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  overflow-x: scroll;
+}
+
+.ham-fred {
+  color: #E74C3C !important;
+}
+
+.ham-forange {
+  color: #E67E22 !important;
+}
+
+.ham-fyellow {
+  color: #F1C40F !important;
+}
+
+.ham-fgreen {
+  color: #2ECC71 !important;
+}
+
+.ham-fteal {
+  color: #1ABC9C !important;
+}
+
+.ham-fcyan {
+  color: #00B5C8 !important;
+}
+
+.ham-fblue {
+  color: #3498DB !important;
+}
+
+.ham-fpurple {
+  color: #6200A5 !important;
+}
+
+/*ham*/
+.ham-red {
+  background-color: #E74C3C !important;
+  color: white !important;
+}
+
+.ham-orange {
+  background-color: #E67E22 !important;
+  color: white !important;
+}
+
+.ham-yellow {
+  background-color: #F1C40F !important;
+  color: white !important;
+}
+
+.ham-green {
+  background-color: #2ECC71 !important;
+  color: white !important;
+}
+
+.ham-teal {
+  background-color: #1ABC9C !important;
+  color: white !important;
+}
+
+.ham-cyan {
+  background-color: #00B5C8 !important;
+  color: white !important;
+}
+
+.ham-blue {
+  background-color: #3498DB !important;
+  color: white !important;
+}
+
+.ham-purple {
+  background-color: #6200A5 !important;
+  color: white !important;
+}
+
+.ham-darker {
+  background-color: #182027;
+  color: #6387a7;
+}
+
+/*dark-ham*/
+.ham-darkred {
+  background-color: #C0392B !important;
+  color: white !important;
+}
+
+.ham-darkorange {
+  background-color: #D35400 !important;
+  color: white !important;
+}
+
+.ham-darkyellow {
+  background-color: #F39C12 !important;
+  color: white !important;
+}
+
+.ham-darkgreen {
+  background-color: #27AE60 !important;
+  color: white !important;
+}
+
+.ham-darkteal {
+  background-color: #138f76 !important;
+  color: white !important;
+}
+
+.ham-darkcyan {
+  background-color: #008396 !important;
+  color: white !important;
+}
+
+.ham-darkblue {
+  background-color: #2980B9 !important;
+  color: white !important;
+}
+
+.ham-darkpurple {
+  background-color: #41006E !important;
+  color: white !important;
+}
+
+/* MIND INNOVATION*/
+.elegant-dark {
+  background: #222831 !important;
+  border-color: #222831;
+  color: white;
+}
+
+.elegant-gray {
+  background-color: #393E46 !important;
+  border-color: #393E46;
+  color: white;
+}
+
+.elegant-darkerblue {
+  background-color: #2980b9 !important;
+  color: white;
+}
+
+.elegant-darkblue {
+  background-color: #0092CA !important;
+  border-color: #0092CA;
+  color: white;
+}
+
+.elegant-blue {
+  background-color: #009fe2 !important;
+  color: white;
+}
+
+.elegant-lightblue {
+  background-color: #00b4ff !important;
+  border-color: #00b4ff;
+  color: white;
+}
+
+.elegant-light {
+  background-color: #DEDEDE !important;
+  color: #7d7d7d;
+}
+
+.elegant-white {
+  background: #efefef !important;
+  color: #8b8b8b;
+}
+
+/*it's Electric*/
+.electric-white {
+  background-color: #e7f9ff;
+  color: #7fa3af;
+}
+
+.electric-lighter {
+  background-color: #1e94b9;
+  color: #bae4f6;
+}
+
+.electric-light {
+  background-color: #187795;
+  color: #adcfde;
+}
+
+.electric {
+  background-color: #1a5068;
+  color: #7ebbd6;
+}
+
+.electric-dark {
+  background-color: #0d4053;
+  color: #3392b5;
+}
+
+.electric-darker {
+  background-color: #022b3a;
+  color: #43869e;
+}
+
+.electric-black {
+  background-color: #182027;
+  color: #496780;
+}
+
+.cyan1 {
+  background-color: #64ecfd;
+}
+
+.cyan2 {
+  background-color: #12b6cf;
+  color: #447c85;
+}
+
+.cyan3 {
+  background-color: #0c95a9;
+  color: #64d1e0;
+}
+
+.cyan4 {
+  background-color: #0a6776;
+  color: #1ba2b8;
+}
+
+.cyan5 {
+  background-color: #063a44;
+  color: #08798f;
+}
+
+.teal1 {
+  background-color: #088c7f;
+  color: #00d6c0;
+}
+
+.teal2 {
+  background-color: #337a73;
+  color: #4dc9be;
+}
+
+.teal3 {
+  background-color: #2c5e59;
+  color: #3c8f84;
+}
+
+.teal4 {
+  background-color: #1a3a36;
+  color: #4dc9be;
+}
+
+.teal5 {
+  background-color: #0c2825;
+  color: #3c8f84;
+}
+
+.platino1 {
+  background-color: #e2e7ec;
+  color: #7e7e7e;
+}
+
+.platino2 {
+  background-color: #d2dae2;
+  color: #6f7070;
+}
+
+.platino3 {
+  background-color: #818e9b;
+  color: #bacdde;
+}
+
+.platino4 {
+  background-color: #48545f;
+  color: #828e99;
+}
+
+.platino5 {
+  background-color: #182027;
+  color: #50606f;
+}
+
+.electricBorder {
+  border: solid 2px #3392b5;
+  border-radius: 5px;
+}
+
 /*end imports*/
 .pd0 {
   padding: 0px;
@@ -1325,6 +1958,10 @@ span:nth-child(3) .card-slide:active {
 .pdV0 {
   padding-top: 0px;
   padding-bottom: 0px;
+}
+
+.fs0 {
+  font-size: 0px;
 }
 
 .pd5 {
@@ -1357,6 +1994,10 @@ span:nth-child(3) .card-slide:active {
   padding-bottom: 5px;
 }
 
+.fs5 {
+  font-size: 5px;
+}
+
 .pd10 {
   padding: 10px;
 }
@@ -1385,6 +2026,10 @@ span:nth-child(3) .card-slide:active {
 .pdV10 {
   padding-top: 10px;
   padding-bottom: 10px;
+}
+
+.fs10 {
+  font-size: 10px;
 }
 
 .pd15 {
@@ -1417,6 +2062,10 @@ span:nth-child(3) .card-slide:active {
   padding-bottom: 15px;
 }
 
+.fs15 {
+  font-size: 15px;
+}
+
 .pd20 {
   padding: 20px;
 }
@@ -1445,6 +2094,10 @@ span:nth-child(3) .card-slide:active {
 .pdV20 {
   padding-top: 20px;
   padding-bottom: 20px;
+}
+
+.fs20 {
+  font-size: 20px;
 }
 
 .pd25 {
@@ -1477,6 +2130,10 @@ span:nth-child(3) .card-slide:active {
   padding-bottom: 25px;
 }
 
+.fs25 {
+  font-size: 25px;
+}
+
 .pd30 {
   padding: 30px;
 }
@@ -1505,6 +2162,10 @@ span:nth-child(3) .card-slide:active {
 .pdV30 {
   padding-top: 30px;
   padding-bottom: 30px;
+}
+
+.fs30 {
+  font-size: 30px;
 }
 
 .pd35 {
@@ -1537,6 +2198,10 @@ span:nth-child(3) .card-slide:active {
   padding-bottom: 35px;
 }
 
+.fs35 {
+  font-size: 35px;
+}
+
 .pd40 {
   padding: 40px;
 }
@@ -1565,6 +2230,10 @@ span:nth-child(3) .card-slide:active {
 .pdV40 {
   padding-top: 40px;
   padding-bottom: 40px;
+}
+
+.fs40 {
+  font-size: 40px;
 }
 
 .pd45 {
@@ -1597,6 +2266,10 @@ span:nth-child(3) .card-slide:active {
   padding-bottom: 45px;
 }
 
+.fs45 {
+  font-size: 45px;
+}
+
 .pd50 {
   padding: 50px;
 }
@@ -1625,6 +2298,10 @@ span:nth-child(3) .card-slide:active {
 .pdV50 {
   padding-top: 50px;
   padding-bottom: 50px;
+}
+
+.fs50 {
+  font-size: 50px;
 }
 
 .pd55 {
@@ -1657,6 +2334,10 @@ span:nth-child(3) .card-slide:active {
   padding-bottom: 55px;
 }
 
+.fs55 {
+  font-size: 55px;
+}
+
 .pd60 {
   padding: 60px;
 }
@@ -1685,6 +2366,10 @@ span:nth-child(3) .card-slide:active {
 .pdV60 {
   padding-top: 60px;
   padding-bottom: 60px;
+}
+
+.fs60 {
+  font-size: 60px;
 }
 
 .pd65 {
@@ -1717,6 +2402,10 @@ span:nth-child(3) .card-slide:active {
   padding-bottom: 65px;
 }
 
+.fs65 {
+  font-size: 65px;
+}
+
 .pd70 {
   padding: 70px;
 }
@@ -1745,6 +2434,10 @@ span:nth-child(3) .card-slide:active {
 .pdV70 {
   padding-top: 70px;
   padding-bottom: 70px;
+}
+
+.fs70 {
+  font-size: 70px;
 }
 
 .pd75 {
@@ -1777,6 +2470,10 @@ span:nth-child(3) .card-slide:active {
   padding-bottom: 75px;
 }
 
+.fs75 {
+  font-size: 75px;
+}
+
 .pd80 {
   padding: 80px;
 }
@@ -1805,6 +2502,10 @@ span:nth-child(3) .card-slide:active {
 .pdV80 {
   padding-top: 80px;
   padding-bottom: 80px;
+}
+
+.fs80 {
+  font-size: 80px;
 }
 
 .pd85 {
@@ -1837,6 +2538,10 @@ span:nth-child(3) .card-slide:active {
   padding-bottom: 85px;
 }
 
+.fs85 {
+  font-size: 85px;
+}
+
 .pd90 {
   padding: 90px;
 }
@@ -1865,6 +2570,10 @@ span:nth-child(3) .card-slide:active {
 .pdV90 {
   padding-top: 90px;
   padding-bottom: 90px;
+}
+
+.fs90 {
+  font-size: 90px;
 }
 
 .pd95 {
@@ -1897,6 +2606,10 @@ span:nth-child(3) .card-slide:active {
   padding-bottom: 95px;
 }
 
+.fs95 {
+  font-size: 95px;
+}
+
 .pd100 {
   padding: 100px;
 }
@@ -1925,6 +2638,10 @@ span:nth-child(3) .card-slide:active {
 .pdV100 {
   padding-top: 100px;
   padding-bottom: 100px;
+}
+
+.fs100 {
+  font-size: 100px;
 }
 
 .pd105 {
@@ -1957,6 +2674,10 @@ span:nth-child(3) .card-slide:active {
   padding-bottom: 105px;
 }
 
+.fs105 {
+  font-size: 105px;
+}
+
 .pd110 {
   padding: 110px;
 }
@@ -1985,6 +2706,10 @@ span:nth-child(3) .card-slide:active {
 .pdV110 {
   padding-top: 110px;
   padding-bottom: 110px;
+}
+
+.fs110 {
+  font-size: 110px;
 }
 
 .pd115 {
@@ -2017,6 +2742,10 @@ span:nth-child(3) .card-slide:active {
   padding-bottom: 115px;
 }
 
+.fs115 {
+  font-size: 115px;
+}
+
 .pd120 {
   padding: 120px;
 }
@@ -2045,6 +2774,10 @@ span:nth-child(3) .card-slide:active {
 .pdV120 {
   padding-top: 120px;
   padding-bottom: 120px;
+}
+
+.fs120 {
+  font-size: 120px;
 }
 
 .pd125 {
@@ -2077,6 +2810,10 @@ span:nth-child(3) .card-slide:active {
   padding-bottom: 125px;
 }
 
+.fs125 {
+  font-size: 125px;
+}
+
 .pd130 {
   padding: 130px;
 }
@@ -2105,6 +2842,10 @@ span:nth-child(3) .card-slide:active {
 .pdV130 {
   padding-top: 130px;
   padding-bottom: 130px;
+}
+
+.fs130 {
+  font-size: 130px;
 }
 
 .pd135 {
@@ -2137,6 +2878,10 @@ span:nth-child(3) .card-slide:active {
   padding-bottom: 135px;
 }
 
+.fs135 {
+  font-size: 135px;
+}
+
 .pd140 {
   padding: 140px;
 }
@@ -2165,6 +2910,10 @@ span:nth-child(3) .card-slide:active {
 .pdV140 {
   padding-top: 140px;
   padding-bottom: 140px;
+}
+
+.fs140 {
+  font-size: 140px;
 }
 
 .pd145 {
@@ -2197,6 +2946,10 @@ span:nth-child(3) .card-slide:active {
   padding-bottom: 145px;
 }
 
+.fs145 {
+  font-size: 145px;
+}
+
 .pd150 {
   padding: 150px;
 }
@@ -2225,6 +2978,10 @@ span:nth-child(3) .card-slide:active {
 .pdV150 {
   padding-top: 150px;
   padding-bottom: 150px;
+}
+
+.fs150 {
+  font-size: 150px;
 }
 
 .pd155 {
@@ -2257,6 +3014,10 @@ span:nth-child(3) .card-slide:active {
   padding-bottom: 155px;
 }
 
+.fs155 {
+  font-size: 155px;
+}
+
 .pd160 {
   padding: 160px;
 }
@@ -2285,6 +3046,10 @@ span:nth-child(3) .card-slide:active {
 .pdV160 {
   padding-top: 160px;
   padding-bottom: 160px;
+}
+
+.fs160 {
+  font-size: 160px;
 }
 
 .pd165 {
@@ -2317,6 +3082,10 @@ span:nth-child(3) .card-slide:active {
   padding-bottom: 165px;
 }
 
+.fs165 {
+  font-size: 165px;
+}
+
 .pd170 {
   padding: 170px;
 }
@@ -2345,6 +3114,10 @@ span:nth-child(3) .card-slide:active {
 .pdV170 {
   padding-top: 170px;
   padding-bottom: 170px;
+}
+
+.fs170 {
+  font-size: 170px;
 }
 
 .pd175 {
@@ -2377,6 +3150,10 @@ span:nth-child(3) .card-slide:active {
   padding-bottom: 175px;
 }
 
+.fs175 {
+  font-size: 175px;
+}
+
 .pd180 {
   padding: 180px;
 }
@@ -2405,6 +3182,10 @@ span:nth-child(3) .card-slide:active {
 .pdV180 {
   padding-top: 180px;
   padding-bottom: 180px;
+}
+
+.fs180 {
+  font-size: 180px;
 }
 
 .pd185 {
@@ -2437,6 +3218,10 @@ span:nth-child(3) .card-slide:active {
   padding-bottom: 185px;
 }
 
+.fs185 {
+  font-size: 185px;
+}
+
 .pd190 {
   padding: 190px;
 }
@@ -2465,6 +3250,10 @@ span:nth-child(3) .card-slide:active {
 .pdV190 {
   padding-top: 190px;
   padding-bottom: 190px;
+}
+
+.fs190 {
+  font-size: 190px;
 }
 
 .pd195 {
@@ -2497,6 +3286,10 @@ span:nth-child(3) .card-slide:active {
   padding-bottom: 195px;
 }
 
+.fs195 {
+  font-size: 195px;
+}
+
 .pd200 {
   padding: 200px;
 }
@@ -2525,6 +3318,10 @@ span:nth-child(3) .card-slide:active {
 .pdV200 {
   padding-top: 200px;
   padding-bottom: 200px;
+}
+
+.fs200 {
+  font-size: 200px;
 }
 
 .pd205 {
@@ -2557,6 +3354,10 @@ span:nth-child(3) .card-slide:active {
   padding-bottom: 205px;
 }
 
+.fs205 {
+  font-size: 205px;
+}
+
 .pd210 {
   padding: 210px;
 }
@@ -2585,6 +3386,10 @@ span:nth-child(3) .card-slide:active {
 .pdV210 {
   padding-top: 210px;
   padding-bottom: 210px;
+}
+
+.fs210 {
+  font-size: 210px;
 }
 
 .pd215 {
@@ -2617,6 +3422,10 @@ span:nth-child(3) .card-slide:active {
   padding-bottom: 215px;
 }
 
+.fs215 {
+  font-size: 215px;
+}
+
 .pd220 {
   padding: 220px;
 }
@@ -2645,6 +3454,10 @@ span:nth-child(3) .card-slide:active {
 .pdV220 {
   padding-top: 220px;
   padding-bottom: 220px;
+}
+
+.fs220 {
+  font-size: 220px;
 }
 
 .pd225 {
@@ -2677,6 +3490,10 @@ span:nth-child(3) .card-slide:active {
   padding-bottom: 225px;
 }
 
+.fs225 {
+  font-size: 225px;
+}
+
 .pd230 {
   padding: 230px;
 }
@@ -2705,6 +3522,10 @@ span:nth-child(3) .card-slide:active {
 .pdV230 {
   padding-top: 230px;
   padding-bottom: 230px;
+}
+
+.fs230 {
+  font-size: 230px;
 }
 
 .pd235 {
@@ -2737,6 +3558,10 @@ span:nth-child(3) .card-slide:active {
   padding-bottom: 235px;
 }
 
+.fs235 {
+  font-size: 235px;
+}
+
 .pd240 {
   padding: 240px;
 }
@@ -2767,6 +3592,10 @@ span:nth-child(3) .card-slide:active {
   padding-bottom: 240px;
 }
 
+.fs240 {
+  font-size: 240px;
+}
+
 .pd245 {
   padding: 245px;
 }
@@ -2795,6 +3624,14 @@ span:nth-child(3) .card-slide:active {
 .pdV245 {
   padding-top: 245px;
   padding-bottom: 245px;
+}
+
+.fs245 {
+  font-size: 245px;
+}
+
+.c_FFF {
+  color: #FFF;
 }
 
 .m0 {
