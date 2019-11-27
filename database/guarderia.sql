@@ -143,11 +143,7 @@ SELECT nomUsuario,apPUsuario,apMUsuario,direccion,telefono,rol FROM Usuario WHER
 SELECT idNiño,nomNiño,apPNiño,apMNiño,grupofk,imgNiño FROM Niño WHERE activo = true;
 
 -- VER BITACORA POR FECHA
-<<<<<<< HEAD
-SELECT * FROM Bitacora WHERE fecBita = '2019-11-24';
-=======
 SELECT * FROM Bitacora WHERE fecBita = '2019-11-24' AND idMaestro = 2;
->>>>>>> edham
 
 -- VER BITACORA POR FECHA Y MAESTRO
 SELECT * FROM Bitacora WHERE fecBita = '2019-11-24' AND idMaestro = 2;

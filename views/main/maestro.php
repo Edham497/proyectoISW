@@ -18,7 +18,7 @@
             card.innerText = `${niño['nomNiño']} ${niño['apPNiño']} ${niño['apMNiño']}`
             let btn = document.createElement('div')
             btn.classList = 'NBitacora'
-            let text = getDocument('views/bitacoras/newBitacora.html')
+            let text = getDocument('views/bitacoras/newBitacora.php')
             btn.onclick = ()=> {
                 newModal('Nueva Bitacora', text[0])
                 // fetch(`api/kids/getKid/${niño['idNiño']}`).then(resp=>resp.json()).then((json)=>{

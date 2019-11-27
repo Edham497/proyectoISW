@@ -11,7 +11,7 @@
             if(isset($_SESSION['usr_name'])){
                 echo '<a href="' . constant('URL') . '"><div class="item">Inicio</div></a>';
                 echo '<a href="' . constant('URL') . 'users/add"><div class="item">Add User</div></a>';
-                echo '<a href="' . constant('URL') . 'alumnos/inscribir"><div class="item">Inscribir</div></a>';
+                echo '<a href="' . constant('URL') . 'bitacoras"><div class="item">Inscribir</div></a>';
                 echo '<a href="' . constant('URL') . 'login/end"><div class="item">Cerrar Sesion</div></a>';
             }else{
                 echo '<a href="' . constant('URL') . 'instalaciones" class="item">Instalaciones</a>';

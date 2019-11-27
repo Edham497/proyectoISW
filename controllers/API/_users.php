@@ -51,9 +51,6 @@ class _users{
         }
 
     }
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
 
     //INSERTAR AUTORIZADOS 
     function insertUser(){ 
@@ -103,49 +100,6 @@ class _users{
     // rol,
     // imgUsuario varchar(255),
     // activo boolean DEFAULT FALSE
-=======
->>>>>>> edham
-    function insertUser($nom,$apP,$apM,$fec,$email,$pass,$dir,$tel,$rol){
-            $db = new Database();
-            $conn = $db->getConn();
-            $passR = password_hash($pass,PASSWORD_DEFAULT);
-            $query = "INSERT INTO Usuario ( nomUsuario, apPUsuario, apMUsuario, fecNUsuario, email, pass, direccion, telefono, rol, activo) VALUES ('$nom','$apP','$apM','$fec','$email','$passR','$dir','$tel',$rol,1);";
-            $stmt = $conn->prepare($query);
-            $stmt->execute();
-            echo json_encode("DATO INSETADO CORRECTAMENTE");
-        }
-        //INSERTAR AUTORIZADOS
-        function insertUserAut($nom,$apP,$apM,$fec,$dir,$tel){
-            $db = new Database();
-            $conn = $db->getConn();
-            $query = "INSERT INTO Usuario ( nomUsuario, apPUsuario, apMUsuario, fecNUsuario, direccion, telefono, rol, activo) VALUES ('$nom','$apP','$apM','$fec','$dir','$tel',6,1);";
-            $stmt = $conn->prepare($query);
-            $stmt->execute();
-            echo json_encode("DATO INSETADO CORRECTAMENTE");
-        }
-        //ACTUALIZAR USUARIO
-        function updateUser($id,$nom,$apP,$apM,$fec,$email,$pass,$dir,$tel,$rol){
-            $db = new Database();
-            $conn = $db->getConn();
-            $passR = password_hash($pass,PASSWORD_DEFAULT);
-            $query = "UPDATE Usuario SET nomUsuario = '$nom', apPUsuario = '$apP', apMUsuario = '$apM', fecNUsuario = '$fec', email = '$email', pass = '$passR',direccion = '$dir', telefono = '$tel', rol = $rol WHERE idUsuario = $id;";
-            $stmt = $conn->prepare($query);
-            $stmt->execute();
-            echo json_encode("DATO ACTUALIZADO CORRECTAMENTE");
-        }
-        //DAR DE BAJA USUARIOS
-        function deleteUser($id){
-            $db = new Database();
-            $conn = $db->getConn();
-            $query = "UPDATE Usuario SET activo = false WHERE idUsuario = $id;";
-            $stmt = $conn->prepare($query);
-            $stmt->execute();
-            echo json_encode("DADO DE BAJA CORRECTAMENTE");
-        }
-<<<<<<< HEAD
-=======
->>>>>>> slim+axios
->>>>>>> edham
 }
 /*LOS METODOS SE LA SUDABA, AGREGE UN ATRIBUTO LLAMADA "method" AL JSON PARA EL METODO
 switch($data->method){
