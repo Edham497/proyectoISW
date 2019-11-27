@@ -23,7 +23,7 @@
     <div class="user">
         <?php
             if(isset($_SESSION['usr_name'])){
-                echo "<div class='usrimg'><img src='".constant('userImages') . $_SESSION['usr_img']."'></div>";
+                echo "<div class='usrimg loged'><img src='".constant('userImages') . $_SESSION['usr_img']."'></div>";
                 echo '<a href="' . constant('URL') . '/perfil"><div class="item">'.$_SESSION['usr_name'].'</div></a>';
                 
             }else{

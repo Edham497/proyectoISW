@@ -26,7 +26,6 @@
         background-size: 100%;
         transition: .25s ease-in-out;
         cursor: pointer;
-        -webkit-tap-highlight-color: transparent;
         &:hover{
             transform: scale(1.1);
         }
@@ -67,5 +66,10 @@
 @media (max-width: 720px){
     .perfil{
         max-width: 90%;
+    }
+    .containerPerfil{
+        padding-top: 100px;
+        padding-bottom: 50px;
+        height: auto;
     }
 }

@@ -1,9 +1,9 @@
 <div class="full col cc material-dark pdgT60">
-    <div class="ham-title fs50 tac">Error 
+    <div class="ham-title fs50 c_FFF tac">Error 
         <?php echo $this->error_code; echo " - " . $this->error_name ?></div>
-    <p class="mt20 tac"><?php echo $this->error_desc; ?></p>
+    <p class="mb20 tac c_FFF"><?php echo $this->error_desc; ?></p>
     <a href="/proyectoISW/">
-        <div class="ham-btn material-normal">Regresar</div>
+        <div class="ham-btn">Regresar</div>
     </a>
 </div>  
 <script>

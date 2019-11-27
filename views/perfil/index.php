@@ -1,4 +1,4 @@
-<div class="container full col">
+<div class="containerPerfil full col">
     <div class="perfil">
         <div id="editar"></div>
         <div class="img">
