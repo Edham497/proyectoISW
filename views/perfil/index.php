@@ -10,7 +10,7 @@
 </div>
 
 <script>
-    fetch('api/users/get/7')
+    fetch('api/users/get/<?php echo $_SESSION['uid'];?>')
     .then(res=>res.json())
     .then((json)=>{
         console.log(json)

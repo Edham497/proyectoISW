@@ -1,34 +1,4 @@
-.datosBitacora{
-    .row,.col{
-        border-radius: 5px;
-        overflow: hidden;
-    }
-    .title{
-        width: 150px;
-        display: flex;
-        align-items: center;
-        background: cornflowerblue;
-        color: #FFF;
-        padding: 10px;
-    }
-    .field{
-        background: rgb(238, 238, 238);
-        color:#353535;
-        width: 100%;
-        padding: 10px;
-
-        &.txt_a{
-            background: #FFF;
-            color: black;
-            resize: none;
-            height: 150px;
-        }
-    }
-}
-.bitacora{
-    .titulo{
-        font-size: 25px;
-    }
+.recepcion{
     .container{
 
         .titulo{
@@ -53,16 +23,23 @@
     }
     .card{
         width: 100%;
-        height: 50px;
+        min-height: 50px;
         background: #FFF;
         display: grid;
         place-items: center;
-        grid-template-columns: 1fr 35px 35px;
-        margin: 5px;
+        grid-template-columns: 50px 1fr 50px 50px;
+        margin: 5px 0;
         .NBitacora{
             width: 35px;
             height: 100%;
             background: url('../ico/createB.png') center no-repeat;
+            background-size: 100%;
+            cursor: pointer;
+        }
+        .RBitacora{
+            width: 35px;
+            height: 100%;
+            background: url('../ico/r_asistencia.png') center no-repeat;
             background-size: 100%;
             cursor: pointer;
         }

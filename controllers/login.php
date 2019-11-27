@@ -2,7 +2,10 @@
 class login extends Controller{
     function __construct(){
         parent::__construct();
-        $this->render();
+        if(isset($_SESSION['usr_name']))
+            new _error(403);
+        else
+            $this->render();
     }
 
     function render(){
