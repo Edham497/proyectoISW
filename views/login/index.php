@@ -13,14 +13,15 @@
             <label for="pass">Contraseña</label>
         </span>
         <span class="mt20">
-            <a href="#" class="fPass">¿Olvido su Contraseña?</a>
+            <a href="#" class="fPass" id="fp">¿Olvido su Contraseña?</a>
         </span>
         <button class=" btn-sub" id="enviar">Iniciar Sesion</button>
     </form>
 </div>
+<script src="<?php echo constant('URL');?>public/js/modal.js"></script>
 <script>
     //87
-    $ = (id)=> document.getElementById(id)
+    $id = (id)=> document.getElementById(id)
     document.getElementById('enviar').addEventListener('click', (e)=>{
         e.preventDefault()
         // fetch('api/')
@@ -31,8 +32,8 @@
         //     alert(json)
         // })
         let data = {
-            usr: $('user').value,
-            pass: $('pass').value
+            usr: $id('user').value,
+            pass: $id('pass').value
         }
         // console.log(data)
         fetch('api/login', {
@@ -54,8 +55,16 @@
         .catch(error=> createAlert(error))
     })
 
+    $id('fp').addEventListener('click', ()=>{
+        fetch('/proyectoISW/views/login/pass_recovery.html')
+        .then((resp)=>resp.text())
+        .then((text) => newModal('Recuperacion de Contraseña', text))
+        // .then(text=>console.log(text))
+        .catch(err => console.log(err))
+    })
+
     function createAlert(msg, Class){
-        let card = $('msg')
+        let card = $id('msg')
         card.classList = []
         card.innerHTML = ''
         card.classList.add('active')

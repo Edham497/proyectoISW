@@ -39,3 +39,9 @@ document.querySelector('.expand').onclick = ()=> {
         navbar.classList.add("fwhite")
     }*/
 }
+
+getDocument = (uri) => {
+    let data = []
+    fetch(uri).then(resp=>resp.text()).then(text=>data.push(text))
+    return data
+}

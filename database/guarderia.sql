@@ -109,13 +109,28 @@ INSERT INTO Usuario ( nomUsuario, apPUsuario, apMUsuario, fecNUsuario, direccion
 
 -- ASIGNANDO A UN MAESTRO EL GRUPO
 INSERT INTO Grupo VALUES ('M1', '2', 'A1'), ('M2', '3', 'A2');
-
+INSERT INTO `grupo` (`idGrupo`, `idMaestro`, `salon`) VALUES ('M3', '12', 'A3');
 -- INSERTANDO NIÑOS
 INSERT INTO Niño (nomNiño, apPNiño, apMNiño, fecNNiño, grupofk, activo) VALUES 
 ('Ivanna Isabelle', 'Hernandez', 'Pereyra', '2024-05-25', 'M1', '1'), 
 ('Jorge Javier', 'Hernandez', 'Pereyra', '2026-09-22','M2','1');
 
+INSERT INTO `tutaut_niño` (`idTutor`, `idNiñofk`) VALUES 
+('7', '7'), ('6', '11'), ('6', '8'), ('7', '4'), ('7', '5'), ('6', '3'), ('6', '6');
 
+INSERT INTO `niño` (`idNiño`, `nomNiño`, `apPNiño`, `apMNiño`, `fecNNiño`, `grupofk`, `imgNiño`, `activo`) VALUES 
+(NULL, 'Pedro', 'Fernandez', 'Lopez', '2014-01-29', 'M1', NULL, '1'), 
+(NULL, 'Iker', 'Aparicio', 'de la O', '2013-08-09', 'M1', NULL, '1'), 
+(NULL, 'Jared', 'Ramirex', 'Chavez', '2016-11-03', NULL, NULL, '1'), 
+(NULL, 'kimbery', 'Ramirez', 'Lopez', '2015-11-06', 'M2', NULL, '1');
+
+INSERT INTO `niño` (`idNiño`, `nomNiño`, `apPNiño`, `apMNiño`, `fecNNiño`, `grupofk`, `imgNiño`, `activo`) VALUES 
+(NULL, 'alfredo', 'Guerrero', 'Hernandez', '2015-11-30', 'M3', NULL, '1'), 
+(NULL, 'Gerson', 'Martinez', 'Sanchez', '2016-11-01', 'M2', NULL, '1'), 
+(NULL, 'Jose', 'Martinez', 'Martinez', '2016-10-10', 'M3', NULL, '1'), 
+(NULL, 'Ruben', 'Elizalde', 'Salazar', '2014-11-26', 'M2', NULL, '1'), 
+(NULL, 'Esmeralda', 'Saavedra', 'Flores', '2016-02-22', 'M3', NULL, '1'),
+(NULL, 'Ivonne', 'Flores', 'Rosales', '2017-10-08', 'M3', NULL, '1');
 -- ASOCIANDO A NIÑOS CON TUTORES Y AUTORIZADOS
 INSERT INTO TutAut_Niño (idTutor, idNiñofk) VALUES
 ('7', '1'), ('8', '1'), ('11', '1'), ('6', '2'), ('9', '2'), ('10', '2');
