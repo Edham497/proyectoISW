@@ -18,7 +18,7 @@
             card.innerText = `${niño['nomNiño']} ${niño['apPNiño']} ${niño['apMNiño']}`
             let btn = document.createElement('div')
             btn.classList = 'NBitacora'
-            let text = getDocument('views/bitacoras/newBitacora.php')
+            let text = getDocument('views/bitacoras/newBitacora.html')
             btn.onclick = ()=> {
                 newModal('Nueva Bitacora', text[0])
                 // fetch(`api/kids/getKid/${niño['idNiño']}`).then(resp=>resp.json()).then((json)=>{
@@ -26,6 +26,10 @@
                 // })
                 $('#id_niño').innerHTML = niño['idNiño']
                 $('#nom_niño').innerHTML = `${niño['nomNiño']} ${niño['apPNiño']} ${niño['apMNiño']}`
+                $('#subBit').addEventListener('click', (e)=>{
+                    e.preventDefault()
+                    console.log('Du click')
+                })
             }
             card.appendChild(btn)
             niños.appendChild(card)

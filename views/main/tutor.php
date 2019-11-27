@@ -27,7 +27,7 @@
 </div>
 <script>
     let niños = $('#niños')
-    fetch('api/kids/listKidsTut/<?php echo $_SESSION['uid'];?>')
+    fetch('api/kids/listKids')
     .then(resp=>resp.json())
     .then((json)=>{
         // console.log(json)

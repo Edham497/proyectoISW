@@ -31,7 +31,7 @@ class _kids{
         $conn = $this->db->getConn();
         $query = "SELECT * FROM Niño WHERE idNiño in (SELECT idNiñofk FROM TutAut_Niño where idTutor = :id);";
         $stmt = $conn->prepare($query);
-        $stmt->bindParam(":id",$id);
+        $stmt->bindParam(":id",$this->data->id);
         $stmt->execute();
         $stmt = $stmt->fetchAll(PDO::FETCH_OBJ);
         echo json_encode($stmt);

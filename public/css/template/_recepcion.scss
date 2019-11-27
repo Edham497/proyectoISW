@@ -1,0 +1,57 @@
+.recepcion{
+    .container{
+
+        .titulo{
+            background: rgb(255, 255, 255);
+            width: 100%;
+            font-size: 18px;
+            padding: 15px;
+            margin-bottom: 10px;
+        }
+
+        .section{
+            margin-bottom: 10px;
+            background: #f6f6f6;
+            .titulo{
+                margin: 0;
+            }
+            .contenido{
+                padding:15px;
+                border: solid #FFF 1px;
+            }
+        }
+    }
+    .card{
+        width: 100%;
+        min-height: 50px;
+        background: #FFF;
+        display: grid;
+        place-items: center;
+        grid-template-columns: 50px 1fr 50px 50px;
+        margin: 5px 0;
+        .NBitacora{
+            width: 35px;
+            height: 100%;
+            background: url('../ico/createB.png') center no-repeat;
+            background-size: 100%;
+            cursor: pointer;
+        }
+        .RBitacora{
+            width: 35px;
+            height: 100%;
+            background: url('../ico/r_asistencia.png') center no-repeat;
+            background-size: 100%;
+            cursor: pointer;
+        }
+    }
+}
+@media(max-width: 720px){
+    .tutor{
+        .card{
+            width: 100%;
+            max-width: 100%;
+            margin: 0;
+            margin-bottom: 10px;
+        }
+    }
+}

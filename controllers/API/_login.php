@@ -11,7 +11,7 @@ class _login{
         function checkUser($user, $pass){
             $db = new Database();
             $conn = $db->getConn();
-            $query = "SELECT idUsuario,nomUsuario, rol, pass, imgUsuario FROM Usuario WHERE email = '" .$user ."';";
+            $query = "SELECT idUsuario, nomUsuario, rol, pass, imgUsuario FROM Usuario WHERE email = '" .$user ."';";
             $stmt = $conn->prepare($query);
             $stmt->execute();
             $stmt = $stmt->fetch(PDO::FETCH_ASSOC);

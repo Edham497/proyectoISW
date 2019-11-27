@@ -9,9 +9,26 @@
         if(!session_status())
             session_start();
             if(isset($_SESSION['usr_name'])){
-                echo '<a href="' . constant('URL') . '"><div class="item">Inicio</div></a>';
-                echo '<a href="' . constant('URL') . 'users/add"><div class="item">Add User</div></a>';
-                echo '<a href="' . constant('URL') . 'bitacoras"><div class="item">Inscribir</div></a>';
+                switch($_SESSION['rol']){
+                    case 1:{
+                        echo '<a href="' . constant('URL') . 'Inscribir"><div class="item">Inscribir</div></a>';
+                    }break;
+                    case 2:{
+                        echo '<a href="' . constant('URL') . 'Bitacoras"><div class="item">Bitacoras</div></a>';
+                        echo '<a href="' . constant('URL') . 'Asistencia"><div class="item">Asistencia</div></a>';
+                        echo '<a href="' . constant('URL') . 'Usuarios"><div class="item">Usuarios</div></a>';
+                        echo '<a href="' . constant('URL') . 'Colegiaturas"><div class="item">Colegiaturas</div></a>';
+                    }break;
+                    case 3:{
+
+                    }break;
+                    case 4:{
+
+                    }break;
+                    case 5:{
+
+                    }break;
+                }
                 echo '<a href="' . constant('URL') . 'login/end"><div class="item">Cerrar Sesion</div></a>';
             }else{
                 echo '<a href="' . constant('URL') . 'instalaciones" class="item">Instalaciones</a>';
