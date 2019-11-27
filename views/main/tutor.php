@@ -2,9 +2,7 @@
     <div class="container fullW col sc pd10 maxW500">
         <div class="titulo">Mis niños</div>
         <div class="contenido fullW row wp cc">
-            <div class="card">Bastardo_1</div>
-            <div class="card">Bastardo_2</div>
-            <div class="card">Bastardo_3</div>
+            
         </div>
     </div>
     <div class="container fullW col sc pd10">
@@ -27,3 +25,8 @@
         </div>
     </div>
 </div>
+<script src="<?php echo constant('URL');?>public/js/table.js"></script>
+<script src="<?php echo constant('URL');?>public/js/listadoAlumnos.js"></script>
+<script>
+
+</script>

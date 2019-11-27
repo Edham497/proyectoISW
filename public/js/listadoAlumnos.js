@@ -39,7 +39,7 @@ document.querySelector('#search').addEventListener('keyup', () => {
 
     function getNiños() {
         clearList()
-        fetch(`api/ninos/list`)
+        fetch(`api/kids/listKids`)
             .then(function (response) {
                 return response.json();
             })

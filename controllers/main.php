@@ -9,7 +9,7 @@ class main extends Controller{
                 switch($_SESSION['rol']){
                     case 1: $this->renderFile = 'main/admin'; break;
                     case 2: $this->renderFile = 'main/admin'; break;
-                    case 3: $this->renderFile = 'main/admin'; break;
+                    case 3: $this->renderFile = 'main/tutor'; break;
                     case 4: $this->renderFile = 'main/admin'; break;
                     case 5: $this->renderFile = 'main/admin'; break;
                 }
