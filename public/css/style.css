@@ -1757,8 +1757,8 @@ and also iPads specifically.
   display: -ms-grid;
   display: grid;
   place-items: center;
-  -ms-grid-columns: 1fr 35px 35px;
-      grid-template-columns: 1fr 35px 35px;
+  -ms-grid-columns: 1fr 50px;
+      grid-template-columns: 1fr 50px;
   margin: 5px;
 }
 
@@ -1808,8 +1808,8 @@ and also iPads specifically.
   display: -ms-grid;
   display: grid;
   place-items: center;
-  -ms-grid-columns: 50px 1fr 50px 50px;
-      grid-template-columns: 50px 1fr 50px 50px;
+  -ms-grid-columns: 50px 1fr 50px 50px 50px;
+      grid-template-columns: 50px 1fr 50px 50px 50px;
   margin: 5px 0;
 }
 

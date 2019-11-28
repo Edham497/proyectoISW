@@ -29,7 +29,37 @@
                 $('#nom_niño').innerHTML = `${niño['nomNiño']} ${niño['apPNiño']} ${niño['apMNiño']}`
                 $('#subBit').addEventListener('click', (e)=>{
                     e.preventDefault()
-                    console.log('Du click')
+                    let data={
+                        idN: niño['idNiño'],
+                        idM: <?php echo $_SESSION['uid'];?>,
+                        rep: $('#reporte').value
+                    }
+                    // console.log(data)
+                    fetch(`api/bitacora/doBit`,{
+                        method: 'POST',
+                        body: JSON.stringify(data),
+                        headers: {
+                        'Content-Type': 'application/json'
+                        }
+                    })
+                    setTimeout(() => {
+            $('.closeModal').remove()
+            $('.modal').remove()
+        }, 500);
+    
+        inyectCSS($('.modal'), {
+            transition: ".25s ease-in-out",
+            opacity: 0
+        })
+    
+        inyectCSS($('.containerM'), {
+            transition: ".25s ease-in-out",
+            width: "0",
+            width: "0",
+            height: "0",
+            padding: "0"
+        })
+                    // .then(res=>res.json()).then(json=>console.log(json))
                 })
             }
             card.appendChild(btn)

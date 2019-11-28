@@ -92,14 +92,14 @@ CREATE TABLE Pagos(
 );
 
 -- INGRESAR AL ADMIN Y A LOS DEMAS USUARIOS
-INSERT INTO Usuario ( nomUsuario, apPUsuario, apMUsuario, fecNUsuario, email, pass, direccion, telefono, rol, activo) VALUES 
-('Naer Edham Meyito', 'HdzReaMedrano', 'SalazarLomasDelaCruz', '1997-08-22', 'yocho@guarderia.com', '$2y$10$PZ6U7BxexFCg..YgGdrKTuq5AQgEvTyJtRVtteIj2MJrgklZljafC', 'calle de la desgracia', '8717331111', '1', '1'),
-('Javier', 'Hernandez', 'De La Cruz', '1999-07-28', 'hector.naer@gmail.com', '$2y$10$PZ6U7BxexFCg..YgGdrKTuq5AQgEvTyJtRVtteIj2MJrgklZljafC', 'calle F in the chat', '8711084343', '3', '1'), 
-('Georgina', 'Lam', 'Rivera', '1973-03-19', 'georgina@gmail.com', '$2y$10$PZ6U7BxexFCg..YgGdrKTuq5AQgEvTyJtRVtteIj2MJrgklZljafC', 'calle nazas ', '8713571598', '3', '1'), 
-('Jorge', 'Rea', 'Salazar', '1998-04-19', 'jorge.lrs497@gmail.com', '$2y$10$PZ6U7BxexFCg..YgGdrKTuq5AQgEvTyJtRVtteIj2MJrgklZljafC', 'calle bastardo', '8713577894', '2', '1'), 
-('Mario', 'Medrano', 'Lomas', '1998-04-04', 'mario@gmail.com', '$2y$10$PZ6U7BxexFCg..YgGdrKTuq5AQgEvTyJtRVtteIj2MJrgklZljafC', 'calle hasta el quinto infierno', '8717894562', '4', '1'), 
-('Alejandro', 'Rios', 'Garcia', '1999-12-12', 'rios@gmail.com', '$2y$10$PZ6U7BxexFCg..YgGdrKTuq5AQgEvTyJtRVtteIj2MJrgklZljafC', 'calle murision', '8713216547', '5', '1'), 
-('Carla', 'Pereyra', 'Lam', '1999-10-04', 'carlagpl@hotmail.com', '$2y$10$PZ6U7BxexFCg..YgGdrKTuq5AQgEvTyJtRVtteIj2MJrgklZljafC', 'calle equis', '8711315592', '5', '1');
+INSERT INTO Usuario ( nomUsuario, apPUsuario, apMUsuario, fecNUsuario, email, pass, direccion, telefono, rol, imgUsuario, activo) VALUES 
+('Naer Edham Meyito', 'HdzReaMedrano', 'SalazarLomasDelaCruz', '1997-08-22', 'yocho@guarderia.com', '$2y$10$PZ6U7BxexFCg..YgGdrKTuq5AQgEvTyJtRVtteIj2MJrgklZljafC', 'calle de la desgracia', '8717331111', '1', 'mbsclouds.jpg','1'),
+('Javier', 'Hernandez', 'De La Cruz', '1999-07-28', 'hector.naer@gmail.com', '$2y$10$PZ6U7BxexFCg..YgGdrKTuq5AQgEvTyJtRVtteIj2MJrgklZljafC', 'calle F in the chat', '8711084343', '3', 'mbsclouds.jpg','1'), 
+('Georgina', 'Lam', 'Rivera', '1973-03-19', 'georgina@gmail.com', '$2y$10$PZ6U7BxexFCg..YgGdrKTuq5AQgEvTyJtRVtteIj2MJrgklZljafC', 'calle nazas ', '8713571598', '3', 'mbsclouds.jpg','1'), 
+('Jorge', 'Rea', 'Salazar', '1998-04-19', 'jorge.lrs497@gmail.com', '$2y$10$PZ6U7BxexFCg..YgGdrKTuq5AQgEvTyJtRVtteIj2MJrgklZljafC', 'calle bastardo', '8713577894', '2', 'mbsclouds.jpg','1'), 
+('Mario', 'Medrano', 'Lomas', '1998-04-04', 'mario@gmail.com', '$2y$10$PZ6U7BxexFCg..YgGdrKTuq5AQgEvTyJtRVtteIj2MJrgklZljafC', 'calle hasta el quinto infierno', '8717894562', '4','mbsclouds.jpg', '1'), 
+('Alejandro', 'Rios', 'Garcia', '1999-12-12', 'rios@gmail.com', '$2y$10$PZ6U7BxexFCg..YgGdrKTuq5AQgEvTyJtRVtteIj2MJrgklZljafC', 'calle murision', '8713216547', '5','mbsclouds.jpg', '1'), 
+('Carla', 'Pereyra', 'Lam', '1999-10-04', 'carlagpl@hotmail.com', '$2y$10$PZ6U7BxexFCg..YgGdrKTuq5AQgEvTyJtRVtteIj2MJrgklZljafC', 'calle equis', '8711315592', '5','mbsclouds.jpg', '1');
 -- INSERTAR AUTORIZADOS
 INSERT INTO Usuario ( nomUsuario, apPUsuario, apMUsuario, fecNUsuario, direccion, telefono, rol, activo) VALUES 
 ('Yessica Berenice', 'Guzman', 'Ortega', '2000-08-10', 'privada por la cruz roja', '8717435678', '6', '1'), 

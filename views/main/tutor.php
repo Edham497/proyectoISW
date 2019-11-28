@@ -8,26 +8,26 @@
     <div class="container fullW col sc pd10">
         <div class="section fullW">
             <div class="titulo">Proximo Pago</div>
-            <div class="contenido">F</div>
+            <div class="contenido">27 Noviembre 2019</div>
         </div>
         <div class="section bb fullW">
             <div class="titulo">Pagos</div>
-            <div class="contenido">F</div>
-            <div class="contenido">F</div>
-            <div class="contenido">F</div>
-            <div class="contenido">F</div>
-            <div class="contenido">F</div>
-            <div class="contenido">F</div>
+            <div class="contenido">27 Octubre 2019</div>
+            <div class="contenido">27 Septiembre 2019</div>
+            <div class="contenido">27 Agosto 2019</div>
+            <div class="contenido">27 Julio 2019</div>
+            <div class="contenido">27 Junio 2019</div>
+            <div class="contenido">27 Mayo 2019</div>
         </div>
         <div class="section bc fullW">
             <div class="titulo">Adeudos</div>
-            <div class="contenido">F</div>
+            <div class="contenido">27 Mayo 2019<span>$ 300.00</span></div>
         </div>
     </div>
 </div>
 <script>
     let niños = $('#niños')
-    fetch('api/kids/listKids')
+    fetch('api/kids/listKidsTut/<?php echo $_SESSION['uid'];?>')
     .then(resp=>resp.json())
     .then((json)=>{
         // console.log(json)

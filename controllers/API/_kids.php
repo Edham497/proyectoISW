@@ -20,10 +20,26 @@ class _kids{
     //GET NIÑO POR ID
     function getKid($id){
         $conn = $this->db->getConn();
-        $query = "SELECT nomNiño, apPNiño, apMNiño,fecNNiño,grupofk,imgNiño FROM Niño WHERE idNiño =  $id;";
+        $query = "SELECT idNiño, nomNiño, apPNiño, apMNiño,fecNNiño,grupofk,imgNiño FROM Niño WHERE idNiño =  $id;";
         $stmt = $conn->prepare($query);
         $stmt->execute();
         $stmt = $stmt->fetch(PDO::FETCH_OBJ);
+        echo json_encode($stmt);
+    }
+    function getAsist($id){
+        $conn = $this->db->getConn();
+        $query = "SELECT * FROM Asistencia JOIN Niño on idNiñoFK = $id GROUP BY fecEntrada;";
+        $stmt = $conn->prepare($query);
+        $stmt->execute();
+        $stmt = $stmt->fetchAll(PDO::FETCH_OBJ);
+        echo json_encode($stmt);
+    }
+    function getAsistA($id){
+        $conn = $this->db->getConn();
+        $query = "SELECT * FROM Asistencia JOIN Niño on idNiñoFK";
+        $stmt = $conn->prepare($query);
+        $stmt->execute();
+        $stmt = $stmt->fetchAll(PDO::FETCH_OBJ);
         echo json_encode($stmt);
     }
     //LISTAR NIÑOS POR TUTOR
@@ -31,7 +47,7 @@ class _kids{
         $conn = $this->db->getConn();
         $query = "SELECT * FROM Niño WHERE idNiño in (SELECT idNiñofk FROM TutAut_Niño where idTutor = :id);";
         $stmt = $conn->prepare($query);
-        $stmt->bindParam(":id",$this->data->id);
+        $stmt->bindParam(":id",$id);
         $stmt->execute();
         $stmt = $stmt->fetchAll(PDO::FETCH_OBJ);
         echo json_encode($stmt);
@@ -77,9 +93,9 @@ class _kids{
         json_encode("ENTRADA CONFIRMADA");
     }
     //REGISTRAR SALIDA
-    function exitKid($idPR,$idTutAut){
+    function exitKid($idPR){
         $conn = $this->db->getConn();
-        $query = "UPDATE Asistencia SET fecSalida=NOW(), idPR = '$idPR', idTutAut = $idTutAut;";
+        $query = "UPDATE Asistencia SET fecSalida=NOW(), idPR = '$idPR';";
         $stmt = $conn->prepare($query);
         $stmt->execute();
     }

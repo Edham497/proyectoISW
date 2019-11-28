@@ -11,7 +11,11 @@
             if(isset($_SESSION['usr_name'])){
                 switch($_SESSION['rol']){
                     case 1:{
-                        echo '<a href="' . constant('URL') . 'Inscribir"><div class="item">Inscribir</div></a>';
+                        echo '<a href="' . constant('URL') . 'inscripcion"><div class="item">Inscribir</div></a>';
+                        echo '<a href="' . constant('URL') . 'Bitacoras"><div class="item">Bitacoras</div></a>';
+                        echo '<a href="' . constant('URL') . 'Asistencia"><div class="item">Asistencia</div></a>';
+                        echo '<a href="' . constant('URL') . 'Usuarios"><div class="item">Usuarios</div></a>';
+                        echo '<a href="' . constant('URL') . 'Colegiaturas"><div class="item">Colegiaturas</div></a>';
                     }break;
                     case 2:{
                         echo '<a href="' . constant('URL') . 'Bitacoras"><div class="item">Bitacoras</div></a>';
@@ -20,18 +24,21 @@
                         echo '<a href="' . constant('URL') . 'Colegiaturas"><div class="item">Colegiaturas</div></a>';
                     }break;
                     case 3:{
-
+                        echo '<a href="' . constant('URL') . 'Bitacoras"><div class="item">Bitacoras</div></a>';
+                        echo '<a href="' . constant('URL') . 'Asistencia"><div class="item">Asistencia</div></a>';
                     }break;
                     case 4:{
-
+                        echo '<a href="' . constant('URL') . 'Bitacoras"><div class="item">Bitacoras</div></a>';
                     }break;
                     case 5:{
-
+                        echo '<a href="' . constant('URL') . 'Bitacoras"><div class="item">Bitacoras</div></a>';
+                        echo '<a href="' . constant('URL') . 'Asistencia"><div class="item">Asistencia</div></a>';
+                        echo '<a href="' . constant('URL') . 'Colegiaturas"><div class="item">Colegiaturas</div></a>';
                     }break;
                 }
                 echo '<a href="' . constant('URL') . 'login/end"><div class="item">Cerrar Sesion</div></a>';
             }else{
-                echo '<a href="' . constant('URL') . 'instalaciones" class="item">Instalaciones</a>';
+                // echo '<a href="' . constant('URL') . 'instalaciones" class="item">Instalaciones</a>';
                 // echo '<a href="' . constant('URL') . 'about"><div class="item">Acerca de</div></a>';
                 // echo '<a href="' . constant('URL') . 'login"><div class="item">Login</div></a>';
             }
