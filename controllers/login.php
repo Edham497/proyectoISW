@@ -2,10 +2,9 @@
 class login extends Controller{
     function __construct(){
         parent::__construct();
-        if(isset($_SESSION['usr_name']))
-            new _error(403);
-        else
-            $this->render();
+        //Bloqueo de no autorizados
+        Router::isLoged()?
+            header('Location:' . constant('URL')) : $this->render();
     }
 
     function render(){
@@ -19,5 +18,6 @@ class login extends Controller{
             //Al destruir la sesion hay que direccionar al login
             header('Location:' . constant('URL') . 'login');
     }
+
 }
 ?>

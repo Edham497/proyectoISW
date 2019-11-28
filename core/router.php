@@ -1,5 +1,4 @@
 <?php 
-
 require_once 'core/controller.php';
 require_once 'core/view.php';
 require_once 'core/_err.php';
@@ -45,5 +44,10 @@ class Router{
 
     function getController($URL){
         return 'controllers/'.$URL[0].'.php';
+    }
+
+    function isLoged(){
+        session_start();
+        return isset($_SESSION['usr_name']);
     }
 }

@@ -12,6 +12,7 @@
                 switch($_SESSION['rol']){
                     case 1:{
                         echo '<a href="' . constant('URL') . 'inscripcion"><div class="item">Inscribir</div></a>';
+                        echo '<a href="' . constant('URL') . 'Bitacoras"><div class="item">Niños</div></a>';
                         echo '<a href="' . constant('URL') . 'Bitacoras"><div class="item">Bitacoras</div></a>';
                         echo '<a href="' . constant('URL') . 'Asistencia"><div class="item">Asistencia</div></a>';
                         echo '<a href="' . constant('URL') . 'Usuarios"><div class="item">Usuarios</div></a>';
