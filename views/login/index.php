@@ -5,7 +5,7 @@
             <div id="msg"></div>
         </h1>
         <span class="mt30">
-            <input class="balloon" autocomplete="off" type="text" id="user" name="user">
+            <input class="balloon" autocomplete="off" type="email" id="user" name="user" required>
             <label for="user">Correo</label>
         </span>
         <span class="mt30">
@@ -18,24 +18,15 @@
         <button class=" btn-sub" id="enviar">Iniciar Sesion</button>
     </form>
 </div>
-<script src="<?php echo constant('URL');?>public/js/modal.js"></script>
+<script src="<?php echo constant('URL');?>public/js/components/modal.js"></script>
 <script>
-    //87
-    $id = (id)=> document.getElementById(id)
-    document.getElementById('enviar').addEventListener('click', (e)=>{
+    $('#enviar').addEventListener('click', (e)=>{
         e.preventDefault()
-        // fetch('api/')
-        // .then((res)=>{
-        //     return res.json()
-        // })
-        // .then((json)=>{
-        //     alert(json)
-        // })
         let data = {
-            usr: $id('user').value,
-            pass: $id('pass').value
+            usr: $('#user').value,
+            pass: $('#pass').value
         }
-        // console.log(data)
+
         fetch('api/login', {
             method: 'POST',
             body: JSON.stringify(data),
@@ -43,6 +34,7 @@
                 'Content-Type': 'application/json'
             }
         })
+
         .then(res => res.json())
         .then((resp) => {
             if(resp.error){
@@ -55,16 +47,15 @@
         .catch(error=> createAlert(error))
     })
 
-    $id('fp').addEventListener('click', ()=>{
-        fetch('/proyectoISW/views/login/pass_recovery.html')
-        .then((resp)=>resp.text())
-        .then((text) => newModal('Recuperacion de Contraseña', text))
-        // .then(text=>console.log(text))
-        .catch(err => console.log(err))
+    $('#fp').addEventListener('click', async()=> {
+        let m = new Modal()
+        getArch('/proyectoISW/views/login/pass_recovery.html').then((data)=>{
+            m.insertarContenido(data)
+        })
     })
 
     function createAlert(msg, Class){
-        let card = $id('msg')
+        let card = $('#msg')
         card.classList = []
         card.innerHTML = ''
         card.classList.add('active')

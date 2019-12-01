@@ -66,10 +66,14 @@ a{
 @import './layouts/index';
 
 @import './template/perfil';
+@import './template/alumnos';
+@import './template/bitacora';
+
+@import './template/admin';
 @import './template/tutor';
 @import './template/maestro';
-@import './template/bitacora';
 @import './template/recepcion';
+
 
 @import './themes/paletasColor';
 /*end imports*/
@@ -98,6 +102,7 @@ a{
 .c_FFF{color: #FFF;}
 
 @for $i from 0 to 10 {
+    .fw#{$i*100}{font-weight: #{$i*100};}
     .m#{$i*10}{margin: #{$i*10}px;}
     .mt#{$i*10}{margin-top: #{$i*10}px;}
     .mb#{$i*10}{margin-bottom: #{$i*10}px;}

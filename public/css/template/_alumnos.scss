@@ -1,0 +1,10 @@
+.alumnos{
+    .card{
+        display: flex;
+        flex-flow: row;
+
+        div{
+            padding: 5px;
+        }
+    }
+}

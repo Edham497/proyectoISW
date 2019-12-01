@@ -12,10 +12,8 @@
                 switch($_SESSION['rol']){
                     case 1:{
                         echo '<a href="' . constant('URL') . 'inscripcion"><div class="item">Inscribir</div></a>';
-                        echo '<a href="' . constant('URL') . 'Bitacoras"><div class="item">Niños</div></a>';
                         echo '<a href="' . constant('URL') . 'Bitacoras"><div class="item">Bitacoras</div></a>';
                         echo '<a href="' . constant('URL') . 'Asistencia"><div class="item">Asistencia</div></a>';
-                        echo '<a href="' . constant('URL') . 'Usuarios"><div class="item">Usuarios</div></a>';
                         echo '<a href="' . constant('URL') . 'Colegiaturas"><div class="item">Colegiaturas</div></a>';
                     }break;
                     case 2:{
@@ -49,7 +47,7 @@
         <?php
             if(isset($_SESSION['usr_name'])){
                 echo "<div class='usrimg loged'><img src='".constant('userImages') . $_SESSION['usr_img']."'></div>";
-                echo '<a href="' . constant('URL') . '/perfil"><div class="item">'.$_SESSION['usr_name'].'</div></a>';
+                echo '<a href="' . constant('URL') . '/perfil"><div class="nombre">'.$_SESSION['usr_name'].'</div></a>';
                 
             }else{
                 echo "<div class='usrimg'><img src='".constant('URL')."public/ico/login.png'></div>";

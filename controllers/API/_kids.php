@@ -17,6 +17,16 @@ class _kids{
         $stmt = $stmt->fetchAll(PDO::FETCH_OBJ);
         echo json_encode($stmt);
     }
+    //buscar por
+    function searchKid($prefix){
+        $conn = $this->db->getConn();
+        $query = "SELECT * FROM Niño WHERE idNiño like '$prefix%' or nomNiño LIKE '%$prefix%' or apPNiño like '%$prefix%' or apMNiño like '%$prefix%' or fecNNiño like '%$prefix%'";
+        $stmt = $conn->prepare($query);
+        $stmt->execute();
+        $stmt = $stmt->fetchAll(PDO::FETCH_OBJ);
+        echo json_encode($stmt);
+    }
+
     //GET NIÑO POR ID
     function getKid($id){
         $conn = $this->db->getConn();

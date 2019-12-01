@@ -8,7 +8,7 @@ class bitacoras extends Controller{
         if(Router::isLoged()){
             switch($_SESSION['rol']){
                 case 1: $this->renderFile = 'bitacoras/index'; break;
-                case 6: $this->renderFile = 'bitacoras/recepcionista'; break;
+                case 2: $this->renderFile = 'bitacoras/recepcion'; break;
                 case 3: $this->renderFile = 'bitacoras/index'; break;
                 case 4: $this->renderFile = 'bitacoras/index'; break;
                 case 5: $this->renderFile = 'bitacoras/tutor'; break;

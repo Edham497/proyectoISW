@@ -1,1 +1,6 @@
-$('#newModal').addEventListener('click', ()=>newModal('Nuevo Usuario', '<p>Mario se la come</p>'))
+$('#newModal').addEventListener('click', ()=> {
+    let m = new Modal()
+    getArch(`views/bitacoras/newBitacora.html`).then((data)=>{
+        m.insertarContenido(data)
+    })
+})
