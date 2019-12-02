@@ -1,7 +1,25 @@
-.grid{
-    display: grid;
-    &-cc{
-        display: grid;
-        place-items: center;
+.grid-{
+
+    @for $i from 1 to 10 {
+        &#{$i}{
+            display: grid;
+            gap: 0 10px;
+            grid-template-columns: repeat(#{$i}, auto);
+        }
+    }
+
+}
+
+@media (max-width:720px){
+    .grid-{
+
+        @for $i from 1 to 10 {
+            &#{$i}{
+                display: grid;
+                gap: 0 10px;
+                grid-template-columns: auto;
+            }
+        }
+    
     }
 }

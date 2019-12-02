@@ -1,87 +1,69 @@
-<body class="col sc pdgT60">
-    <div class="container">
-        <div class="ham-title mrg20 pdg10 mt40 ">Inscripcion</div>
-    </div>
-    <form action="<?php echo constant('URL');?>API/admin/inscripcion" method="POST" class="formulario pdg10">
-        
-        <div class="ham-subtitle cold-blue m0 mt20">Informacion del Niño</div>
+<div class="ham-title fw300">Inscripcion</div>
+<div class="container col sc fullW">
+    <form action="" class="formulario fullW maxW800">
+        <div class="ham-title fw300">Informacion del Niño</div>
+        <span>
+            <input class="balloon" type="text" id="nom_Niño">
+            <label for="nom_Niño">Nombre</label>
+        </span>
+        <div class="grid-2">
             <span class="">
-                <input class="balloon" name="nomNiño" id="search" autocomplete="off" type="text" /><label for="phone">Nombre</label>
-            </span>
-            <span class="">
-                <input class="balloon" name="apPatNiño" id="search" autocomplete="off" type="text" /><label for="phone">Ap. Paterno</label>
-            </span>
-            <span class="">
-                <input class="balloon" name="apMatNiño" id="search" autocomplete="off" type="text" /><label for="phone">Ap. Materno</label>
+                <input class="balloon" type="text" id="app_Niño">
+                <label for="app_Niño">Ap. Paterno</label>
             </span>
             <span class="">
-                <input class="balloon" name="grado" id="search" autocomplete="off" type="text" /><label for="phone">Grado</label>
+                <input class="balloon" type="text" id="apm_Niño">
+                <label for="apm_Niño">Ap. Materno</label>
             </span>
-            <span class="row">
-                <span class="mrg10">
-                <input class="balloon pdg10 pdgL0" name="dia" id="search" autocomplete="off" type="number" placeholder="Dia"/><label for="phone">Dia</label>
-                </span>
-                <span class="mrg10">
-                <input class="balloon pdg10 pdgL0" name="mes" id="search" autocomplete="off" type="number" placeholder="Mes"/><label for="phone">Mes</label>
-                </span>
-                <span class="mrg10">
-                <input class="balloon pdg10 pdgL0" name="anio" id="search" autocomplete="off" type="number" placeholder="Año"/><label for="phone">Año</label>
-                </span>
+        </div>
+        <span class="grid-3">
+            <span>
+                <input class="balloon pdg10 pdgL0" id="d" autocomplete="off" type="number" placeholder="Dia"/>
+                <label for="d">Dia</label>
             </span>
-            <span class="">
-                <input class="balloon" name="direccion" id="search" autocomplete="off" type="text" /><label for="phone">Direccion</label>
+            <span>
+                <input class="balloon pdg10 pdgL0" id="m" autocomplete="off" type="number" placeholder="Mes"/>
+                <label for="m">Mes</label>
             </span>
-        <div class="ham-subtitle cold-dark m0 mt20">Informacion del Tutor</div>
-            <span class="">
-                <input class="balloon" name="nomTut" id="search" autocomplete="off" type="text" /><label for="phone">Nombre</label>
+            <span>
+                <input class="balloon pdg10 pdgL0" id="a" autocomplete="off" type="number" placeholder="Año"/>
+                <label for="a">Año</label>
             </span>
-            <span class="">
-                <input class="balloon" name="apPatTut" id="search" autocomplete="off" type="text" /><label for="phone">Ap. Paterno</label>
-            </span>
-            <span class="">
-                <input class="balloon" name="apMatTut" id="search" autocomplete="off" type="text" /><label for="phone">Ap. Materno</label>
-            </span>
-            <span class="">
-                <input class="balloon" name="email" id="search" autocomplete="off" type="email" /><label for="phone">Correo</label>
-            </span>
-            <span class="">
-                <input class="balloon" name="pass" id="search" autocomplete="off" type="password" /><label for="phone">Contraseña</label>
-            </span>
-            <span class="">
-                <input class="balloon" name="telefono" id="search" autocomplete="off" type="text" /><label for="phone">telefono</label>
-            </span>
-        <div class="ham-subtitle cold-dark m0 mt20">Informacion del Autorizado 1</div>
-            <span class="">
-                <input class="balloon" name="nomAut1" id="search" autocomplete="off" type="text" /><label for="phone">Nombre</label>
-            </span>
-            <span class="">
-                <input class="balloon" name="apPatAut1" id="search" autocomplete="off" type="text" /><label for="phone">Ap. Paterno</label>
-            </span>
-            <span class="">
-                <input class="balloon" name="apMatAut1" id="search" autocomplete="off" type="text" /><label for="phone">Ap. Materno</label>
-            </span>
-            <span class="">
-                <input class="balloon" name="telefonoAut1" id="search" autocomplete="off" type="text" /><label for="phone">telefono</label>
-            </span>
-        <div class="ham-subtitle cold-dark m0 mt20">Informacion del Autoriazado 2</div>
-        <span class="">
-                <input class="balloon" name="nomAut2" id="search" autocomplete="off" type="text" /><label for="phone">Nombre</label>
-            </span>
-            <span class="">
-                <input class="balloon" name="apPatAut2" id="search" autocomplete="off" type="text" /><label for="phone">Ap. Paterno</label>
-            </span>
-            <span class="">
-                <input class="balloon" name="apMatAut2" id="search" autocomplete="off" type="text" /><label for="phone">Ap. Materno</label>
-            </span>
-            <span class="">
-                <input class="balloon" name="telefonoAut2" id="search" autocomplete="off" type="text" /><label for="phone">telefono</label>
-            </span>
-            <button class="ham-btn ham-blue pdgH20 fullW mgV50 display5">Terminar Inscripcion</button>
+        </span>
+        <span>
+            <input class="balloon" type="text" id="grupo">
+            <label for="Grupo">Grupo</label>
+        </span>
+        <button type="submit" class="ham-btn ham-blue" id="sub-btn">Inscribir</button>
     </form>
-    <script>
-        document.querySelector('.ham-btn').addEventListener('click', (e)=>{
-            e.preventDefault()
-            location.href = '/proyectoISW/'
+</div>
+<script src="public/js/components/listarWeas.js"></script>
+<script src="public/js/components/modal.js"></script>
+
+<script>
+    function inscribir(data){
+         fetch_POST('api/admin/inscribir', data).then(resp=>{
+            new Modal('success', resp.success, ()=>setTimeout(() => location.href = '/proyectoISW/', 1000) )
+        }).catch(err=> new Modal('error', 'La Inscripcion no pudo ser completada'))
+    } 
+    $('#sub-btn').addEventListener('click', (e)=>{
+        e.preventDefault()
+        let data = {
+            info_niño: {
+                nom: $('#nom_Niño').value,
+                app: $('#app_Niño').value,
+                apm: $('#apm_Niño').value,
+                fnac: `${$('#a').value}-${$('#m').value}-${$('#d').value}`,
+                grupo: $('#grupo').value
+            }
+        }
+        // console.log(data)
+        let ok = true
+        Object.keys(data.info_niño).forEach(dato=>{
+            ok = data.info_niño[dato] != ''
+            // if(!ok)break
         })
-    </script>
-</body>
+        if(ok)inscribir(data)
+        else new Modal('error', 'No Hay datos')
+    })
+</script>

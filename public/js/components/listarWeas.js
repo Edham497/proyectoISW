@@ -12,7 +12,7 @@ async function fetch_POST(url, data){
             'Content-Type': 'application/json'
         }
     })
-    let info = await response.JSON()
+    let info = await response.json()
     return info
 }
 

@@ -1,10 +1,56 @@
 .alumnos{
-    .card{
-        display: flex;
-        flex-flow: row;
+    .asistencia, .inscritos{
+        width: 100%;
 
-        div{
-            padding: 5px;
+        .card{
+            width: 100%;
+            background: #FFF;
+            display: grid;
+            grid-template-columns: 2fr 1fr repeat(3, 50px);
+            // gap: 5px;
+            padding: 15px;
+            align-items: center;
+            position: relative;
+
+            div{
+                position: relative;
+            }
+
+            .imgn, .grupo, .ac{
+                margin: 0 auto;
+            }
+            
+            .imgn{
+                width: 35px;
+                height: 35px;
+                border-radius: 100%;
+            }
+        }
+    }
+}
+
+@media (max-width: 720px){
+    .alumnos{
+        .asistencia, .inscritos{
+            .card{
+                grid-template-columns: auto;
+                margin: 10px 0;
+                div{
+                    padding-left: 150px;
+                }
+
+                .imgn{
+                    width: 80px;
+                    height: 80px;
+                    top: 10%;
+                    left: 10%;
+                    position: absolute;
+                }
+
+                .imgn, .grupo, .ac{
+                    margin: 0;
+                }
+            }
         }
     }
 }

@@ -1253,19 +1253,51 @@ and also iPads specifically.
   width: 100%;
   max-width: 80%;
   background: #FFF;
-  padding: 35px;
-  -webkit-box-shadow: 0 0 100px 1px #000000a2, 0 0 1px 2px #5a5a5a;
-          box-shadow: 0 0 100px 1px #000000a2, 0 0 1px 2px #5a5a5a;
+  -webkit-box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.16), 0 12px 24px 0 rgba(0, 0, 0, 0.15);
+          box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.16), 0 12px 24px 0 rgba(0, 0, 0, 0.15);
   position: relative;
   border-radius: 10px;
+  overflow: hidden;
+}
+
+.modal .containerM .contenido .confirmation {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 200px auto;
+      grid-template-columns: 200px auto;
+}
+
+.modal .containerM .contenido .confirmation .aside {
+  height: 100%;
+  background: #243a5e;
+}
+
+.modal .containerM .contenido .confirmation .aside.success {
+  background-image: url(../ico/success.png);
+  background-size: 50%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.modal .containerM .contenido .confirmation .aside.error {
+  background-image: url(../ico/error.png);
+  background-size: 50%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.modal .containerM .contenido .confirmation .msg {
+  font-weight: 100;
+  height: 100%;
+  padding: 25px;
 }
 
 .modal .containerM .closeModal {
   position: absolute;
-  margin: 10px;
-  width: 25px;
-  height: 25px;
-  background: url(../ico/close.png);
+  margin: 20px;
+  width: 30px;
+  height: 30px;
+  background: url(../ico/closen.png);
   background-size: 100%;
   top: 0;
   right: 0;
@@ -1279,6 +1311,10 @@ and also iPads specifically.
 @media (max-width: 720px) {
   .modal .containerM {
     max-width: 95%;
+  }
+  .modal .containerM .contenido .confirmation {
+    -ms-grid-columns: 100px 1fr;
+        grid-template-columns: 100px 1fr;
   }
 }
 
@@ -1497,15 +1533,142 @@ and also iPads specifically.
   }
 }
 
-.grid {
+.grid-1 {
   display: -ms-grid;
   display: grid;
+  gap: 0 10px;
+  -ms-grid-columns: (auto)[1];
+      grid-template-columns: repeat(1, auto);
 }
 
-.grid-cc {
+.grid-2 {
   display: -ms-grid;
   display: grid;
-  place-items: center;
+  gap: 0 10px;
+  -ms-grid-columns: (auto)[2];
+      grid-template-columns: repeat(2, auto);
+}
+
+.grid-3 {
+  display: -ms-grid;
+  display: grid;
+  gap: 0 10px;
+  -ms-grid-columns: (auto)[3];
+      grid-template-columns: repeat(3, auto);
+}
+
+.grid-4 {
+  display: -ms-grid;
+  display: grid;
+  gap: 0 10px;
+  -ms-grid-columns: (auto)[4];
+      grid-template-columns: repeat(4, auto);
+}
+
+.grid-5 {
+  display: -ms-grid;
+  display: grid;
+  gap: 0 10px;
+  -ms-grid-columns: (auto)[5];
+      grid-template-columns: repeat(5, auto);
+}
+
+.grid-6 {
+  display: -ms-grid;
+  display: grid;
+  gap: 0 10px;
+  -ms-grid-columns: (auto)[6];
+      grid-template-columns: repeat(6, auto);
+}
+
+.grid-7 {
+  display: -ms-grid;
+  display: grid;
+  gap: 0 10px;
+  -ms-grid-columns: (auto)[7];
+      grid-template-columns: repeat(7, auto);
+}
+
+.grid-8 {
+  display: -ms-grid;
+  display: grid;
+  gap: 0 10px;
+  -ms-grid-columns: (auto)[8];
+      grid-template-columns: repeat(8, auto);
+}
+
+.grid-9 {
+  display: -ms-grid;
+  display: grid;
+  gap: 0 10px;
+  -ms-grid-columns: (auto)[9];
+      grid-template-columns: repeat(9, auto);
+}
+
+@media (max-width: 720px) {
+  .grid-1 {
+    display: -ms-grid;
+    display: grid;
+    gap: 0 10px;
+    -ms-grid-columns: auto;
+        grid-template-columns: auto;
+  }
+  .grid-2 {
+    display: -ms-grid;
+    display: grid;
+    gap: 0 10px;
+    -ms-grid-columns: auto;
+        grid-template-columns: auto;
+  }
+  .grid-3 {
+    display: -ms-grid;
+    display: grid;
+    gap: 0 10px;
+    -ms-grid-columns: auto;
+        grid-template-columns: auto;
+  }
+  .grid-4 {
+    display: -ms-grid;
+    display: grid;
+    gap: 0 10px;
+    -ms-grid-columns: auto;
+        grid-template-columns: auto;
+  }
+  .grid-5 {
+    display: -ms-grid;
+    display: grid;
+    gap: 0 10px;
+    -ms-grid-columns: auto;
+        grid-template-columns: auto;
+  }
+  .grid-6 {
+    display: -ms-grid;
+    display: grid;
+    gap: 0 10px;
+    -ms-grid-columns: auto;
+        grid-template-columns: auto;
+  }
+  .grid-7 {
+    display: -ms-grid;
+    display: grid;
+    gap: 0 10px;
+    -ms-grid-columns: auto;
+        grid-template-columns: auto;
+  }
+  .grid-8 {
+    display: -ms-grid;
+    display: grid;
+    gap: 0 10px;
+    -ms-grid-columns: auto;
+        grid-template-columns: auto;
+  }
+  .grid-9 {
+    display: -ms-grid;
+    display: grid;
+    gap: 0 10px;
+    -ms-grid-columns: auto;
+        grid-template-columns: auto;
+  }
 }
 
 .perfil {
@@ -1600,18 +1763,57 @@ and also iPads specifically.
   }
 }
 
-.alumnos .card {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: row;
-          flex-flow: row;
+.alumnos .asistencia, .alumnos .inscritos {
+  width: 100%;
 }
 
-.alumnos .card div {
-  padding: 5px;
+.alumnos .asistencia .card, .alumnos .inscritos .card {
+  width: 100%;
+  background: #FFF;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 2fr 1fr (50px)[3];
+      grid-template-columns: 2fr 1fr repeat(3, 50px);
+  padding: 15px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+
+.alumnos .asistencia .card div, .alumnos .inscritos .card div {
+  position: relative;
+}
+
+.alumnos .asistencia .card .imgn, .alumnos .asistencia .card .grupo, .alumnos .asistencia .card .ac, .alumnos .inscritos .card .imgn, .alumnos .inscritos .card .grupo, .alumnos .inscritos .card .ac {
+  margin: 0 auto;
+}
+
+.alumnos .asistencia .card .imgn, .alumnos .inscritos .card .imgn {
+  width: 35px;
+  height: 35px;
+  border-radius: 100%;
+}
+
+@media (max-width: 720px) {
+  .alumnos .asistencia .card, .alumnos .inscritos .card {
+    -ms-grid-columns: auto;
+        grid-template-columns: auto;
+    margin: 10px 0;
+  }
+  .alumnos .asistencia .card div, .alumnos .inscritos .card div {
+    padding-left: 150px;
+  }
+  .alumnos .asistencia .card .imgn, .alumnos .inscritos .card .imgn {
+    width: 80px;
+    height: 80px;
+    top: 10%;
+    left: 10%;
+    position: absolute;
+  }
+  .alumnos .asistencia .card .imgn, .alumnos .asistencia .card .grupo, .alumnos .asistencia .card .ac, .alumnos .inscritos .card .imgn, .alumnos .inscritos .card .grupo, .alumnos .inscritos .card .ac {
+    margin: 0;
+  }
 }
 
 .datosBitacora .row, .datosBitacora .col {
@@ -1704,11 +1906,7 @@ and also iPads specifically.
 .admin .cards {
   width: 100%;
   max-height: 70px;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (auto)[6];
-      grid-template-columns: repeat(6, auto);
-  gap: 10px;
+  z-index: 10;
 }
 
 .admin .cards .card {
@@ -1765,7 +1963,7 @@ and also iPads specifically.
     display: grid;
     -ms-grid-columns: auto auto;
         grid-template-columns: auto auto;
-    border: solid 1px rgba(128, 128, 128, 0.349);
+    border: solid 1px #80808059;
   }
   .admin .cards .card.active {
     border: none;

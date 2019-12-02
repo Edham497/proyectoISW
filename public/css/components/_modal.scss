@@ -17,18 +17,47 @@
         width: 100%;
         max-width: 80%;
         background: #FFF;
-        padding: 35px;
-        box-shadow: 0 0 100px 1px #000000a2, 0 0 1px 2px #5a5a5a;
+        box-shadow: 0 0 1px 0 rgba(0,0,0,.16), 0 12px 24px 0 rgba(0,0,0,.15);
         position: relative;
         border-radius: 10px;
+        overflow: hidden;
 
+        .contenido{
+            .confirmation{
+                display: grid;
+                grid-template-columns: 200px auto;
+                .aside{
+                    height: 100%;
+                    background: #243a5e;
+
+                    &.success{
+                        background-image: url(../ico/success.png);
+                        background-size: 50%;
+                        background-repeat: no-repeat;
+                        background-position: center;
+                    }
+
+                    &.error{
+                        background-image: url(../ico/error.png);
+                        background-size: 50%;
+                        background-repeat: no-repeat;
+                        background-position: center;
+                    }
+                }
+                .msg{
+                    font-weight: 100;
+                    height: 100%;
+                    padding: 25px;
+                }
+            }
+        }
 
         .closeModal{
             position: absolute;
-            margin: 10px;
-            width: 25px;
-            height: 25px;
-            background: url(../ico/close.png);
+            margin: 20px;
+            width: 30px;
+            height: 30px;
+            background: url(../ico/closen.png);
             background-size: 100%;
             top: 0;
             right: 0;
@@ -44,6 +73,11 @@
     .modal{
         .containerM{
             max-width: 95%;
+            .contenido{
+                .confirmation{
+                    grid-template-columns: 100px 1fr;
+                }
+            }
         }
     }
 }

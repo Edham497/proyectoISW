@@ -20,7 +20,7 @@ class _kids{
     //buscar por
     function searchKid($prefix){
         $conn = $this->db->getConn();
-        $query = "SELECT * FROM Niño WHERE idNiño like '$prefix%' or nomNiño LIKE '%$prefix%' or apPNiño like '%$prefix%' or apMNiño like '%$prefix%' or fecNNiño like '%$prefix%'";
+        $query = "SELECT idNiño as id, nomNiño as nom, apPNiño as app, apMNiño as apm, fecNNiño as fn, grupofk as grupo, imgNiño as imgn, activo FROM Niño WHERE idNiño like '$prefix%' or nomNiño LIKE '%$prefix%' or apPNiño like '%$prefix%' or apMNiño like '%$prefix%' or fecNNiño like '%$prefix%'";
         $stmt = $conn->prepare($query);
         $stmt->execute();
         $stmt = $stmt->fetchAll(PDO::FETCH_OBJ);

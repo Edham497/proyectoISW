@@ -15,12 +15,6 @@
     </div>
     </div>
 </div>
-
-    
-    <script src="<?php echo constant('URL');?>public/js/components/table.js"></script>
-    <script src="<?php echo constant('URL');?>public/js/components/modal.js"></script>
-    <script src="<?php echo constant('URL');?>public/js/tableUsuarios.js"></script>
-    <script src="<?php echo constant('URL');?>public/js/modalNuevoUsuario.js"></script>
     <style>
         @media  only screen and (max-width: 650px), (min-device-width: 768px) and (max-device-width: 1024px)  {
             td:nth-of-type(1):before { content: "ID"; }

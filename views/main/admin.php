@@ -1,5 +1,5 @@
 <div class="admin pd20">
-    <div class="cards close mt20">
+    <div class="cards grid-6 close mt20">
         <div class="card active" content="Alumnos">
             <div class="title">Alumnos</div>
             <div class="info" id="ni"></div>
@@ -25,9 +25,11 @@
             <div class="info" id="na"></div>
         </div>
     </div>
-    <div class="container mt20">
-        <div class="ham-title fw100" id="titulo">Alumnos</div>
+    <div class="container mt20" id="contenido">
+        <?php include "views/alumnos/admin.php"; ?>
     </div>
 </div>
 <script src="<?php echo constant('URL');?>public/js/componentS/listarWeas.js"></script>
 <script src="<?php echo constant('URL');?>public/js/admin/index.js"></script>
+<script src="<?php echo constant('URL');?>public/js/components/card.js"></script>
+<script src="<?php echo constant('URL');?>public/js/components/table.js"></script>
