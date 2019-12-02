@@ -1,3 +1,4 @@
+@charset "UTF-8";
 :root {
   --fuente: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -1316,6 +1317,9 @@ and also iPads specifically.
     -ms-grid-columns: 100px 1fr;
         grid-template-columns: 100px 1fr;
   }
+  .modal .containerM .contenido .confirmation .msg {
+    font-size: 15px;
+  }
 }
 
 .full {
@@ -1772,8 +1776,9 @@ and also iPads specifically.
   background: #FFF;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 2fr 1fr (50px)[3];
-      grid-template-columns: 2fr 1fr repeat(3, 50px);
+  -ms-grid-columns: 2fr 1fr (50px)[2] 1fr;
+      grid-template-columns: 2fr 1fr repeat(2, 50px) 1fr;
+  gap: 10px;
   padding: 15px;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -1813,6 +1818,76 @@ and also iPads specifically.
   }
   .alumnos .asistencia .card .imgn, .alumnos .asistencia .card .grupo, .alumnos .asistencia .card .ac, .alumnos .inscritos .card .imgn, .alumnos .inscritos .card .grupo, .alumnos .inscritos .card .ac {
     margin: 0;
+  }
+}
+
+.tutores .tutoresI, .tutores .inscritos {
+  width: 100%;
+}
+
+.tutores .tutoresI .card, .tutores .inscritos .card {
+  width: 100%;
+  background: #FFF;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 50px 100px 30px 100px;
+      grid-template-columns: 1fr 1fr 50px 100px 30px 100px;
+  gap: 20px;
+  padding: 15px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+
+.tutores .tutoresI .card div, .tutores .inscritos .card div {
+  position: relative;
+}
+
+.tutores .tutoresI .card .imgu, .tutores .tutoresI .card .grupo, .tutores .tutoresI .card .ac, .tutores .inscritos .card .imgu, .tutores .inscritos .card .grupo, .tutores .inscritos .card .ac {
+  margin: 0 auto;
+}
+
+.tutores .tutoresI .card .imgu, .tutores .inscritos .card .imgu {
+  width: 35px;
+  height: 35px;
+  border-radius: 100%;
+}
+
+.tutores .tutoresI .card .niños, .tutores .inscritos .card .niños {
+  text-align: center;
+}
+
+.tutores .tutoresI .card .niños::before, .tutores .inscritos .card .niños::before {
+  font-size: 10px;
+  content: "niños ";
+}
+
+@media (max-width: 720px) {
+  .tutores .tutoresI .card, .tutores .inscritos .card {
+    -ms-grid-columns: auto;
+        grid-template-columns: auto;
+    margin: 10px 0;
+    gap: 10px;
+  }
+  .tutores .tutoresI .card div, .tutores .inscritos .card div {
+    padding-left: 150px;
+  }
+  .tutores .tutoresI .card .imgu, .tutores .inscritos .card .imgu {
+    width: 80px;
+    height: 80px;
+    top: 10%;
+    left: 10%;
+    position: absolute;
+  }
+  .tutores .tutoresI .card .imgu, .tutores .tutoresI .card .grupo, .tutores .tutoresI .card .ac, .tutores .inscritos .card .imgu, .tutores .inscritos .card .grupo, .tutores .inscritos .card .ac {
+    margin: 0;
+  }
+  .tutores .tutoresI .card .niños, .tutores .tutoresI .card .email, .tutores .inscritos .card .niños, .tutores .inscritos .card .email {
+    text-align: start;
+  }
+  .tutores .tutoresI .card .niños::before, .tutores .inscritos .card .niños::before {
+    font-size: 15px;
   }
 }
 

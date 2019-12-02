@@ -5,8 +5,7 @@
             <input class="balloon" type="text" id="search" autocomplete="off">
             <label for="filtro">Buscar</label>
         </span>
-        <div class="ham-btn ham-blue" id="newModal">Nuevo</div>
-        <div class="container full">
+        <div class="container full mt20">
         <div class="table-container">
             <table id="usuarios">
 

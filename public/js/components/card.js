@@ -1,7 +1,7 @@
 class CardNiño{
     constructor(data){
         this.card = crearWea('div', {
-            id: data['idNiño'],
+            id: data['id'],
             classList: 'card'
         })
 
@@ -30,7 +30,7 @@ class CardNiño{
             classList: 'fnacimiento',
             innerHTML: `${fecha[2]} de ${fecha[1]} de ${fecha[0]}`
         }))
-        
+
         this.card.appendChild(crearWea('div',{
             classList: 'grupo',
             innerHTML: `${data['grupo']}`
@@ -40,8 +40,45 @@ class CardNiño{
             src: `public/img/guardarias.jpg`
         }))
         this.card.appendChild(crearWea('div',{
-            classList: 'ac',
-            innerHTML: `${data['activo']}`
+            classList: 'nomTutor',
+            innerHTML: `${data['nomTutor']} ${data['appTutor']}`
+        }))
+
+        return this.card;
+    }
+}
+
+class CardTutor{
+    constructor(data){
+        this.card = crearWea('div', {
+            id: data['id'],
+            classList: 'card'
+        })
+
+        this.card.appendChild(crearWea('div',{
+            classList: 'nombre',
+            innerHTML: `${data['nom']} ${data['app']} ${data['apm']}`
+        }))
+
+        this.card.appendChild(crearWea('div',{
+            classList: 'email',
+            innerHTML: `${data['email']}`
+        }))
+        this.card.appendChild(crearWea('img',{
+            classList: 'imgu',
+            src: `public/img/guardarias.jpg`
+        }))
+        this.card.appendChild(crearWea('div',{
+            classList: 'tel',
+            innerHTML: `${data['tel']}`
+        }))
+        this.card.appendChild(crearWea('div',{
+            classList: 'niños',
+            innerHTML: `${data['niños']}`
+        }))
+        this.card.appendChild(crearWea('button',{
+            classList: 'ham-btn ham-blue m0 tac',
+            innerHTML: 'ver'
         }))
 
         return this.card;

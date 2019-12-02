@@ -101,3 +101,28 @@ function Usuarios(){
             }
     })
 }
+
+function Tutores(){
+    let inscritos = $('.tutoresI')
+
+    getTutores().then(alumnos => {
+        alumnos.forEach(alumno => {
+            // console.log(alumno)
+            inscritos.appendChild(new CardTutor(alumno))
+        })
+    })
+
+    $('#search').addEventListener('keyup', () => {
+        inscritos.innerHTML = ''
+        buscarTutores($('#search').value).then(alumnos => {
+            alumnos.forEach(alumno => {
+                // console.log(alumno)
+                inscritos.appendChild(new CardTutor(alumno))
+            })
+        })
+    })
+}
+
+function Maestros(){
+
+}

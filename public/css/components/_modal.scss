@@ -76,6 +76,9 @@
             .contenido{
                 .confirmation{
                     grid-template-columns: 100px 1fr;
+                    .msg{
+                        font-size: 15px;
+                    }
                 }
             }
         }

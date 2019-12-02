@@ -1,7 +1,7 @@
 <div class="alumnos">
     <!-- Asistencias -->
     <div class="container col sc">
-        <div class="ham-title">Asistencia</div>
+        <div class="ham-title fw300">Asistencia</div>
         <span class="maxW500">
             <input class="balloon" type="text" id="search_a" autocomplete="off">
             <!-- <label for="filtro">Buscar</label> -->
@@ -11,7 +11,7 @@
     </div>
     <!-- Alumnos Inscritos -->
     <div class="container col sc">
-        <div class="ham-title">Alumnos Inscritos</div>
+        <div class="ham-title fw300">Alumnos Inscritos</div>
         <span class="maxW500">
             <input class="balloon" type="text" id="search" autocomplete="off">
             <label for="filtro">Buscar</label>

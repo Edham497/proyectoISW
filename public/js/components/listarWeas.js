@@ -16,16 +16,26 @@ async function fetch_POST(url, data){
     return info
 }
 
-/** Funcion para listar niños desde la api **/
+/** Niños **/
 async function getAlumnos(){
-    return await fetch_GET('api/admin/', 'listkids')
+    return await fetch_GET('api/kids/', 'sk')
 }
 async function buscarAlumnos(param){
     return await fetch_GET('api/kids/', `searchKid/${param}`)
 }
+
 async function totalAlumnos(){
     return await fetch_GET('api/admin/nInscritos');
 }
 async function totales(){
     return await fetch_GET('api/admin/totales');
 }
+
+/** Tutores **/
+async function getTutores(){
+    return await fetch_GET('api/admin/listTutores')
+}
+async function buscarTutores(){
+    return await fetch_GET('api/admin/searchTutores', param)
+}
+    

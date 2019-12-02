@@ -1,13 +1,13 @@
-.alumnos{
-    .asistencia, .inscritos{
+.tutores{
+    .tutoresI, .inscritos{
         width: 100%;
 
         .card{
             width: 100%;
             background: #FFF;
             display: grid;
-            grid-template-columns: 2fr 1fr repeat(2, 50px) 1fr;
-            gap: 10px;
+            grid-template-columns: 1fr 1fr 50px 100px 30px 100px;
+            gap: 20px;
             padding: 15px;
             align-items: center;
             position: relative;
@@ -16,30 +16,41 @@
                 position: relative;
             }
 
-            .imgn, .grupo, .ac{
+            .imgu, .grupo, .ac{
                 margin: 0 auto;
             }
             
-            .imgn{
+            .imgu{
                 width: 35px;
                 height: 35px;
                 border-radius: 100%;
+            }
+            .niños{
+                text-align: center;
+            }
+            .niños{
+                &::before{
+                    font-size: 10px;
+                    content: "niños ";
+                }
             }
         }
     }
 }
 
 @media (max-width: 720px){
-    .alumnos{
-        .asistencia, .inscritos{
+    .tutores{
+        .tutoresI, .inscritos{
             .card{
                 grid-template-columns: auto;
                 margin: 10px 0;
+                gap: 10px;
+                
                 div{
                     padding-left: 150px;
                 }
 
-                .imgn{
+                .imgu{
                     width: 80px;
                     height: 80px;
                     top: 10%;
@@ -47,8 +58,16 @@
                     position: absolute;
                 }
 
-                .imgn, .grupo, .ac{
+                .imgu, .grupo, .ac{
                     margin: 0;
+                }
+                .niños, .email{
+                    text-align: start;
+                }
+                .niños{
+                    &::before{
+                        font-size: 15px;
+                    }
                 }
             }
         }

@@ -12,46 +12,39 @@ class _admin{
 
     //LISTADO DE TODOS LOS NIÑOS
     function listKids(){
-        $query = "SELECT idNiño as id, nomNiño as nom, apPNiño as app, apMNiño as apm, fecNNiño as fn, grupofk as grupo, imgNiño as imgn, activo FROM Niño WHERE activo =  true;";
+        $query = "SELECT idNiño as id,
+                         nomNiño as nom,
+                         apPNiño as app,
+                         apMNiño as apm,
+                         fecNNiño as fn,
+                         grupofk as grupo,
+                         imgNiño as imgn,
+                         activo FROM Niño WHERE activo =  true 
+                         ORDER BY nom Limit 10;";
         $stmt = $this->db->prepare($query);
         $stmt->execute();
         $stmt = $stmt->fetchAll(PDO::FETCH_OBJ);
         echo json_encode($stmt);
     }
 
-    function nAlumnos(){
-        $query = "SELECT COUNT(*) total FROM Niño;";
-        $stmt = $this->db->query($query);
-        $n = $stmt->fetch(PDO::FETCH_OBJ);
-        echo json_encode($n);
-    }
-    
-    function nUsuarios(){
-        $query = "SELECT COUNT(*) total FROM Usuario;";
-        $stmt = $this->db->query($query);
-        $n = $stmt->fetch(PDO::FETCH_OBJ);
-        echo json_encode($n);
-    }
-
-    function nMaestros(){
-        $query = "SELECT COUNT(*) total FROM Usuario WHERE rol = 3;";
-        $stmt = $this->db->query($query);
-        $n = $stmt->fetch(PDO::FETCH_OBJ);
-        echo json_encode($n);
-    }
-
-    function nPediatras(){
-        $query = "SELECT COUNT(*) total FROM Usuario WHERE rol = 4;";
-        $stmt = $this->db->query($query);
-        $n = $stmt->fetch(PDO::FETCH_OBJ);
-        echo json_encode($n);
-    }
-
-    function nTutores(){
-        $query = "SELECT COUNT(*) total FROM Usuario WHERE rol = 5;";
-        $stmt = $this->db->query($query);
-        $n = $stmt->fetch(PDO::FETCH_OBJ);
-        echo json_encode($n);
+    function listTutores(){
+        $query = "SELECT idUsuario as id,
+                         nomUsuario as nom,
+                         apPUsuario as app,
+                         apMUsuario as apm,
+                         email,
+                         telefono as tel,
+                         imgUsuario as img,
+                         count(*) as niños
+                         FROM Usuario JOIN TutAut_Niño
+                         on idUsuario = TutAut_Niño.idTutor JOIN Niño
+                         on TutAut_Niño.idNiñofk = idNiño 
+                         WHERE Usuario.activo = true and rol = 5 
+                         group by idUsuario";
+        $stmt = $this->db->prepare($query);
+        $stmt->execute();
+        $stmt = $stmt->fetchAll(PDO::FETCH_OBJ);
+        echo json_encode($stmt);
     }
     
     function totales(){
@@ -83,7 +76,7 @@ class _admin{
             // $stmt->execute(json_decode(json_encode($this->data->info_tutor), true));
 
             // var_dump($this->data->info_niño);
-            echo json_encode(['success' => 'Dato insertado correctamente']);
+            echo json_encode(['success' => 'Inscripcion Finalizada']);
         }
         catch(PDOException $e){
             echo json_encode(['error' => $e.getMessage()]);

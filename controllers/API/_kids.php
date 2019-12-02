@@ -18,9 +18,31 @@ class _kids{
         echo json_encode($stmt);
     }
     //buscar por
+
+    function sk(){
+        $conn = $this->db->getConn();
+        $query = "SELECT idNiño as id,
+                         nomNiño as nom, 
+                         apPNiño as app, 
+                         apMNiño as apm, 
+                         fecNNiño as fn, 
+                         grupofk as grupo, 
+                         imgNiño as imgn, 
+                         nomUsuario as nomTutor, 
+                         apPUsuario as appTutor
+                    FROM Niño JOIN TutAut_Niño 
+                    on Niño.idNiño = TutAut_Niño.idNiñofk join Usuario 
+                    on TutAut_Niño.idTutor = Usuario.idUsuario
+                    where rol = 5"; 
+        $stmt = $conn->query($query);
+        $stmt = $stmt->fetchAll(PDO::FETCH_OBJ);
+        echo json_encode($stmt);
+    }
+
     function searchKid($prefix){
         $conn = $this->db->getConn();
-        $query = "SELECT idNiño as id, nomNiño as nom, apPNiño as app, apMNiño as apm, fecNNiño as fn, grupofk as grupo, imgNiño as imgn, activo FROM Niño WHERE idNiño like '$prefix%' or nomNiño LIKE '%$prefix%' or apPNiño like '%$prefix%' or apMNiño like '%$prefix%' or fecNNiño like '%$prefix%'";
+        $query = "SELECT idNiño as id, nomNiño as nom, apPNiño as app, apMNiño as apm, fecNNiño as fn, grupofk as grupo, imgNiño as imgn, activo FROM Niño 
+                            WHERE idNiño like '$prefix%' or nomNiño LIKE '%$prefix%' or apPNiño like '%$prefix%' or apMNiño like '%$prefix%' or fecNNiño like '%$prefix%' or grupofk like '%$prefix%'";
         $stmt = $conn->prepare($query);
         $stmt->execute();
         $stmt = $stmt->fetchAll(PDO::FETCH_OBJ);

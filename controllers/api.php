@@ -11,7 +11,7 @@ class API{
                 return new $nameAPI;
             }
         }
-        if(Router::isLoged()){
+        // if(Router::isLoged()){
             if(isset($URL[1])){
                 if(file_exists(self::getApiPath($nameAPI))){
                     require_once self::getApiPath($nameAPI);
@@ -26,8 +26,8 @@ class API{
                 else new _error(400);
             }
             else new _error(400);
-        }
-        else new _error(403);
+        // }
+        // else new _error(403);
     }
     
     private static function getApiPath($nameAPI){
